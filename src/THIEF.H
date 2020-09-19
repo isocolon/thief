@@ -1,0 +1,6 @@
+#include "global.h"
+#include "fics.h"
+#include "icc.h"
+#include "nonfics.h"
+#include "function.h"
+#include "dialog.h"
