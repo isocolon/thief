@@ -19,7 +19,11 @@ void FICS_ProcessBeforeLoginLine (char *cS)
         }
     Telnet.bDisplayContinueLine = 1 ;
 
-    if (cS [1] == 'i' && cS [2] == 'c' && cS [3] == 's' && cS [4] == '%' && cS [5] == ' ')
+    if (cS [1] == 'i' && 
+        cS [2] == 'c' && 
+        cS [3] == 's' && 
+        cS [4] == '%' && 
+        cS [5] == ' ')
         {
         cS += FICS_PROMPT_LENGTH ;
         }
@@ -2355,7 +2359,7 @@ int FICS_ParseBoard (char *cS)
             // it's my move
             if (System.bIsMyTurn)
                 {
-                // has alreay a true premove in the buffer
+                // has already a true premove in the buffer
                 if (Premove.nPremoveCount > 0)
                     {
                     nJ = 0 ;
@@ -2425,7 +2429,7 @@ int FICS_ParseBoard (char *cS)
                                                 Premove.nPremoveLegalBuffer [Premove.nPremoveTail] [7]))
 
 									{
-		                            // it's a legal move lets send it
+		                            // it's a legal move let's send it
 			                        TOOLBOX_WriteICS (Premove.cPremoveBuffer [Premove.nPremoveTail]) ;
 	
 		                            User.bAutoQueen = nOA ;
@@ -2530,7 +2534,7 @@ int FICS_ParseBoard (char *cS)
         return 1 ;
         }
             
-    // examing game
+    // examining game
     if (nRl == 2 ||    // i am examing a game
         nRl == 4)      // i am examing a game issued pause/unpause command
         {

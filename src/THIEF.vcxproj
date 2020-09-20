@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="KICS Release|Win32">
+      <Configuration>KICS Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A64321C3-E4A9-48FA-B086-1E2B17264235}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='KICS Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='KICS Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='KICS Release|Win32'">
+    <OutDir>.\THIEF___Win32_KICS_Release\</OutDir>
+    <IntDir>.\THIEF___Win32_KICS_Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\THIEF___Win32_Debug\</OutDir>
+    <IntDir>.\THIEF___Win32_Debug\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\THIEF___Win32_Release\</OutDir>
+    <IntDir>.\THIEF___Win32_Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='KICS Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;KICS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\THIEF___Win32_KICS_Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\THIEF___Win32_KICS_Release\THIEF.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\THIEF___Win32_KICS_Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\THIEF___Win32_KICS_Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\THIEF___Win32_KICS_Release\THIEF.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\THIEF___Win32_KICS_Release\THIEF.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\THIEF___Win32_KICS_Release\THIEF.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;winmm.lib;comctl32.lib;odbc32.lib;odbccp32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\THIEF___Win32_Debug\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\THIEF___Win32_Debug\THIEF.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\THIEF___Win32_Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\THIEF___Win32_Debug\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\THIEF___Win32_Debug\THIEF.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\THIEF___Win32_Debug\THIEF.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\THIEF___Win32_Debug\THIEF.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;winmm.lib;comctl32.lib;odbc32.lib;odbccp32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>.\THIEF___Win32_Release\</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\THIEF___Win32_Release\THIEF.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\THIEF___Win32_Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\THIEF___Win32_Release\</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TypeLibraryName>.\THIEF___Win32_Release\THIEF.tlb</TypeLibraryName>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\THIEF___Win32_Release\THIEF.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <OutputFile>.\THIEF___Win32_Release\THIEF.exe</OutputFile>
+      <AdditionalDependencies>wsock32.lib;winmm.lib;comctl32.lib;odbc32.lib;odbccp32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="About.c" />
+    <ClCompile Include="Animate.c" />
+    <ClCompile Include="Assist.c" />
+    <ClCompile Include="Bdraw.c" />
+    <ClCompile Include="Board.c" />
+    <ClCompile Include="BOARD1.C" />
+    <ClCompile Include="Boardcfg.c" />
+    <ClCompile Include="Bughouse.c" />
+    <ClCompile Include="Butcfg.c" />
+    <ClCompile Include="Button.c" />
+    <ClCompile Include="Censor.c" />
+    <ClCompile Include="Chess.c" />
+    <ClCompile Include="Clock.c" />
+    <ClCompile Include="Color.c" />
+    <ClCompile Include="Cset.c" />
+    <ClCompile Include="Ctrlkey.c" />
+    <ClCompile Include="Draw.c" />
+    <ClCompile Include="Ear.c" />
+    <ClCompile Include="Earcfg.c" />
+    <ClCompile Include="F8key.c" />
+    <ClCompile Include="F9key.c" />
+    <ClCompile Include="Fics.c" />
+    <ClCompile Include="Fkey.c" />
+    <ClCompile Include="Font.c" />
+    <ClCompile Include="Game.c" />
+    <ClCompile Include="Gamecfg.c" />
+    <ClCompile Include="Gameevnt.c" />
+    <ClCompile Include="Gamesnd.c" />
+    <ClCompile Include="Gdisplay.c" />
+    <ClCompile Include="GNOTIFY.C" />
+    <ClCompile Include="Goption.c" />
+    <ClCompile Include="History.c" />
+    <ClCompile Include="Icc.c" />
+    <ClCompile Include="Ini.c" />
+    <ClCompile Include="Lagcmd.c" />
+    <ClCompile Include="Layout.c" />
+    <ClCompile Include="Log.c" />
+    <ClCompile Include="Logevent.c" />
+    <ClCompile Include="Login.c" />
+    <ClCompile Include="Main.c" />
+    <ClCompile Include="Match.c" />
+    <ClCompile Include="Message.c" />
+    <ClCompile Include="Minput.c" />
+    <ClCompile Include="Movebut.c" />
+    <ClCompile Include="Newlogin.c" />
+    <ClCompile Include="Nonfics.c" />
+    <ClCompile Include="Observe.c" />
+    <ClCompile Include="Oldlogin.c" />
+    <ClCompile Include="Password.c" />
+    <ClCompile Include="Play.c" />
+    <ClCompile Include="Position.c" />
+    <ClCompile Include="Promote.c" />
+    <ClCompile Include="Question.c" />
+    <ClCompile Include="Redclock.c" />
+    <ClCompile Include="Rightm.c" />
+    <ClCompile Include="Savegame.c" />
+    <ClCompile Include="Seek.c" />
+    <ClCompile Include="Server.c" />
+    <ClCompile Include="Silence.c" />
+    <ClCompile Include="Sitpiece.c" />
+    <ClCompile Include="Smove.c" />
+    <ClCompile Include="Sndcfg.c" />
+    <ClCompile Include="Sound.c" />
+    <ClCompile Include="State.c" />
+    <ClCompile Include="Sys.c" />
+    <ClCompile Include="Telcfg.c" />
+    <ClCompile Include="Tell.c" />
+    <ClCompile Include="Telnet.c" />
+    <ClCompile Include="Thief.c" />
+    <ClCompile Include="Timercfg.c" />
+    <ClCompile Include="Timercmd.c" />
+    <ClCompile Include="Timesnd.c" />
+    <ClCompile Include="Tmove.c" />
+    <ClCompile Include="Toolbox.c" />
+    <ClCompile Include="Toption.c" />
+    <ClCompile Include="TRY.C" />
+    <ClCompile Include="Vars.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dialog.h" />
+    <ClInclude Include="Fics.h" />
+    <ClInclude Include="Function.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Icc.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Nonfics.h" />
+    <ClInclude Include="Thief.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="thief.RES" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

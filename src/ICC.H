@@ -97,4 +97,3 @@
 
 #define ICC_HEARED_IGNORE_FORMULA   "Ignoring (formula): "
 #define ICC_HEARED_ROBO_WELCOME     "ROBOadmin(C)(*) tells you: "
-
