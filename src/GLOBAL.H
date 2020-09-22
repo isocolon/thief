@@ -28,7 +28,7 @@
 
 #ifdef  DEBUG
 #define THIEF_NICK                  "(The Beta, Debugging)"
-#else 
+#else
 #define THIEF_NICK                  "(The Release)"
 #endif
 
@@ -42,11 +42,11 @@
 #define THIEF_ICO                   "THIEF"
 
 #ifndef KICS
-  #define THIEF_NAME                  "THIEF"
+#define THIEF_NAME                  "THIEF"
 #endif
 
 #ifdef KICS
-  #define THIEF_NAME                  "THIEFforKICS"
+#define THIEF_NAME                  "THIEFforKICS"
 #endif
 
 
@@ -92,11 +92,11 @@
 #define SERVER_ILLEGALCHAR_MSG		"Illegal Character(s) in: "
 
 #ifndef KICS
-   #define ICS_SERVER_ADDRESS1         "timeseal.exe freechess.org 5000"
+#define ICS_SERVER_ADDRESS1         "timeseal.exe freechess.org 5000"
 #endif
 
 #ifdef KICS
-   #define ICS_SERVER_ADDRESS1         "timeseal.exe kics.freechess.org 6000"
+#define ICS_SERVER_ADDRESS1         "timeseal.exe kics.freechess.org 6000"
 #endif
 
 #define ICS_SERVER_ADDRESS2         "timeseal.exe freechess.org 23"
@@ -1061,569 +1061,569 @@
 #define MAX_GNOTIFY_HANDLE          30
 
 typedef struct
-    {
-    long nSec ; // assuming this is >= 32 bits
-    int nMs ;   // assuming this is >= 16 bits
-    }
-    TIMEMARK ;
+{
+	long nSec ; // assuming this is >= 32 bits
+	int nMs ;   // assuming this is >= 16 bits
+}
+TIMEMARK ;
 
 typedef struct
-    {
-    HFONT hfFont ;
-    LOGFONT lf ;
-    char Name [MAX_FONT_NAME + 10] ;
-    int nPointSize ;
-    int bBold ;
-    int bItalic ;
-    int bUnderLine ;
-    int bStrikeOut ;
-    }
-    FONTRECORD ;
+{
+	HFONT hfFont ;
+	LOGFONT lf ;
+	char Name [MAX_FONT_NAME + 10] ;
+	int nPointSize ;
+	int bBold ;
+	int bItalic ;
+	int bUnderLine ;
+	int bStrikeOut ;
+}
+FONTRECORD ;
 
 typedef struct
-    {
-    int nBoard [2] [8] [8] ;
-    int nBuffer [2] [MAX_BUFFER] ;
-    char cLastMove [2] [50] ;
-    char cTime4Move [2] [50] ;
-    long nTime [2] ;
-    }
-    POSITION ;
+{
+	int nBoard [2] [8] [8] ;
+	int nBuffer [2] [MAX_BUFFER] ;
+	char cLastMove [2] [50] ;
+	char cTime4Move [2] [50] ;
+	long nTime [2] ;
+}
+POSITION ;
 
 typedef struct
-    {
-    HINSTANCE hGame ;                   // instanace
-    HWND      hwnd ;                    // game window handle
-    HWND      hwnd1 ;                   // move button 1 window handle
-    HWND      hwnd2 ;                   // move button 2 window handle
-    HWND      hwnd3 ;                   // move button 3 window handle
-    HWND      hwnd4 ;                   // move button 4 window handle
-    HBRUSH    hbBackground ;            // window background brush
-    int       nState ;                  // window state (normal, miminized, maxmized)
-    int       bFirstResize ;            // first time it issued WM_SIZE command?
-    int       bFirstGame ;              // first time for this new game?
-    int       bValid ;                  // valid window?
-    int       bFlip ;                   // flip board?
+{
+	HINSTANCE hGame ;                   // instanace
+	HWND      hwnd ;                    // game window handle
+	HWND      hwnd1 ;                   // move button 1 window handle
+	HWND      hwnd2 ;                   // move button 2 window handle
+	HWND      hwnd3 ;                   // move button 3 window handle
+	HWND      hwnd4 ;                   // move button 4 window handle
+	HBRUSH    hbBackground ;            // window background brush
+	int       nState ;                  // window state (normal, miminized, maxmized)
+	int       bFirstResize ;            // first time it issued WM_SIZE command?
+	int       bFirstGame ;              // first time for this new game?
+	int       bValid ;                  // valid window?
+	int       bFlip ;                   // flip board?
 
-    int       nGameNumber ;             // game number
-    int       nGamePartner ;            // partner's game number
-    int       nRelation ;               // my relation to this game
-    int       nGameType ;               // game type
-    int       bChessGame ;              // chess game?
-    int       bWhitesMove ;             // white's move?
-    int       bLastWhitesMove ;         // last white's move
-    int       bPlaying ;                // playing?
-    int       bIPlayWhite ;             // playing white side of the board?
-    int       bInitialMove ;            // initial move?
-    int       nMoveNumber ;             // move number
+	int       nGameNumber ;             // game number
+	int       nGamePartner ;            // partner's game number
+	int       nRelation ;               // my relation to this game
+	int       nGameType ;               // game type
+	int       bChessGame ;              // chess game?
+	int       bWhitesMove ;             // white's move?
+	int       bLastWhitesMove ;         // last white's move
+	int       bPlaying ;                // playing?
+	int       bIPlayWhite ;             // playing white side of the board?
+	int       bInitialMove ;            // initial move?
+	int       nMoveNumber ;             // move number
 
-    char      cLastMove [50] ;          // last move
-    char      cVerboseMove [50] ;       // verbose last move
-    char      cTime4Move [50] ;         // time it takes to make the last move
-    char      cHandle [2] [50] ;        // handle 0 = white, 1 = black
-    char      cRating [2] [50] ;        // handle 0 = white, 1 = black
-    int       nRated ;                  // 0 = unrated, 1 = rated, -1 = ?
-    char      cOrgGameType [255] ;      // original game type string
-    char      cGameType [255] ;         // game type
-    char      cOrgResult [500] ;        // original game result string
-    char      cResult [500] ;           // game result
-    int       bSavedGame ;              // game has been saved?
+	char      cLastMove [50] ;          // last move
+	char      cVerboseMove [50] ;       // verbose last move
+	char      cTime4Move [50] ;         // time it takes to make the last move
+	char      cHandle [2] [50] ;        // handle 0 = white, 1 = black
+	char      cRating [2] [50] ;        // handle 0 = white, 1 = black
+	int       nRated ;                  // 0 = unrated, 1 = rated, -1 = ?
+	char      cOrgGameType [255] ;      // original game type string
+	char      cGameType [255] ;         // game type
+	char      cOrgResult [500] ;        // original game result string
+	char      cResult [500] ;           // game result
+	int       bSavedGame ;              // game has been saved?
 
-    int       nBoard [8] [8] ;          // board
-    int       nLastBoard [8] [8] ;      // last board
-    int       nPromoteBoard [8] [8] ;   // promoted piece board
-    int       nBuffer [MAX_BUFFER] ;    // buffer piece count (does not include kings)
-    int       nLastBuffer [MAX_BUFFER] ;// last buffer piece count
-    int       nLastDoublePushFile ;     // last pawn double push file number
-    int       bCanCastleKingSide [2] ;  // can castle king side?
-    int       bCanCastleQueenSide [2] ; // can castle queen side?
-    int       nHalfMoves ;              // number of half moves
-    int       nKingX [2] ;              // king x coordinate
-    int       nKingY [2] ;              // king x coordinate
+	int       nBoard [8] [8] ;          // board
+	int       nLastBoard [8] [8] ;      // last board
+	int       nPromoteBoard [8] [8] ;   // promoted piece board
+	int       nBuffer [MAX_BUFFER] ;    // buffer piece count (does not include kings)
+	int       nLastBuffer [MAX_BUFFER] ;// last buffer piece count
+	int       nLastDoublePushFile ;     // last pawn double push file number
+	int       bCanCastleKingSide [2] ;  // can castle king side?
+	int       bCanCastleQueenSide [2] ; // can castle queen side?
+	int       nHalfMoves ;              // number of half moves
+	int       nKingX [2] ;              // king x coordinate
+	int       nKingY [2] ;              // king x coordinate
 
-    POINT     ptHighlight [2] ;         // current highlight (board coordinates)
-    POINT     ptLastHighlight [2] ;     // last highlight (board coordinates)
+	POINT     ptHighlight [2] ;         // current highlight (board coordinates)
+	POINT     ptLastHighlight [2] ;     // last highlight (board coordinates)
 
-    POINT     ptKing [2] [8] ;          // current king highlight (0 = white, 1 = black, board coordinates)
-    POINT     ptLastKing [2] [8] ;      // last king highlight (0 = white, 1 = black, board coordinates)
+	POINT     ptKing [2] [8] ;          // current king highlight (0 = white, 1 = black, board coordinates)
+	POINT     ptLastKing [2] [8] ;      // last king highlight (0 = white, 1 = black, board coordinates)
 
-    int       nInitialClock ;           // initial time
-    int       nIncrementClock ;         // increment time
-    int       nClockTimerEvent ;        // clock timer event
-    int       bTickClock  ;             // tick clock?
-    int       bFlagged [2] ;            // flagged?
-    long      nTimeRemaining [2] ;      // time remaining (in milliseconds)
-    TIMEMARK  tTickStartTM ;            // last time mark
-    long      nIntendedTickLength ;     // intended tick length
-    int       bOnLagClock ;             // are we lagging currently?
-    long      nNextLagCheck ;           // how long till we check for bug lag?
-    long      nLag [2] ;                // lag for this board
+	int       nInitialClock ;           // initial time
+	int       nIncrementClock ;         // increment time
+	int       nClockTimerEvent ;        // clock timer event
+	int       bTickClock  ;             // tick clock?
+	int       bFlagged [2] ;            // flagged?
+	long      nTimeRemaining [2] ;      // time remaining (in milliseconds)
+	TIMEMARK  tTickStartTM ;            // last time mark
+	long      nIntendedTickLength ;     // intended tick length
+	int       bOnLagClock ;             // are we lagging currently?
+	long      nNextLagCheck ;           // how long till we check for bug lag?
+	long      nLag [2] ;                // lag for this board
 
-    char      cStyle12 [512] ;          // last style 12 string (ICC playing only)
+	char      cStyle12 [512] ;          // last style 12 string (ICC playing only)
 
-    HBITMAP   hWindow ;                 // window
-    HBITMAP   hSave ;                   // save background (drag info)
-    HBITMAP   hTemp ;                   // temporary
-    HBITMAP   hSquare [MAX_SQUARE] ;    // 0 = white, 1 = black, 2 = buffer
-    HBITMAP   hPiece [MAX_PIECE] ;      // piece
-    int       nss ;                     // square size
-    int       nhss ;                    // half square size
-    int       ndss ;                    // double square size
-    RECT      rLag [2] ;                // lag
-    RECT      rHandle [2] ;             // handle
-    RECT      rClock [2] ;              // clock
-    RECT      rGameType ;               // game type
-    RECT      rLastMove ;               // last move
-    RECT      rResult ;                 // result
-    RECT      rBoard ;                  // board
-    RECT      rBuffer ;                 // buffer
-    RECT      rBuffer1 ;                // buffer (bottom)
-    RECT      rActual ;                 // actual
-    RECT      rVCoord [8] ;             // vertical coordinates
-    RECT      rHCoord [8] ;             // horizontal coordinates
-    POINT     ptBuffer [10] ;           // buffer piece starting x and y coordinates
-    POINT     ptNumber [3] ;            // buffer piece number coordinates
+	HBITMAP   hWindow ;                 // window
+	HBITMAP   hSave ;                   // save background (drag info)
+	HBITMAP   hTemp ;                   // temporary
+	HBITMAP   hSquare [MAX_SQUARE] ;    // 0 = white, 1 = black, 2 = buffer
+	HBITMAP   hPiece [MAX_PIECE] ;      // piece
+	int       nss ;                     // square size
+	int       nhss ;                    // half square size
+	int       ndss ;                    // double square size
+	RECT      rLag [2] ;                // lag
+	RECT      rHandle [2] ;             // handle
+	RECT      rClock [2] ;              // clock
+	RECT      rGameType ;               // game type
+	RECT      rLastMove ;               // last move
+	RECT      rResult ;                 // result
+	RECT      rBoard ;                  // board
+	RECT      rBuffer ;                 // buffer
+	RECT      rBuffer1 ;                // buffer (bottom)
+	RECT      rActual ;                 // actual
+	RECT      rVCoord [8] ;             // vertical coordinates
+	RECT      rHCoord [8] ;             // horizontal coordinates
+	POINT     ptBuffer [10] ;           // buffer piece starting x and y coordinates
+	POINT     ptNumber [3] ;            // buffer piece number coordinates
 
-    int       bShowMoveButtons ;        // showed move buttons?
-    int       bErrorMoveList ;          // errored move list?
-    int       bRelation4 ;              // found style 12 string with relation -4?
-    int       bClickedButton ;          // clicked move button?
-    int       nInitDoublePushFile ;     // initial last pawn double push file number
-    int       bInitKingSide [2] ;       // initial can castle king side?
-    int       bInitQueenSide [2] ;      // initial can castle queen side?
-    int       nInitHalfMoves ;          // initial number of half moves
-    int       nInitKingX [2] ;          // initial king x coordinate
-    int       nInitKingY [2] ;          // initial king x coordinate
-    int       nInitBoard [8] [8] ;      // initial board
-    int       nInitBuffer [MAX_BUFFER] ;// initial buffer piece count (does not include kings)
-    int       bInitInitialMove ;        // initial initial move?
-    int       bInitWhitesMove ;         // initial white's move?
-    int       nInitMoveNumber ;         // initial move number
-    char      cInitLastMove [50] ;      // initial last move
-    char      cInitTime4Move [50] ;     // initial time it takes to make the last move
-    int       nCurrentIndex ;           // current position index
-    int       nCurrentColor ;           // current color
-    int       nMinIndex ;               // minimum position index
-    int       nMinColor ;               // minimum color
-    int       nMaxIndex ;               // maximum position index
-    int       nMaxColor ;               // maximum color
-    int       nMoveListMaxIndex ;       // maximum move list index
-    int       nMoveListMaxColor ;       // maximum move list color
-    POSITION  Position [MAX_POSITION] ; // position
+	int       bShowMoveButtons ;        // showed move buttons?
+	int       bErrorMoveList ;          // errored move list?
+	int       bRelation4 ;              // found style 12 string with relation -4?
+	int       bClickedButton ;          // clicked move button?
+	int       nInitDoublePushFile ;     // initial last pawn double push file number
+	int       bInitKingSide [2] ;       // initial can castle king side?
+	int       bInitQueenSide [2] ;      // initial can castle queen side?
+	int       nInitHalfMoves ;          // initial number of half moves
+	int       nInitKingX [2] ;          // initial king x coordinate
+	int       nInitKingY [2] ;          // initial king x coordinate
+	int       nInitBoard [8] [8] ;      // initial board
+	int       nInitBuffer [MAX_BUFFER] ;// initial buffer piece count (does not include kings)
+	int       bInitInitialMove ;        // initial initial move?
+	int       bInitWhitesMove ;         // initial white's move?
+	int       nInitMoveNumber ;         // initial move number
+	char      cInitLastMove [50] ;      // initial last move
+	char      cInitTime4Move [50] ;     // initial time it takes to make the last move
+	int       nCurrentIndex ;           // current position index
+	int       nCurrentColor ;           // current color
+	int       nMinIndex ;               // minimum position index
+	int       nMinColor ;               // minimum color
+	int       nMaxIndex ;               // maximum position index
+	int       nMaxColor ;               // maximum color
+	int       nMoveListMaxIndex ;       // maximum move list index
+	int       nMoveListMaxColor ;       // maximum move list color
+	POSITION  Position [MAX_POSITION] ; // position
 
-    int       bShowCapturedPiece ;      // show captured piece?
-    int       bIssuedEventCommand ;     // issued game event command?
+	int       bShowCapturedPiece ;      // show captured piece?
+	int       bIssuedEventCommand ;     // issued game event command?
 	int		  nAbortStatus ;            // running = 0, aborted by player = 1, aborted by opp = 2
 
-    int ChessValue [13] ;               // chess piece value
-    int BugValue   [13] ;               // bughouse/crazyhouse piece value
-    }
-    GAME ;
+	int ChessValue [13] ;               // chess piece value
+	int BugValue   [13] ;               // bughouse/crazyhouse piece value
+}
+GAME ;
 
 typedef struct
-    {
-    HBITMAP  hPiece   [MAX_PIECE] ;
-    POINT    ptPiece  [MAX_PIECE] ;
-    COLORREF clrPiece [MAX_PIECE] ;
-    HBITMAP  hSquare  [MAX_PIECE] ;
-    POINT    ptSquare [MAX_PIECE] ;
-    }
-    CSET ;
+{
+	HBITMAP  hPiece   [MAX_PIECE] ;
+	POINT    ptPiece  [MAX_PIECE] ;
+	COLORREF clrPiece [MAX_PIECE] ;
+	HBITMAP  hSquare  [MAX_PIECE] ;
+	POINT    ptSquare [MAX_PIECE] ;
+}
+CSET ;
 
 typedef struct
-    {
-    int   nss ;             // square size
-    int   nhss ;            // half square size
-    int   ndss ;            // double square size
-    RECT  rLag [2] ;        // lag
-    RECT  rHandle [2] ;     // handle
-    RECT  rClock [2] ;      // clock
-    RECT  rGameType ;       // game type
-    RECT  rLastMove ;       // last move
-    RECT  rResult ;         // result
-    RECT  rPtell ;          // ptell
-    RECT  rGinfo ;          // game info
-    RECT  rBoard ;          // board
-    RECT  rBuffer ;         // buffer
-    RECT  rActual ;         // actual
-    RECT  rVCoord [8] ;     // vertical coordinates
-    RECT  rHCoord [8] ;     // horizontal coordinates
-    POINT ptBuffer [10] ;   // buffer piece starting x and y coordinates
-    POINT ptNumber [3] ;    // buffer piece number coordinates
+{
+	int   nss ;             // square size
+	int   nhss ;            // half square size
+	int   ndss ;            // double square size
+	RECT  rLag [2] ;        // lag
+	RECT  rHandle [2] ;     // handle
+	RECT  rClock [2] ;      // clock
+	RECT  rGameType ;       // game type
+	RECT  rLastMove ;       // last move
+	RECT  rResult ;         // result
+	RECT  rPtell ;          // ptell
+	RECT  rGinfo ;          // game info
+	RECT  rBoard ;          // board
+	RECT  rBuffer ;         // buffer
+	RECT  rActual ;         // actual
+	RECT  rVCoord [8] ;     // vertical coordinates
+	RECT  rHCoord [8] ;     // horizontal coordinates
+	POINT ptBuffer [10] ;   // buffer piece starting x and y coordinates
+	POINT ptNumber [3] ;    // buffer piece number coordinates
 
-    int   bVectorPiece ;
-    int   bVectorSquare ;
-    char  cBitmapPiece [_MAX_PATH + 10] ;
-    char  cBitmapSquare [_MAX_PATH + 10] ;
-    int   nPieceSet ;
+	int   bVectorPiece ;
+	int   bVectorSquare ;
+	char  cBitmapPiece [_MAX_PATH + 10] ;
+	char  cBitmapSquare [_MAX_PATH + 10] ;
+	int   nPieceSet ;
 
-    HBITMAP htTemp ;
-    }
-    BOARDCFG ;
-
-typedef struct
-    {
-    int nMove ;
-    int nLastMatch ;
-    int nFromX    [MAX_MOVE] ;
-    int nFromY    [MAX_MOVE] ;
-    int nToX      [MAX_MOVE] ;
-    int nToY      [MAX_MOVE] ;
-    int nMoveType [MAX_MOVE] ;
-    int nCapture  [MAX_MOVE] ;
-    int nDrop     [MAX_MOVE] ;
-    int nPromote  [MAX_MOVE] ;
-    }
-    MOVES ;
+	HBITMAP htTemp ;
+}
+BOARDCFG ;
 
 typedef struct
-    {
-    int  nMainIndex ;                   // main index
-    int  nMainBoard [8] [8] ;           // main board
-    int  nMainPromote [8] [8] ;         // main promote board
-    int  nMainBuffer [MAX_BUFFER] ;     // main buffer piece count (does not include kings)
-    int  nMainLastDoublePushFile ;      // main last pawn double push file number
-    int  bMainCastleKingSide [2] ;      // main can castle king side?
-    int  bMainCastleQueenSide [2] ;     // main can castle queen side?
-    long nMainTimeRemaining [2] ;       // main time remaining (in milliseconds)
-    int  bMainWhitesMove ;              // main whites move
-    int  nMainMove ;                    // main move
-    int  nMainColor ;                   // main color
-                                        //
-    int  nPartnerIndex ;                // partner index
-    int  nPartnerBoard [8] [8] ;        // partner board
-    int  nPartnerPromote [8] [8] ;      // partner promote board
-    int  nPartnerBuffer [MAX_BUFFER] ;  // partner buffer piece count (does not include kings)
-    int  nPartnerLastDoublePushFile ;   // main last pawn double push file number
-    int  bPartnerCastleKingSide [2] ;   // main can castle king side?
-    int  bPartnerCastleQueenSide [2] ;  // main can castle queen side?
-    long nPartnerTimeRemaining [2] ;    // partner time remaining (in milliseconds)
-    int  bPartnerWhitesMove ;           // main whites move
-    int  nPartnerMove ;                 // partner move
-    int  nPartnerColor ;                // partner color
-                                        //
-    int  bFromInitialPosition ;         // save game from initial position?
-                                        //
-    int  nMove ;                        // number of moves
-    int  nIndex [MAX_BUGHOUSE] ;        // index (main or partner)
-    int  nNumber [MAX_BUGHOUSE] ;       // move number
-    int  nColor [MAX_BUGHOUSE] ;        // color
-    }
-    BUGHOUSE ;
+{
+	int nMove ;
+	int nLastMatch ;
+	int nFromX    [MAX_MOVE] ;
+	int nFromY    [MAX_MOVE] ;
+	int nToX      [MAX_MOVE] ;
+	int nToY      [MAX_MOVE] ;
+	int nMoveType [MAX_MOVE] ;
+	int nCapture  [MAX_MOVE] ;
+	int nDrop     [MAX_MOVE] ;
+	int nPromote  [MAX_MOVE] ;
+}
+MOVES ;
 
 typedef struct
-    {
-    int x ; // window x coordinate
-    int y ; // window y coordinate
-    int w ; // window width
-    int h ; // window height
-    int s ; // window state (0=normal,1=maximized,
-    }       //               2=minimized,3=closed)
-    WCOORD ;
+{
+	int  nMainIndex ;                   // main index
+	int  nMainBoard [8] [8] ;           // main board
+	int  nMainPromote [8] [8] ;         // main promote board
+	int  nMainBuffer [MAX_BUFFER] ;     // main buffer piece count (does not include kings)
+	int  nMainLastDoublePushFile ;      // main last pawn double push file number
+	int  bMainCastleKingSide [2] ;      // main can castle king side?
+	int  bMainCastleQueenSide [2] ;     // main can castle queen side?
+	long nMainTimeRemaining [2] ;       // main time remaining (in milliseconds)
+	int  bMainWhitesMove ;              // main whites move
+	int  nMainMove ;                    // main move
+	int  nMainColor ;                   // main color
+	//
+	int  nPartnerIndex ;                // partner index
+	int  nPartnerBoard [8] [8] ;        // partner board
+	int  nPartnerPromote [8] [8] ;      // partner promote board
+	int  nPartnerBuffer [MAX_BUFFER] ;  // partner buffer piece count (does not include kings)
+	int  nPartnerLastDoublePushFile ;   // main last pawn double push file number
+	int  bPartnerCastleKingSide [2] ;   // main can castle king side?
+	int  bPartnerCastleQueenSide [2] ;  // main can castle queen side?
+	long nPartnerTimeRemaining [2] ;    // partner time remaining (in milliseconds)
+	int  bPartnerWhitesMove ;           // main whites move
+	int  nPartnerMove ;                 // partner move
+	int  nPartnerColor ;                // partner color
+	//
+	int  bFromInitialPosition ;         // save game from initial position?
+	//
+	int  nMove ;                        // number of moves
+	int  nIndex [MAX_BUGHOUSE] ;        // index (main or partner)
+	int  nNumber [MAX_BUGHOUSE] ;       // move number
+	int  nColor [MAX_BUGHOUSE] ;        // color
+}
+BUGHOUSE ;
 
 typedef struct
-    {
-    int nType [MAX_BUTTON] ;
-    char cText [MAX_BUTTON] [MAX_BUTTON_TEXT + 10] ;
-    char cAction [MAX_BUTTON] [MAX_BUTTON_ACTION + 10] ;
-    }
-    BUTTONS, *LPBUTTONS ;
+{
+	int x ; // window x coordinate
+	int y ; // window y coordinate
+	int w ; // window width
+	int h ; // window height
+	int s ; // window state (0=normal,1=maximized,
+}       //               2=minimized,3=closed)
+WCOORD ;
 
 typedef struct
-    {
-    int bPlay [MAX_SOUND] ;
-    int bBeep [MAX_SOUND] ;
-    char cName [MAX_SOUND] [MAX_SOUND_NAME + 10] ;
-    void *pData [MAX_SOUND] ;
-    }
-    SOUNDS, *LPSOUNDS ;
+{
+	int nType [MAX_BUTTON] ;
+	char cText [MAX_BUTTON] [MAX_BUTTON_TEXT + 10] ;
+	char cAction [MAX_BUTTON] [MAX_BUTTON_ACTION + 10] ;
+}
+BUTTONS, *LPBUTTONS ;
 
 typedef struct
-    {
-    int bPlay [MAX_EAR] ;
-    int bBeep [MAX_EAR] ;
-    char cTell [MAX_EAR] [MAX_EAR_TELL + 10] ;
-    char cName [MAX_EAR] [MAX_EAR_NAME + 10] ;
-    void *pData [MAX_EAR] ;
-    }
-    EARS, *LPEARS ;
+{
+	int bPlay [MAX_SOUND] ;
+	int bBeep [MAX_SOUND] ;
+	char cName [MAX_SOUND] [MAX_SOUND_NAME + 10] ;
+	void *pData [MAX_SOUND] ;
+}
+SOUNDS, *LPSOUNDS ;
 
 typedef struct
-    {
-    int bPlay [MAX_GAME_SOUND] ;
-    int bBeep [MAX_GAME_SOUND] ;
-    char cName [MAX_GAME_SOUND] [MAX_GAME_SOUND_NAME + 10] ;
-    void *pData [MAX_GAME_SOUND] ;
-    }
-    GAMESOUNDS, *LPGAMESOUNDS ;
+{
+	int bPlay [MAX_EAR] ;
+	int bBeep [MAX_EAR] ;
+	char cTell [MAX_EAR] [MAX_EAR_TELL + 10] ;
+	char cName [MAX_EAR] [MAX_EAR_NAME + 10] ;
+	void *pData [MAX_EAR] ;
+}
+EARS, *LPEARS ;
 
 typedef struct
-    {
-    int bPlay [MAX_TIME_SOUND] ;
-    int bPlayed [MAX_TIME_SOUND] ;
-    int nLastSecond ;
-    char cName [MAX_TIME_SOUND] [MAX_TIME_SOUND_NAME + 10] ;
-    void *pData [MAX_TIME_SOUND] ;
-    }
-    TIMESOUNDS, *LPTIMESOUNDS ;
+{
+	int bPlay [MAX_GAME_SOUND] ;
+	int bBeep [MAX_GAME_SOUND] ;
+	char cName [MAX_GAME_SOUND] [MAX_GAME_SOUND_NAME + 10] ;
+	void *pData [MAX_GAME_SOUND] ;
+}
+GAMESOUNDS, *LPGAMESOUNDS ;
 
 typedef struct
-    {
-    int nType [MAX_LOGIN_EVENT] ;
-    char cCommand [MAX_LOGIN_EVENT] [MAX_LOGIN_EVENT_COMMAND_SIZE + 10] ;
-    }
-    LOGINEVENT ;
+{
+	int bPlay [MAX_TIME_SOUND] ;
+	int bPlayed [MAX_TIME_SOUND] ;
+	int nLastSecond ;
+	char cName [MAX_TIME_SOUND] [MAX_TIME_SOUND_NAME + 10] ;
+	void *pData [MAX_TIME_SOUND] ;
+}
+TIMESOUNDS, *LPTIMESOUNDS ;
 
 typedef struct
-    {
-    int nType [MAX_GAME_EVENT] ;
-    char cCommand [MAX_GAME_EVENT] [MAX_GAME_EVENT_COMMAND_SIZE + 10] ;
-    }
-    GAMEEVENT ;
+{
+	int nType [MAX_LOGIN_EVENT] ;
+	char cCommand [MAX_LOGIN_EVENT] [MAX_LOGIN_EVENT_COMMAND_SIZE + 10] ;
+}
+LOGINEVENT ;
 
 typedef struct
-    {
-    char cMenu [MAX_RM_ITEM] [MAX_RM_MENU_SIZE + 10] ;
-    int nType [MAX_RM_ITEM] ;
-    char cCommand [MAX_RM_ITEM] [MAX_RM_COMMAND_SIZE + 10] ;
-    }
-    RIGHTMOUSE ;
+{
+	int nType [MAX_GAME_EVENT] ;
+	char cCommand [MAX_GAME_EVENT] [MAX_GAME_EVENT_COMMAND_SIZE + 10] ;
+}
+GAMEEVENT ;
 
 typedef struct
-    {
-    int nI ;
-    int nX ;
-    int nY ;
-    }
-    LEFTMOUSEDROP ;
+{
+	char cMenu [MAX_RM_ITEM] [MAX_RM_MENU_SIZE + 10] ;
+	int nType [MAX_RM_ITEM] ;
+	char cCommand [MAX_RM_ITEM] [MAX_RM_COMMAND_SIZE + 10] ;
+}
+RIGHTMOUSE ;
 
 typedef struct
-    {
-    int nI ;
-    int nX ;
-    int nY ;
-    }
-    RIGHTMOUSEDROP ;
+{
+	int nI ;
+	int nX ;
+	int nY ;
+}
+LEFTMOUSEDROP ;
 
 typedef struct
-    {
-    int nIndex ;        // board index
-    int bFromBoard ;    // dragged piece from board?
-    POINT ptFrom ;      // board  coordinates of the piece's original position
-    POINT ptCurrent ;   // window coordinates of current position
-    POINT ptLast ;      // window coordinates of last position
-    POINT ptDist ;      // mouse and center of the original piece distance
-    int nPc ;           // dragged piece
-    int nClicked ;      // click move counter
-    }
-    TFDRAGINFO ;
+{
+	int nI ;
+	int nX ;
+	int nY ;
+}
+RIGHTMOUSEDROP ;
 
 typedef struct
-    {
-    int nIndex ;        // board index
-    int bFromBoard ;    // dragged piece from board?
-    POINT ptFrom ;      // board  coordinates of the piece's original position
-    POINT ptCurrent ;   // window coordinates of current position
-    POINT ptLast ;      // window coordinates of last position
-    int nPc ;           // dragged piece
-    }
-    TFANIMATEINFO ;
+{
+	int nIndex ;        // board index
+	int bFromBoard ;    // dragged piece from board?
+	POINT ptFrom ;      // board  coordinates of the piece's original position
+	POINT ptCurrent ;   // window coordinates of current position
+	POINT ptLast ;      // window coordinates of last position
+	POINT ptDist ;      // mouse and center of the original piece distance
+	int nPc ;           // dragged piece
+	int nClicked ;      // click move counter
+}
+TFDRAGINFO ;
 
 typedef struct
-    {
-    char cConnectionBrowse [_MAX_PATH + 10] ;
-    char cLogBrowse [_MAX_PATH + 10] ;
-    char cSaveBPGNBrowse [_MAX_PATH + 10] ;
-    char cSavePGNBrowse [_MAX_PATH + 10] ;
-    char cProfileBrowse [_MAX_PATH + 10] ;
-    char cPieceBrowse [_MAX_PATH + 10] ;
-    char cSquareBrowse [_MAX_PATH + 10] ;
-    char cPGNBrowse [_MAX_PATH + 10] ;
-    char cBPGNBrowse [_MAX_PATH + 10] ;
-    }
-    BROWSE ;
+{
+	int nIndex ;        // board index
+	int bFromBoard ;    // dragged piece from board?
+	POINT ptFrom ;      // board  coordinates of the piece's original position
+	POINT ptCurrent ;   // window coordinates of current position
+	POINT ptLast ;      // window coordinates of last position
+	int nPc ;           // dragged piece
+}
+TFANIMATEINFO ;
 
 typedef struct
-    {
-    CHARFORMAT cfTelnet ;
-    CHARFORMAT cfItalic ;
-    CHARFORMAT cfUnderline ;
-    char cTelnetBuffer [CO_MAX + 1 + 10] ;
-    char cMarkBuffer [CO_MAX + 1 + 10] ;
-    char cEditBuffer [EDIT_LINE_SIZE + 10] ;
-    int bHasESC ;
-    int bFoundHandle ;
-    int bTelnetSkipLine ;
-    int bLastTelnetIsCR ;
-    int bLastIsTelnetEdit ;
-    int bLastChannel ;
-    int nLastChannel ;
-    int nTelnetState ;
-    COLORREF clrCurrent ;
-    COLORREF clrLastLine ;
-    int nCurrentSound ;
-    int bDisplayLine ;
-    int bForceVisible ;
-    int bMissingQuote ;
-    int bMissingBracket ;
-    int bMissinghttpwww ;
-    int bDisplayContinueLine ;
-    int bSkipDisplayLine ;
-    int bLastIsChallenge ;
-    int bTellTold ;
-    int bPtellTold ;
-    int bSayTold ;
-    int bPartnerTold ;
-    int nTellTold ;
-    int nPtellTold ;
-    int nSayTold ;
-    int nPartnerTold ;
+{
+	char cConnectionBrowse [_MAX_PATH + 10] ;
+	char cLogBrowse [_MAX_PATH + 10] ;
+	char cSaveBPGNBrowse [_MAX_PATH + 10] ;
+	char cSavePGNBrowse [_MAX_PATH + 10] ;
+	char cProfileBrowse [_MAX_PATH + 10] ;
+	char cPieceBrowse [_MAX_PATH + 10] ;
+	char cSquareBrowse [_MAX_PATH + 10] ;
+	char cPGNBrowse [_MAX_PATH + 10] ;
+	char cBPGNBrowse [_MAX_PATH + 10] ;
+}
+BROWSE ;
+
+typedef struct
+{
+	CHARFORMAT cfTelnet ;
+	CHARFORMAT cfItalic ;
+	CHARFORMAT cfUnderline ;
+	char cTelnetBuffer [CO_MAX + 1 + 10] ;
+	char cMarkBuffer [CO_MAX + 1 + 10] ;
+	char cEditBuffer [EDIT_LINE_SIZE + 10] ;
+	int bHasESC ;
+	int bFoundHandle ;
+	int bTelnetSkipLine ;
+	int bLastTelnetIsCR ;
+	int bLastIsTelnetEdit ;
+	int bLastChannel ;
+	int nLastChannel ;
+	int nTelnetState ;
+	COLORREF clrCurrent ;
+	COLORREF clrLastLine ;
+	int nCurrentSound ;
+	int bDisplayLine ;
+	int bForceVisible ;
+	int bMissingQuote ;
+	int bMissingBracket ;
+	int bMissinghttpwww ;
+	int bDisplayContinueLine ;
+	int bSkipDisplayLine ;
+	int bLastIsChallenge ;
+	int bTellTold ;
+	int bPtellTold ;
+	int bSayTold ;
+	int bPartnerTold ;
+	int nTellTold ;
+	int nPtellTold ;
+	int nSayTold ;
+	int nPartnerTold ;
 	int bReceivedMessage ;
 	int nAutoClearedMessage ;
-    char cTellTold [128] ;
-    char cPtellTold [128] ;
-    char cSayTold [128] ;
-    char cPartnerTold [128] ;
-    char cLastGameInfo [512] ;
-    }
-    TELNET ;
+	char cTellTold [128] ;
+	char cPtellTold [128] ;
+	char cSayTold [128] ;
+	char cPartnerTold [128] ;
+	char cLastGameInfo [512] ;
+}
+TELNET ;
 
 typedef struct
-    {
-    char cBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;    // input buffer
-    char cAppSpawn [MAX_APP_SPAWN + 10] ;           // child process executable filename
-    HANDLE hFile ;
-    HANDLE hThread ;
-    HANDLE hProcess ;
-    HANDLE hTo ;
-    HANDLE hFrom ;
-    DWORD nID ;
-    DWORD nCount ;
-    char *cNext ;
-    int nError ;
-    int bLoadOK ;
-    }
-    INPUT ;
+{
+	char cBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;    // input buffer
+	char cAppSpawn [MAX_APP_SPAWN + 10] ;           // child process executable filename
+	HANDLE hFile ;
+	HANDLE hThread ;
+	HANDLE hProcess ;
+	HANDLE hTo ;
+	HANDLE hFrom ;
+	DWORD nID ;
+	DWORD nCount ;
+	char *cNext ;
+	int nError ;
+	int bLoadOK ;
+}
+INPUT ;
 
 typedef struct
-    {
-    INPUT TSInput ;
-    SOCKET skSocket ;
-    char cSocketBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;
-    char cSocketLine [MAX_SOCKET_BUFFER_SIZE + 10] ;
-    int bSocketLine ;
-    char cServerAddress [2048] ;
-    int bSocketIsOpen ;
-    int nSocketLogin ;
-    int bBeforeLogin ;
-    }
-    TIMESEAL ;
+{
+	INPUT TSInput ;
+	SOCKET skSocket ;
+	char cSocketBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;
+	char cSocketLine [MAX_SOCKET_BUFFER_SIZE + 10] ;
+	int bSocketLine ;
+	char cServerAddress [2048] ;
+	int bSocketIsOpen ;
+	int nSocketLogin ;
+	int bBeforeLogin ;
+}
+TIMESEAL ;
 
 typedef struct
-    {
-    int nTimer ;
-    int nTimerCount ;
-    int bTimerCommand ;
-    int nTimerMinute ;
-    int nType ;
-    char cTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
-    char cICCTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
-    }
-    TIMERCMD ;
+{
+	int nTimer ;
+	int nTimerCount ;
+	int bTimerCommand ;
+	int nTimerMinute ;
+	int nType ;
+	char cTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
+	char cICCTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
+}
+TIMERCMD ;
 
 typedef struct
-    {
-    TIMEMARK tLastLagCommand ;
-    int nLagTolerance ;
-    int nLagThreshold ;
-    long nLagLThreshold ;
-    int nType ;
-    char cLagCommand [MAX_LAG_COMMAND_SIZE + 10] ;
-    char cLagDisplay [MAX_LAG_DISPLAY_SIZE + 10] ;
-    }
-    LAGCMD ;
+{
+	TIMEMARK tLastLagCommand ;
+	int nLagTolerance ;
+	int nLagThreshold ;
+	long nLagLThreshold ;
+	int nType ;
+	char cLagCommand [MAX_LAG_COMMAND_SIZE + 10] ;
+	char cLagDisplay [MAX_LAG_DISPLAY_SIZE + 10] ;
+}
+LAGCMD ;
 
 typedef struct
-    {
-    int nRedClock ;
-    long nLRedClock ;
-    int nShowTenthSecond ;
-    int bShowOneSecond ;
-    }
-    REDCLOCK ;
+{
+	int nRedClock ;
+	long nLRedClock ;
+	int nShowTenthSecond ;
+	int bShowOneSecond ;
+}
+REDCLOCK ;
 
 typedef struct
-    {
-    int bCensor ;
-    int nItem ;
-    char cHandle [MAX_CENSOR_ITEM] [ICS_HANDLE_LENGTH] ;
-    char cCensor [MAX_CENSOR_ITEM] [MAX_CENSOR_BIT] ;
-    char cTell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-    char cPtell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-    char cSay [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-    char cPartner [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-    char cMessage [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-    int nStart [26] ;
-    int nEnd [26] ;
-    }
-    CENSOR ;
+{
+	int bCensor ;
+	int nItem ;
+	char cHandle [MAX_CENSOR_ITEM] [ICS_HANDLE_LENGTH] ;
+	char cCensor [MAX_CENSOR_ITEM] [MAX_CENSOR_BIT] ;
+	char cTell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
+	char cPtell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
+	char cSay [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
+	char cPartner [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
+	char cMessage [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
+	int nStart [26] ;
+	int nEnd [26] ;
+}
+CENSOR ;
 
 typedef struct
-    {
-    CHARRANGE TmpSel ;
-    int nGameIndex ;
-    int bMaximizeMain ;
-    int bIsMyTurn ;
-    int nIssuedMovesCommand ;
-    int nMoveListIndexNumber ;
-    int bIncludeSpace ;
-    int bInDialogBox ;
-    int nRightMouseIndex ;
-    int bFirstTime ;
-    int bOkToResizePlay ;
-    char cDocumentDir [_MAX_PATH + 10] ;
-    HWND hwndLastGame ;
-    int bUnobserve ;
-    int nUnobGameNumber ;
-    char cUnobWname [50] ;
-    char cUnobBname [50] ;
-    TIMEMARK tUnobserve ;
-    char cSaveBuffer [CO_MAX + CO_MAX + 1 + 10] ;
-    char cLoginFile [_MAX_PATH + 10] ;
-    int nSysPlayGameType ;
-    int nSysExamGameType ;
-    int nSysObserveGameType ;
-    int nLastPlayGameType ;
-    int nLastExamGameType ;
-    int nLastObserveGameType ;
+{
+	CHARRANGE TmpSel ;
+	int nGameIndex ;
+	int bMaximizeMain ;
+	int bIsMyTurn ;
+	int nIssuedMovesCommand ;
+	int nMoveListIndexNumber ;
+	int bIncludeSpace ;
+	int bInDialogBox ;
+	int nRightMouseIndex ;
+	int bFirstTime ;
+	int bOkToResizePlay ;
+	char cDocumentDir [_MAX_PATH + 10] ;
+	HWND hwndLastGame ;
+	int bUnobserve ;
+	int nUnobGameNumber ;
+	char cUnobWname [50] ;
+	char cUnobBname [50] ;
+	TIMEMARK tUnobserve ;
+	char cSaveBuffer [CO_MAX + CO_MAX + 1 + 10] ;
+	char cLoginFile [_MAX_PATH + 10] ;
+	int nSysPlayGameType ;
+	int nSysExamGameType ;
+	int nSysObserveGameType ;
+	int nLastPlayGameType ;
+	int nLastExamGameType ;
+	int nLastObserveGameType ;
 	//int bMoveOnLButtonDown;
-    int nCensorIndex ;
-    int bIssuedAbort ;
-    int bICCLastGameWasWild16 ;
-    int bPromoteCommand ;
-    int nPromoteWPiece ;
-    int nPromoteBPiece ;
-    int bPromoteKnight ;
-    int nTryList ;
-    int nTryScreen ;
-    int nTryTaskbar ;
-    int nTryPlay ;
-    int bInPromote ;
-    HWND hwndPromote ;
-    int bQuickConnection ;
-    int bCDROMConnection ;
-    }
-    SYSTEM ;
+	int nCensorIndex ;
+	int bIssuedAbort ;
+	int bICCLastGameWasWild16 ;
+	int bPromoteCommand ;
+	int nPromoteWPiece ;
+	int nPromoteBPiece ;
+	int bPromoteKnight ;
+	int nTryList ;
+	int nTryScreen ;
+	int nTryTaskbar ;
+	int nTryPlay ;
+	int bInPromote ;
+	HWND hwndPromote ;
+	int bQuickConnection ;
+	int bCDROMConnection ;
+}
+SYSTEM ;
 
 typedef struct
-    {
-    char cFn [_MAX_PATH + 10] ;
-    FILE *Fv ;
-    }
-    LOG ;
+{
+	char cFn [_MAX_PATH + 10] ;
+	FILE *Fv ;
+}
+LOG ;
 
 typedef struct
-    {
+{
 	int bSilenceApply;
 	int bSilenceShout;
 	int bSilenceCShout;
@@ -1641,304 +1641,304 @@ typedef struct
 	int bSilencePlaySay;
 	int bSilencePlayKibitz;
 	int bSilencePlayWhisper;
-    char cTell [SILENCE_COMMAND_SIZE + 10] ;
-    }
+	char cTell [SILENCE_COMMAND_SIZE + 10] ;
+}
 SILENCE ;
 
 typedef struct
-    {
-    int bLogTelnet ;
+{
+	int bLogTelnet ;
 	int bTimeStampTelnet;
 	int bTimeStampLog;
-    int bLogGame ;
-    int bSavePlayGame ;
-    int bSaveObserveGame ;
-    int bSaveUnobserveGame ;
-    int bSaveAbortGame ;
-    int bSaveNoBFENBugGame ;
-    int bSaveDaily ;
-    char cPGNViewer [_MAX_PATH + 10] ;
-    char cBPGNViewer [_MAX_PATH + 10] ;
-    int bAutoFlag ;
-    int bAutoRematch ;
-    int bAutoObserve ;
-    int bAutoObserveGNotify ;
-    int bActualSize ;
-    int bStopResizePlay ;
-    int bEscCancelDragMove ;
-    int bEscCancelTruePremove ;
-    int bEscCancelSitDropMove ;
-    int bEscCancelPromoteKnight ;
-    int bNoPlayAbuser ;
-    int bNoPlayComputer ;
-    int nPlayWild5Flip ;
-    int bShowResult ;
-    int bShowRating ;
-    int bShowLagStat ;
-    int bShowPtell ;
-    int bShowCoord ;
-    int bShowGameType ;
-    int bShowGameTypeOnTitleBar ;
-    int bShowValueOnTitleBar ;
-    int bShowLastMove ;
-    int bShowLastMoveTenth ;
-    int bShowHighlight ;
-    int bShowTPHighlight ;
-    int bShowClockOnTop ;
-    int bShowKingHighlight ;
-    int nShowKingHighlightPM ;
-    int nShowKingHighlightPO ;
-    int nShowKingHighlightE ;
-    int nShowKingHighlightO ;
-    int nShowCapturedChessPiece ;
-    int nBufferOrientation ;
-    int bVectorPiece ;
-    int bVectorSquare ;
-    char cBitmapPiece [_MAX_PATH + 10] ;
-    char cBitmapSquare [_MAX_PATH + 10] ;
-    int nPieceSet ;
-    int bAutoQueen ;
-    int nMoveType ;
-    int bAutoCenterDragPiece ;
-    int bSmartMove ;
-    int bSmartMove1 ;
-    int bSmartMove2 ;
-    int bTruePremove ;
-    int nTruePremove ;
-    int bIllegalTPBeep ;
-    int bRightMousePlay ;
-    int bRightMousePartner ;
-    int bTestLegalPlay ;
-    int bTestLegalPartner ;
-    int bAnimateObserve ;
-    int bAnimateExam ;
-    int bAnimatePlay ;
-    int nAnimateSpeedObserve ;
-    int nAnimateSpeedExam ;
-    int nAnimateSpeedPlay ;
-    int bLongPartner ;
-    char cPartnerMove1 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-    char cPartnerMove2 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-    char cPartnerMove3 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-    char cPartnerMove4 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-    int bShowMoveButton ;
-    int bUseArrowKeyMoveButton ;
-    int bMouseWheel ;
-    int bShowUnderline ;
-    int bEnterHighlight ;
-    int bTelnetResizeGoBottom ;
-    int bSuppressAnnouncement ;
-    int bSuppressCompKibitz ;
-    int bSuppressCompWhisper ;
-    int bSuppressIgnoreFormula ;
-    int bSuppressROBOWelcome ;
-    int bSuppressCompChTell ;
-    int bSuppressCompTell ;
-    int bSuppressCompShout ;
-    int bMaximizeTelnetUponLogin ;
-    int bSound ;
-    int bTelnetSound ;
-    int bGameSound ;
-    int bEarSound ;
-    int bFinalCountDown ;
-    int bLagCommand ;
-    int bExtendedButton ;
-    int bSaveOnExit ;
+	int bLogGame ;
+	int bSavePlayGame ;
+	int bSaveObserveGame ;
+	int bSaveUnobserveGame ;
+	int bSaveAbortGame ;
+	int bSaveNoBFENBugGame ;
+	int bSaveDaily ;
+	char cPGNViewer [_MAX_PATH + 10] ;
+	char cBPGNViewer [_MAX_PATH + 10] ;
+	int bAutoFlag ;
+	int bAutoRematch ;
+	int bAutoObserve ;
+	int bAutoObserveGNotify ;
+	int bActualSize ;
+	int bStopResizePlay ;
+	int bEscCancelDragMove ;
+	int bEscCancelTruePremove ;
+	int bEscCancelSitDropMove ;
+	int bEscCancelPromoteKnight ;
+	int bNoPlayAbuser ;
+	int bNoPlayComputer ;
+	int nPlayWild5Flip ;
+	int bShowResult ;
+	int bShowRating ;
+	int bShowLagStat ;
+	int bShowPtell ;
+	int bShowCoord ;
+	int bShowGameType ;
+	int bShowGameTypeOnTitleBar ;
+	int bShowValueOnTitleBar ;
+	int bShowLastMove ;
+	int bShowLastMoveTenth ;
+	int bShowHighlight ;
+	int bShowTPHighlight ;
+	int bShowClockOnTop ;
+	int bShowKingHighlight ;
+	int nShowKingHighlightPM ;
+	int nShowKingHighlightPO ;
+	int nShowKingHighlightE ;
+	int nShowKingHighlightO ;
+	int nShowCapturedChessPiece ;
+	int nBufferOrientation ;
+	int bVectorPiece ;
+	int bVectorSquare ;
+	char cBitmapPiece [_MAX_PATH + 10] ;
+	char cBitmapSquare [_MAX_PATH + 10] ;
+	int nPieceSet ;
+	int bAutoQueen ;
+	int nMoveType ;
+	int bAutoCenterDragPiece ;
+	int bSmartMove ;
+	int bSmartMove1 ;
+	int bSmartMove2 ;
+	int bTruePremove ;
+	int nTruePremove ;
+	int bIllegalTPBeep ;
+	int bRightMousePlay ;
+	int bRightMousePartner ;
+	int bTestLegalPlay ;
+	int bTestLegalPartner ;
+	int bAnimateObserve ;
+	int bAnimateExam ;
+	int bAnimatePlay ;
+	int nAnimateSpeedObserve ;
+	int nAnimateSpeedExam ;
+	int nAnimateSpeedPlay ;
+	int bLongPartner ;
+	char cPartnerMove1 [MAX_PARTNER_ASSIST_SIZE + 10] ;
+	char cPartnerMove2 [MAX_PARTNER_ASSIST_SIZE + 10] ;
+	char cPartnerMove3 [MAX_PARTNER_ASSIST_SIZE + 10] ;
+	char cPartnerMove4 [MAX_PARTNER_ASSIST_SIZE + 10] ;
+	int bShowMoveButton ;
+	int bUseArrowKeyMoveButton ;
+	int bMouseWheel ;
+	int bShowUnderline ;
+	int bEnterHighlight ;
+	int bTelnetResizeGoBottom ;
+	int bSuppressAnnouncement ;
+	int bSuppressCompKibitz ;
+	int bSuppressCompWhisper ;
+	int bSuppressIgnoreFormula ;
+	int bSuppressROBOWelcome ;
+	int bSuppressCompChTell ;
+	int bSuppressCompTell ;
+	int bSuppressCompShout ;
+	int bMaximizeTelnetUponLogin ;
+	int bSound ;
+	int bTelnetSound ;
+	int bGameSound ;
+	int bEarSound ;
+	int bFinalCountDown ;
+	int bLagCommand ;
+	int bExtendedButton ;
+	int bSaveOnExit ;
 	int bMinimizetoTray;
-    int bShowBitmapSize ;
-    int bShowMenuPath ;
-    int bButtonCommandAddHist ;
-    int bPlayCommandAddHist ;
-    int bObserveCommandAddHist ;
-    int bTelnetTextCommandAddHist ;
-    int bTelnetEditCommandAddHist ;
-    int bLEventCommandAddHist ;
-    int bGEventCommandAddHist ;
-    int bFKeyCommandAddHist ;
-    int bCKeyCommandAddHist ;
-    int bSeekCommandAddHist ;
-    int bMatchCommandAddHist ;
-    int bTellCommandAddHist ;
-    int bMessageCommandAddHist ;
-    int bTimerCommandAddHist ;
-    int bLagCommandAddHist ;
-    int bQuestionCommandAddHist ;
-    int bEarPartner ;
-    int bFICSPlayCloseAll ;
-    int bFICSPlayEndPartner ;
-    int bICCPlayCloseAll ;
-    int bICCPlayEndPartner ;
-    int bNONFICSPlayCloseAll ;
-    int bNONFICSPlayEndPartner ;
-    int bEat12GameNotFoundLine ;
-    int bEatb1GameNotFoundLine ;
-    int bRMNoHLSetTelnetHandle ;
-    int bSuppressExitPrompt ;
-    int bUseXTellForLastTell ;
-    char cNotepad [_MAX_PATH + 10] ;
-    int bMessageMouse ;
-    int bIamAGuest ;
+	int bShowBitmapSize ;
+	int bShowMenuPath ;
+	int bButtonCommandAddHist ;
+	int bPlayCommandAddHist ;
+	int bObserveCommandAddHist ;
+	int bTelnetTextCommandAddHist ;
+	int bTelnetEditCommandAddHist ;
+	int bLEventCommandAddHist ;
+	int bGEventCommandAddHist ;
+	int bFKeyCommandAddHist ;
+	int bCKeyCommandAddHist ;
+	int bSeekCommandAddHist ;
+	int bMatchCommandAddHist ;
+	int bTellCommandAddHist ;
+	int bMessageCommandAddHist ;
+	int bTimerCommandAddHist ;
+	int bLagCommandAddHist ;
+	int bQuestionCommandAddHist ;
+	int bEarPartner ;
+	int bFICSPlayCloseAll ;
+	int bFICSPlayEndPartner ;
+	int bICCPlayCloseAll ;
+	int bICCPlayEndPartner ;
+	int bNONFICSPlayCloseAll ;
+	int bNONFICSPlayEndPartner ;
+	int bEat12GameNotFoundLine ;
+	int bEatb1GameNotFoundLine ;
+	int bRMNoHLSetTelnetHandle ;
+	int bSuppressExitPrompt ;
+	int bUseXTellForLastTell ;
+	char cNotepad [_MAX_PATH + 10] ;
+	int bMessageMouse ;
+	int bIamAGuest ;
 	int bColoredClocks;
-	}
+}
 USER ;
 
 typedef struct
-    {
-    char cServer [MAX_SERVER] [MAX_SERVER_SIZE + 10] ;
-    char cPort [MAX_SERVER] [MAX_SERVER_PORT_SIZE + 10] ;
-    char cPrompt [MAX_SERVER] [MAX_SERVER_PROMPT_SIZE + 10] ;
-    int nType [MAX_SERVER] ;
-    }
-    SERVER ;
+{
+	char cServer [MAX_SERVER] [MAX_SERVER_SIZE + 10] ;
+	char cPort [MAX_SERVER] [MAX_SERVER_PORT_SIZE + 10] ;
+	char cPrompt [MAX_SERVER] [MAX_SERVER_PROMPT_SIZE + 10] ;
+	int nType [MAX_SERVER] ;
+}
+SERVER ;
 
 typedef struct
-    {
-    int nLoginString ;
-    char cLoginString [MAX_LOGIN] [MAX_LOGIN_SIZE + 10] ;
-    char cLoginFile [_MAX_PATH + 10] ;
-    char cLoginName [MAX_LOGIN_NAME_SIZE + 10] ;
-    char cLoginAddress [MAX_LOGIN_ADDRESS_SIZE + 10] ;
-    char cLoginPort [MAX_LOGIN_PORT_SIZE + 10] ;
-    char cLoginPrompt [MAX_LOGIN_PROMPT_SIZE + 10] ;
-    int nLoginPrompt ;
-    char cLoginHelper [_MAX_PATH + 10] ;
-    int bLoginHelper ;
-    int nLoginType ;
-    char cLoginHandle [MAX_LOGIN_HANDLE_SIZE + 10] ;
-    char cLoginPassword [MAX_LOGIN_PASSWORD_SIZE + 10] ;
-    char cLoginScript [_MAX_PATH + 10] ;
-    char cServerName [MAX_LOGIN_SERVER_NAME_SIZE + 10] ;
-    }
-    LOGIN ;
+{
+	int nLoginString ;
+	char cLoginString [MAX_LOGIN] [MAX_LOGIN_SIZE + 10] ;
+	char cLoginFile [_MAX_PATH + 10] ;
+	char cLoginName [MAX_LOGIN_NAME_SIZE + 10] ;
+	char cLoginAddress [MAX_LOGIN_ADDRESS_SIZE + 10] ;
+	char cLoginPort [MAX_LOGIN_PORT_SIZE + 10] ;
+	char cLoginPrompt [MAX_LOGIN_PROMPT_SIZE + 10] ;
+	int nLoginPrompt ;
+	char cLoginHelper [_MAX_PATH + 10] ;
+	int bLoginHelper ;
+	int nLoginType ;
+	char cLoginHandle [MAX_LOGIN_HANDLE_SIZE + 10] ;
+	char cLoginPassword [MAX_LOGIN_PASSWORD_SIZE + 10] ;
+	char cLoginScript [_MAX_PATH + 10] ;
+	char cServerName [MAX_LOGIN_SERVER_NAME_SIZE + 10] ;
+}
+LOGIN ;
 
 typedef struct
-    {
-    char cWhoAmI [50] ;
-    char cPartner [50] ;
-    char cOpponent [50] ;
-    char cPartnerOpponent [50] ;
-    char cLastTell [50] ;
-    char cLastKib [50] ;
-    char cLastWhisper [50] ;
-    char cLastSay [50] ;
-    char cTelnetHandle [50] ;
-    char cBoardHandle [50] ;
-    char cUserHandle1 [50] ;
-    char cUserHandle2 [50] ;
-    char cPartnerTell [4096] ;
-    char cPartnerTell1 [50] ;
-    char cPartnerTell2 [50] ;
-    char cFollow [50] ;
-    char cPfollow [50] ;
-    char cFollowGone [255] ;
-    char cFollowGone1 [255] ;
-    char cFollowOn [255] ;
-    int nFollowGone ;
-    int nFollowGone1 ;
-    int nFollowOn ;
-    char cObserve [50] ;
-    char cExam [50] ;
-    int nEditVar ;
-    }
-    VARS ;
+{
+	char cWhoAmI [50] ;
+	char cPartner [50] ;
+	char cOpponent [50] ;
+	char cPartnerOpponent [50] ;
+	char cLastTell [50] ;
+	char cLastKib [50] ;
+	char cLastWhisper [50] ;
+	char cLastSay [50] ;
+	char cTelnetHandle [50] ;
+	char cBoardHandle [50] ;
+	char cUserHandle1 [50] ;
+	char cUserHandle2 [50] ;
+	char cPartnerTell [4096] ;
+	char cPartnerTell1 [50] ;
+	char cPartnerTell2 [50] ;
+	char cFollow [50] ;
+	char cPfollow [50] ;
+	char cFollowGone [255] ;
+	char cFollowGone1 [255] ;
+	char cFollowOn [255] ;
+	int nFollowGone ;
+	int nFollowGone1 ;
+	int nFollowOn ;
+	char cObserve [50] ;
+	char cExam [50] ;
+	int nEditVar ;
+}
+VARS ;
 
 typedef struct
-    {
-    int nHistoryI ;
-    int nHistoryP ;
-    char cHistoryT [MAX_HISTORY] [EDIT_LINE_SIZE + 10] ;
-    }
-    HISTORY ;
+{
+	int nHistoryI ;
+	int nHistoryP ;
+	char cHistoryT [MAX_HISTORY] [EDIT_LINE_SIZE + 10] ;
+}
+HISTORY ;
 
 typedef struct
-    {
-    int  nType [MAX_FUNCTION_KEY] ;
-    char cFKey [MAX_FUNCTION_KEY] [MAX_FUNCTION_KEY_SIZE + 10] ;
-    }
-    FKEY ;
+{
+	int  nType [MAX_FUNCTION_KEY] ;
+	char cFKey [MAX_FUNCTION_KEY] [MAX_FUNCTION_KEY_SIZE + 10] ;
+}
+FKEY ;
 
 typedef struct
-    {
-    char cSitPieceDropMove [MAX_MOVE_STRING_SIZE + 10] ;
-    }
-    F8KEY ;
+{
+	char cSitPieceDropMove [MAX_MOVE_STRING_SIZE + 10] ;
+}
+F8KEY ;
 
 typedef struct
-    {
-    int nLoopTellHandle ;
-    char cLastTellHandle [MAX_TELL_HANDLE] [50] ;
-    }
-    F9KEY ;
+{
+	int nLoopTellHandle ;
+	char cLastTellHandle [MAX_TELL_HANDLE] [50] ;
+}
+F9KEY ;
 
 typedef struct
-    {
-    int  nType [MAX_CONTROL_KEY] ;
-    char cFKey [MAX_CONTROL_KEY] [MAX_CONTROL_KEY_SIZE + 10] ;
-    }
-    CONTROLKEY ;
+{
+	int  nType [MAX_CONTROL_KEY] ;
+	char cFKey [MAX_CONTROL_KEY] [MAX_CONTROL_KEY_SIZE + 10] ;
+}
+CONTROLKEY ;
 
 typedef struct
-    {
-    int bPobserve ;
-    int nPobserve ;
-    char cPobserve [50] ;
-    }
-    FICS ;
+{
+	int bPobserve ;
+	int nPobserve ;
+	char cPobserve [50] ;
+}
+FICS ;
 
 typedef struct
-    {
-    int bIssuedBugCommand ;
-    int nIssuedBugCommand ;
-    int bStartBugGameList ;
-    int nFirstBugGame ;
-    int nSecondBugGame ;
-    int bSecondBugFlip ;
-    int bFindICCPartner ;
-    char cICCPartner [20] ;
-    }
-    ICC ;
+{
+	int bIssuedBugCommand ;
+	int nIssuedBugCommand ;
+	int bStartBugGameList ;
+	int nFirstBugGame ;
+	int nSecondBugGame ;
+	int bSecondBugFlip ;
+	int bFindICCPartner ;
+	char cICCPartner [20] ;
+}
+ICC ;
 
 typedef struct
-    {
-    int nPremoveCount ;
-    int nPremoveHead ;
-    int nPremoveTail ;
-    char cPremoveBuffer [MAX_TRUE_PREMOVE] [32] ;
-    int nPremoveLegalBuffer [MAX_TRUE_PREMOVE] [9] ;
-    int bLastTP ;
-    POINT ptLastTP [2] ;
-    int bIllegalTP ;
-    POINT ptIllegalTP [2] ;
-    }
-    PREMOVE ;
+{
+	int nPremoveCount ;
+	int nPremoveHead ;
+	int nPremoveTail ;
+	char cPremoveBuffer [MAX_TRUE_PREMOVE] [32] ;
+	int nPremoveLegalBuffer [MAX_TRUE_PREMOVE] [9] ;
+	int bLastTP ;
+	POINT ptLastTP [2] ;
+	int bIllegalTP ;
+	POINT ptIllegalTP [2] ;
+}
+PREMOVE ;
 
 typedef struct
-    {
-    int bMatchMouse ;
-    char cMatchHandle [50] ;
-    int nMatchTime ;
-    int nMatchIncrement ;
-    int bMatchRated ;
-    int nMatchType ;
-    int nICCMatchType ;
-    int nMatchColor ;
-    }
-    MATCH ;
+{
+	int bMatchMouse ;
+	char cMatchHandle [50] ;
+	int nMatchTime ;
+	int nMatchIncrement ;
+	int bMatchRated ;
+	int nMatchType ;
+	int nICCMatchType ;
+	int nMatchColor ;
+}
+MATCH ;
 
 typedef struct
-    {
-    int nSeekTime ;
-    int nSeekIncrement ;
-    int nSeekRating1 ;
-    int nSeekRating2 ;
-    int nSeekType ;
-    int nICCSeekType ;
-    int nSeekColor ;
-    int bSeekManual ;
-    int bSeekFormula ;
-    int bSeekRated ;
-    }
-    SEEK ;
+{
+	int nSeekTime ;
+	int nSeekIncrement ;
+	int nSeekRating1 ;
+	int nSeekRating2 ;
+	int nSeekType ;
+	int nICCSeekType ;
+	int nSeekColor ;
+	int bSeekManual ;
+	int bSeekFormula ;
+	int bSeekRated ;
+}
+SEEK ;
 
 #ifdef __MAIN__
 HINSTANCE hInst ;
@@ -2025,30 +2025,48 @@ PREMOVE Premove ;
 MATCH Match ;
 SEEK Seek ;
 
-int ColorBoard [8] [8] = { {INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
-                            INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE},
-                           {INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
-                            INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK},
-                           {INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
-                            INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE},
-                           {INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
-                            INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK},
-                           {INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
-                            INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE},
-                           {INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
-                            INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK},
-                           {INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
-                            INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE},
-                           {INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
-                            INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK}
-                         } ;
+int ColorBoard [8] [8] = { {
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE
+	},
+	{
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK
+	},
+	{
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE
+	},
+	{
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK
+	},
+	{
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE
+	},
+	{
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK
+	},
+	{
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
+		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE
+	},
+	{
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
+		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK
+	}
+} ;
 int ReverseCoord [8] = { 7, 6, 5, 4, 3, 2, 1 } ;
 char ICSPiece [MAX_PIECE] = { ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
-                              ICS_BLACK_PAWN, ICS_BLACK_ROOK, ICS_BLACK_KNIGHT, ICS_BLACK_BISHOP, ICS_BLACK_QUEEN,
-                              ICS_WHITE_KING, ICS_BLACK_KING } ;
+							  ICS_BLACK_PAWN, ICS_BLACK_ROOK, ICS_BLACK_KNIGHT, ICS_BLACK_BISHOP, ICS_BLACK_QUEEN,
+							  ICS_WHITE_KING, ICS_BLACK_KING
+							} ;
 char ICSWPiece [MAX_PIECE] = { ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
-                               ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
-                               ICS_WHITE_KING, ICS_WHITE_KING } ;
+							   ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
+							   ICS_WHITE_KING, ICS_WHITE_KING
+							 } ;
 
 int ChessPiece        [MAX_BUFFER] = { 8, 2, 2, 2, 1, 8, 2, 2, 2, 1 } ;
 int ReverseChessPiece [MAX_BUFFER] = { 5, 6, 7, 8, 9, 0, 1, 2, 3, 4 } ;
@@ -2056,455 +2074,455 @@ int ReverseChessPiece [MAX_BUFFER] = { 5, 6, 7, 8, 9, 0, 1, 2, 3, 4 } ;
 int AnimateSpeed [MAX_ANIMATE_SPEED] = {  5, 10, 15, 20, 25, 30, 35, 40, 45, 50 } ;
 
 UINT FMenu [MAX_FMENU] = { IDM_NONE,
-                           IDM_TITLE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_SEEK_GAME,
-                           IDM_MATCH_PLAYER,
-                           IDM_MESSAGE_USER,
-                           IDM_TITLE,
-                           IDM_TEXT_SELECTALL,
-                           IDM_TEXT_COPY,
-                           IDM_TEXT_QUICKPASTE,
-                           IDM_TEXT_SAVETOFILE,
-                           IDM_EDIT_SELECTALL,
-                           IDM_EDIT_COPY,
-                           IDM_EDIT_CUT,
-                           IDM_EDIT_PASTE,
+						   IDM_TITLE,
 						   IDM_NONE,
-                           IDM_LOG_TELNET,
-                           IDM_TOGGLE_TELNET,
-                           IDM_MAXIMIZE_TELNET,
-                           IDM_RESTORE_TELNET,
-                           IDM_TITLE,
-                           IDM_LOG_GAMES,
-                           IDM_LOG_GAME_SETTINGS,
-                           IDM_LOAD_BPGN,
-                           IDM_LOAD_PGN,
-                           IDM_RESET_BOARD,
-                           IDM_FLIP_BOARD,
-                           IDM_CLOSE_BOARD,
-                           IDM_TITLE,
-                           IDM_AUTO_QUEEN,
-                           IDM_AUTO_REMATCH,
-                           IDM_RIGHT_MOUSE_PARTNER,
-                           IDM_COORDINATES_SHOW,
-                           IDM_TEST_LEGAL_PLAY,
-                           IDM_TEST_LEGAL_PARTNER,
-                           IDM_TITLE,
-                           IDM_AUTO_OBSERVE,
-                           IDM_ANIMATE_OBSERVE,
-                           IDM_ANIMATE_EXAM,
-                           IDM_UNEXAM_GAME,
-                           IDM_TITLE,
-                           IDM_SMART_MOVE,
-                           IDM_TRUE_PREMOVE_THIEF,
-                           IDM_TRUE_PREMOVE_LR,
-                           IDM_NONE,
-                           IDM_TITLE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_TITLE,
-                           IDM_WINDOW_RESTORE0,
-                           IDM_WINDOW_RESTORE1,
-                           IDM_WINDOW_RESTORE2,
-                           IDM_WINDOW_RESTORE3,
-                           IDM_WINDOW_RESTORE4,
-                           IDM_WINDOW_RESTORE5,
-                           IDM_WINDOW_RESTORE6,
-                           IDM_WINDOW_RESTORE7,
-                           IDM_WINDOW_RESTORE8,
-                           IDM_WINDOW_SAVE0,
-                           IDM_WINDOW_SAVE1,
-                           IDM_WINDOW_SAVE2,
-                           IDM_WINDOW_SAVE3,
-                           IDM_WINDOW_SAVE4,
-                           IDM_WINDOW_SAVE5,
-                           IDM_WINDOW_SAVE6,
-                           IDM_WINDOW_SAVE7,
-                           IDM_WINDOW_SAVE8,
-                           IDM_TITLE,
-                           IDM_START_TIMER,
-                           IDM_STOP_TIMER,
-                           IDM_TOGGLE_TIMER_ONOFF,
-                           IDM_TITLE,
-                           IDM_APPLY_SOUND,
-                           IDM_APPLY_TELNET_SOUND,
-                           IDM_APPLY_GAME_SOUND,
-                           IDM_APPLY_EAR_SOUND,
-                           IDM_FINAL_COUNTDOWN,
-                           IDM_TITLE,
-                           IDM_TIMER,
-                           IDM_BUTTON_CONFIG,
-                           IDM_FUNCTION,
-                           IDM_CONTROL_KEY,
-                           IDM_TELNET_CONFIGURE,
-                           IDM_LAG_COMMAND,
-                           IDM_FICS_CENSOR,
-                           IDM_ICC_CENSOR,
-                           IDM_NONFICS_CENSOR,
-                           IDM_TITLE,
-                           IDM_EDIT_PARTNER,
-                           IDM_EDIT_USERHANDLE1,
-                           IDM_EDIT_USERHANDLE2,
-                           IDM_COPY_VARIABLE,
-                           IDM_TITLE,
-                           IDM_ASK_QUESTION,
-                           IDM_NONE,
-                           IDM_READ_THE_BUGBOARD,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_NONE,
-                           IDM_SET_TF_TRUE_PREMOVE,
-                           IDM_SET_LR_TRUE_PREMOVE,
-                           IDM_SET_AUTO_KNIGHT_ON,
-                           IDM_SET_AUTO_KNIGHT_OFF,
+						   IDM_NONE,
+						   IDM_SEEK_GAME,
+						   IDM_MATCH_PLAYER,
+						   IDM_MESSAGE_USER,
+						   IDM_TITLE,
+						   IDM_TEXT_SELECTALL,
+						   IDM_TEXT_COPY,
+						   IDM_TEXT_QUICKPASTE,
+						   IDM_TEXT_SAVETOFILE,
+						   IDM_EDIT_SELECTALL,
+						   IDM_EDIT_COPY,
+						   IDM_EDIT_CUT,
+						   IDM_EDIT_PASTE,
+						   IDM_NONE,
+						   IDM_LOG_TELNET,
+						   IDM_TOGGLE_TELNET,
+						   IDM_MAXIMIZE_TELNET,
+						   IDM_RESTORE_TELNET,
+						   IDM_TITLE,
+						   IDM_LOG_GAMES,
+						   IDM_LOG_GAME_SETTINGS,
+						   IDM_LOAD_BPGN,
+						   IDM_LOAD_PGN,
+						   IDM_RESET_BOARD,
+						   IDM_FLIP_BOARD,
+						   IDM_CLOSE_BOARD,
+						   IDM_TITLE,
+						   IDM_AUTO_QUEEN,
+						   IDM_AUTO_REMATCH,
+						   IDM_RIGHT_MOUSE_PARTNER,
+						   IDM_COORDINATES_SHOW,
+						   IDM_TEST_LEGAL_PLAY,
+						   IDM_TEST_LEGAL_PARTNER,
+						   IDM_TITLE,
+						   IDM_AUTO_OBSERVE,
+						   IDM_ANIMATE_OBSERVE,
+						   IDM_ANIMATE_EXAM,
+						   IDM_UNEXAM_GAME,
+						   IDM_TITLE,
+						   IDM_SMART_MOVE,
+						   IDM_TRUE_PREMOVE_THIEF,
+						   IDM_TRUE_PREMOVE_LR,
+						   IDM_NONE,
+						   IDM_TITLE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_TITLE,
+						   IDM_WINDOW_RESTORE0,
+						   IDM_WINDOW_RESTORE1,
+						   IDM_WINDOW_RESTORE2,
+						   IDM_WINDOW_RESTORE3,
+						   IDM_WINDOW_RESTORE4,
+						   IDM_WINDOW_RESTORE5,
+						   IDM_WINDOW_RESTORE6,
+						   IDM_WINDOW_RESTORE7,
+						   IDM_WINDOW_RESTORE8,
+						   IDM_WINDOW_SAVE0,
+						   IDM_WINDOW_SAVE1,
+						   IDM_WINDOW_SAVE2,
+						   IDM_WINDOW_SAVE3,
+						   IDM_WINDOW_SAVE4,
+						   IDM_WINDOW_SAVE5,
+						   IDM_WINDOW_SAVE6,
+						   IDM_WINDOW_SAVE7,
+						   IDM_WINDOW_SAVE8,
+						   IDM_TITLE,
+						   IDM_START_TIMER,
+						   IDM_STOP_TIMER,
+						   IDM_TOGGLE_TIMER_ONOFF,
+						   IDM_TITLE,
+						   IDM_APPLY_SOUND,
+						   IDM_APPLY_TELNET_SOUND,
+						   IDM_APPLY_GAME_SOUND,
+						   IDM_APPLY_EAR_SOUND,
+						   IDM_FINAL_COUNTDOWN,
+						   IDM_TITLE,
+						   IDM_TIMER,
+						   IDM_BUTTON_CONFIG,
+						   IDM_FUNCTION,
+						   IDM_CONTROL_KEY,
+						   IDM_TELNET_CONFIGURE,
+						   IDM_LAG_COMMAND,
+						   IDM_FICS_CENSOR,
+						   IDM_ICC_CENSOR,
+						   IDM_NONFICS_CENSOR,
+						   IDM_TITLE,
+						   IDM_EDIT_PARTNER,
+						   IDM_EDIT_USERHANDLE1,
+						   IDM_EDIT_USERHANDLE2,
+						   IDM_COPY_VARIABLE,
+						   IDM_TITLE,
+						   IDM_ASK_QUESTION,
+						   IDM_NONE,
+						   IDM_READ_THE_BUGBOARD,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_NONE,
+						   IDM_SET_TF_TRUE_PREMOVE,
+						   IDM_SET_LR_TRUE_PREMOVE,
+						   IDM_SET_AUTO_KNIGHT_ON,
+						   IDM_SET_AUTO_KNIGHT_OFF,
 						   IDM_TEXT_TELL
-                         } ;
+						 } ;
 
 char FString [MAX_FMENU] [99] = { "None",
-                                  "--- Telnet Commands ---",
-                                  "Configure Personal ICS Command",
-                                  "Reply to Last Tell",
-                                  "Seek a Game",
-                                  "Match Player",
-                                  "Message a User",
-                                  "--- Telnet Console Options ---",
-                                  "Main Telnet Console: Select All Text",
-                                  "Main Telnet Console: Copy",
-                                  "Main Telnet Console: Copy and Paste",
-                                  "Save Text to File",
-                                  "Command Line: Select All",
-                                  "Command Line: Copy",
-                                  "Command Line: Cut",
-                                  "Command Line: Paste",
-                                  "Command Line: Edit",
+								  "--- Telnet Commands ---",
+								  "Configure Personal ICS Command",
+								  "Reply to Last Tell",
+								  "Seek a Game",
+								  "Match Player",
+								  "Message a User",
+								  "--- Telnet Console Options ---",
+								  "Main Telnet Console: Select All Text",
+								  "Main Telnet Console: Copy",
+								  "Main Telnet Console: Copy and Paste",
+								  "Save Text to File",
+								  "Command Line: Select All",
+								  "Command Line: Copy",
+								  "Command Line: Cut",
+								  "Command Line: Paste",
+								  "Command Line: Edit",
 								  "Toggle Log Telnet Console",
-                                  "Toggle Maximize/Restore Telnet Console",
-                                  "Maximize Telnet Console",
-                                  "Restore Telnet Console",
-                                  "--- Game: General Options ---",
-                                  "Toggle Start/Stop Logging Games",
-                                  "Log Game Settings",
-                                  "Load BPGN Games",
-                                  "Load PGN Games",
-                                  "Reset Board",
-                                  "Flip Board",
-                                  "Close Board",
-                                  "--- Game: Playing Options ---",
-                                  "Toggle Auto Queen/King",
-                                  "Toggle Apply Auto Rematch",
-                                  "Toggle Right Mouse Click on Partner's Board to Drop",
-                                  "Toggle Show Coordinates",
-                                  "Toggle Test Legality on Playing Board",
-                                  "Toggle Test Legality on Partner's Board",
-                                  "--- Game: Observing Options ---",
-                                  "Toggle Apply Auto Observe",
-                                  "Toggle Animate Observe Game Move (While Not Playing)",
-                                  "Toggle Animate Examine Game Move",
-                                  "Unexamine Game",
-                                  "--- Move Style ---",
-                                  "Toggle Smart Move",
-                                  "Toggle True Premove (Thief Style)",
-                                  "Toggle True Premove (Lightning Rulez Style)",
-                                  "Toggle Thief/Lightning Rulez True Premove Style",
-                                  "--- Piece Drop ---",
-                                  "Pawn Drop Move",
-                                  "Knight Drop Move",
-                                  "Bishop Drop Move",
-                                  "Rook Drop Move",
-                                  "Queen Drop Move",
-                                  "Sit For Piece Drop Move",
-                                  "--- Board Layout Options ---",
-                                  "Restore Default Layout",
-                                  "Restore Layout #1",
-                                  "Restore Layout #2",
-                                  "Restore Layout #3",
-                                  "Restore Layout #4",
-                                  "Restore Layout #5",
-                                  "Restore Layout #6",
-                                  "Restore Layout #7",
-                                  "Restore Layout #8",
-                                  "Save as Default Layout",
-                                  "Save as Layout #1",
-                                  "Save as Layout #2",
-                                  "Save as Layout #3",
-                                  "Save as Layout #4",
-                                  "Save as Layout #5",
-                                  "Save as Layout #6",
-                                  "Save as Layout #7",
-                                  "Save as Layout #8",
-                                  "--- Timer Option ---",
-                                  "Start Timer Command",
-                                  "Stop Timer Command",
-                                  "Toggle Timer Command On/Off",
-                                  "--- Sounds ---",
-                                  "Toggle Apply Sound",
-                                  "Toggle Apply Telnet Console Sounds",
-                                  "Toggle Apply Game Sounds",
-                                  "Toggle Apply Partner Communicator Sounds",
-                                  "Toggle Apply Final Countdown",
-                                  "--- Configuration Options ---",
-                                  "Customize Timer Command",
-                                  "Customize Partner Communicator Buttons",
-                                  "Customize Function Key",
-                                  "Customize Control Key",
-                                  "Configure Telnet Console Colors",
-                                  "Customize Lag Command",
-                                  "Configure FICS Censor List",
-                                  "Configure ICC Censor List",
-                                  "Configure Censor List for Other ICS",
-                                  "-- Variables ---",
-                                  "Edit %partner%",
-                                  "Edit %userhandle1%",
-                                  "Edit %userhandle2%",
-                                  "Copy Variable",
-                                  "--- Miscellaneous ---",
-                                  "Ask for Help on Chess Server",
-                                  "Open Internet Browser",
-                                  "Read The Bug Board",
-                                  "Minimize Thief",
-                                  "Run Script",
-                                  "Load Personal Configuration Profile",
-                                  "Set Thief True Premove Style",
-                                  "Set Lightning Rulez True Premove Style",
-                                  "Set Auto Knight Promotion On",
-                                  "Set Auto Knight Promotion Off",
+								  "Toggle Maximize/Restore Telnet Console",
+								  "Maximize Telnet Console",
+								  "Restore Telnet Console",
+								  "--- Game: General Options ---",
+								  "Toggle Start/Stop Logging Games",
+								  "Log Game Settings",
+								  "Load BPGN Games",
+								  "Load PGN Games",
+								  "Reset Board",
+								  "Flip Board",
+								  "Close Board",
+								  "--- Game: Playing Options ---",
+								  "Toggle Auto Queen/King",
+								  "Toggle Apply Auto Rematch",
+								  "Toggle Right Mouse Click on Partner's Board to Drop",
+								  "Toggle Show Coordinates",
+								  "Toggle Test Legality on Playing Board",
+								  "Toggle Test Legality on Partner's Board",
+								  "--- Game: Observing Options ---",
+								  "Toggle Apply Auto Observe",
+								  "Toggle Animate Observe Game Move (While Not Playing)",
+								  "Toggle Animate Examine Game Move",
+								  "Unexamine Game",
+								  "--- Move Style ---",
+								  "Toggle Smart Move",
+								  "Toggle True Premove (Thief Style)",
+								  "Toggle True Premove (Lightning Rulez Style)",
+								  "Toggle Thief/Lightning Rulez True Premove Style",
+								  "--- Piece Drop ---",
+								  "Pawn Drop Move",
+								  "Knight Drop Move",
+								  "Bishop Drop Move",
+								  "Rook Drop Move",
+								  "Queen Drop Move",
+								  "Sit For Piece Drop Move",
+								  "--- Board Layout Options ---",
+								  "Restore Default Layout",
+								  "Restore Layout #1",
+								  "Restore Layout #2",
+								  "Restore Layout #3",
+								  "Restore Layout #4",
+								  "Restore Layout #5",
+								  "Restore Layout #6",
+								  "Restore Layout #7",
+								  "Restore Layout #8",
+								  "Save as Default Layout",
+								  "Save as Layout #1",
+								  "Save as Layout #2",
+								  "Save as Layout #3",
+								  "Save as Layout #4",
+								  "Save as Layout #5",
+								  "Save as Layout #6",
+								  "Save as Layout #7",
+								  "Save as Layout #8",
+								  "--- Timer Option ---",
+								  "Start Timer Command",
+								  "Stop Timer Command",
+								  "Toggle Timer Command On/Off",
+								  "--- Sounds ---",
+								  "Toggle Apply Sound",
+								  "Toggle Apply Telnet Console Sounds",
+								  "Toggle Apply Game Sounds",
+								  "Toggle Apply Partner Communicator Sounds",
+								  "Toggle Apply Final Countdown",
+								  "--- Configuration Options ---",
+								  "Customize Timer Command",
+								  "Customize Partner Communicator Buttons",
+								  "Customize Function Key",
+								  "Customize Control Key",
+								  "Configure Telnet Console Colors",
+								  "Customize Lag Command",
+								  "Configure FICS Censor List",
+								  "Configure ICC Censor List",
+								  "Configure Censor List for Other ICS",
+								  "-- Variables ---",
+								  "Edit %partner%",
+								  "Edit %userhandle1%",
+								  "Edit %userhandle2%",
+								  "Copy Variable",
+								  "--- Miscellaneous ---",
+								  "Ask for Help on Chess Server",
+								  "Open Internet Browser",
+								  "Read The Bug Board",
+								  "Minimize Thief",
+								  "Run Script",
+								  "Load Personal Configuration Profile",
+								  "Set Thief True Premove Style",
+								  "Set Lightning Rulez True Premove Style",
+								  "Set Auto Knight Promotion On",
+								  "Set Auto Knight Promotion Off",
 								  "Main Telnet Console: Tell Handle"
-                                } ;
+								} ;
 
 int FCheck [MAX_FMENU] ;
 
 char TelnetUnderLine [MAX_UNDERLINE_STRING] [32] = { "play ",
-                                                     "tell ",
-                                                     "finger",
-                                                     "partner ",
-                                                     "help",
-                                                     "more",
-                                                     "accept",
-                                                     "decline",
-                                                     "abort",
-                                                     "adjourn",
-                                                     "draw",
-                                                     "match",
-                                                     "seek",
-                                                     "set ",
-                                                     "who",
-                                                     "bugwho",
-                                                     "follow ",
-                                                     "flag",
-                                                     "adjourn",
-                                                     "messages",
-                                                     "observe ",
-                                                     "examine ",
-                                                     "mam "
-                                                   } ;
+													 "tell ",
+													 "finger",
+													 "partner ",
+													 "help",
+													 "more",
+													 "accept",
+													 "decline",
+													 "abort",
+													 "adjourn",
+													 "draw",
+													 "match",
+													 "seek",
+													 "set ",
+													 "who",
+													 "bugwho",
+													 "follow ",
+													 "flag",
+													 "adjourn",
+													 "messages",
+													 "observe ",
+													 "examine ",
+													 "mam "
+												   } ;
 int TelnetUnderSize [MAX_UNDERLINE_STRING] ;
 
 char TelnetBracket [MAX_BRACKET_STRING] [32] = { "next" } ;
 int TelnetBracketSize [MAX_BRACKET_STRING] ;
 
 char MamerString [MAX_MAMER_STRING] [99] = { ":-",
-                                             ":-: Inactive;",
-                                             ":#: Match request issued.",
-                                             ":%: Requested half-point bye;",
-                                             ":(*) Board #",
-                                             ":(*) Players disconnected: ",
-                                             ":(*) Players idle: ",
-                                             ":(manager of tourneys: #",
-                                             ":(managing event: #",
-                                             ":(managing tourney: #",
-                                             ":(observing tourney: #",
-                                             ":(participating in tourney: #",
-                                             ":(playing a regular server game)",
-                                             ":*: Kept.",
-                                             ":*: Managing.",
-                                             ":*: Paired.",
-                                             ":.: Idle;",
-                                             ":[",
-                                             ":|-",
-                                             ":| ",
-                                             ":+-",
-                                             ":+: Joinable;",
-                                             ":+: Online;",
-                                             ":<: Running.",
-                                             ":>: Joined;",
-                                             ":Active:",
-                                             ":Add Level:",
-                                             ":AllowedList:",
-                                             ":Announce:",
-                                             ":AutoAnnounce:",
-                                             ":AutoPair:",
-                                             ":AutoStart:",
-                                             ":Average rating: ",
-                                             ":Bell:",
-                                             ":Board:",
-                                             ":Byes:",
-                                             ":Censor:",
-                                             ":Censoring count:",
-                                             ":Command:",
-                                             ":Comment added for ",
-                                             ":Comment:",
-                                             ":Comments for ",
-                                             ":Comments:",
-                                             ":Computers:",
-                                             ":Contact ",
-                                             ":Current Acting-COO:",
-                                             ":Current COO:",
-                                             ":Current Programmer:",
-                                             ":Currently empty.",
-                                             ":Currently includes ",
-                                             ":DefaultKOTH:",
-                                             ":DefaultTourney:",
-                                             ":Echo:",
-                                             ":EntryMessage:",
-                                             ":Event:",
-                                             ":Examples:",
-                                             ":ExtraInfo:",
-                                             ":Female:",
-                                             ":Force:",
-                                             ":Game cleared.",
-                                             ":Game number set.",
-                                             ":Game set.",
-                                             ":Getting KOTH Infos count:",
-                                             ":Getting Tourney Infos count:",
-                                             ":Getting Tourney Shouts count:",
-                                             ":HalfJoins:",
-                                             ":Height:",
-                                             ":Help file ",
-                                             ":Idle:",
-                                             ":In Load:",
-                                             ":In Size:",
-                                             ":Inc:",
-                                             ":Interface variable settings of ",
-                                             ":Invitation:",
-                                             ":Keep:",
-                                             ":KOTHInfo:",
-                                             ":Language:",
-                                             ":Last Managed:",
-                                             ":Last Played:",
-                                             ":LateJoins:",
-                                             ":Level:",
-                                             ":Listed: ",
-                                             ":Loaded count:",
-                                             ":Lock:",
-                                             ":MailingAddress:",
-                                             ":MailingAddress2:",
-                                             ":mamer's command list:",
-                                             ":mamer's Event list:",
-                                             ":mamer's KOTH list:",
-                                             ":mamer's manager list:",
-                                             ":mamer's tourney list:",
-                                             ":mamer KOTH INFO: ",
-                                             ":mamer TOURNEY #",
-                                             ":mamer TOURNEY INFO: ",
-                                             ":Manager help file ",
-                                             ":Manager Level:",
-                                             ":MaxByes:",
-                                             ":MaxRating:",
-                                             ":Message sent to ",
-                                             ":MinRating:",
-                                             ":Mode:",
-                                             ":Name:",
-                                             ":No one is observing tourney #",
-                                             ":No potential problems detected.",
-                                             ":NoEscape:",
-                                             ":Note that this is not your tourney.",
-                                             ":NotifyAdmin:",
-                                             ":NotifyCA:",
-                                             ":NotifyCOO:",
-                                             ":NotifyFM:",
-                                             ":NotifyGM:",
-                                             ":NotifyIM:",
-                                             ":NotifySR:",
-                                             ":NotifyTM:",
-                                             ":NotifyWFM:",
-                                             ":NotifyWGM:",
-                                             ":NotifyWIM:",
-                                             ":Online count:",
-                                             ":Out Load:",
-                                             ":Out Size:",
-                                             ":PlayerLimit:",
-                                             ":Please leave a comment to explain why ",
-                                             ":Prize:",
-                                             ":Purpose:",
-                                             ":Read Level:",
-                                             ":RefusedList:",
-                                             ":RefusedList2:",
-                                             ":Registered count:",
-                                             ":Results of tourney #",
-                                             ":Rounds:",
-                                             ":RoundUpdates:",
-                                             ":See Level:",
-                                             ":SetDefault:",
-                                             ":ShoutInterface:",
-                                             ":Silence:",
-                                             ":Statistics for ",
-                                             ":Style:",
-                                             ":Sub Level:",
-                                             ":The tourney has been forced to an end.",
-                                             ":The variable ",
-                                             ":There is no login information.",
-                                             ":This is a ",
-                                             ":This is a tourney in progress.",
-                                             ":This is an aborted tourney.",
-                                             ":This is an open ",
-                                             ":TieBreaker:",
-                                             ":Time:",
-                                             ":Total Bandwidth:",
-                                             ":Total: ",
-                                             ":Tourney #",
-                                             ":TourneyInfo:",
-                                             ":TourneyTell:",
-                                             ":TourneyUpdates:",
-                                             ":TShout:",
-                                             ":Type ",
-                                             ":Unable to comply.",
-                                             ":Usage count:",
-                                             ":Usage:",
-                                             ":Use \"tell mamer Next\" to see the next page.",
-                                             ":Use Level:",
-                                             ":Use the \"ManageTourney\" command if you need to take over.",
-                                             ":Variable settings of ",
-                                             ":Variant:",
-                                             ":Warning: There is an odd number of players (",
-                                             ":Wild:",
-                                             ":You are managing this tourney.",
-                                             ":You are already following KOTH #",
-                                             ":You are no longer observing any tourney.",
-                                             ":You are no longer observing the games in tourney #",
-                                             ":You are no longer observing tourney #",
-                                             ":You are no longer the king of KOTH #",
-                                             ":You are no longer the queen of KOTH #",
-                                             ":You are now observing the games in tourney #",
-                                             ":You are now observing tourney #",
-                                             ":You are now the king of KOTH #",
-                                             ":You are now the queen of KOTH #",
-                                             ":You can join this tourney.",
-                                             ":You cannot late-join this tourney.",
-                                             ":You challenge the king of KOTH #",
-                                             ":You challenge the queen of KOTH #",
-                                             ":You challenge your opponent in tourney #",
-                                             ":You currently have ",
-                                             ":You have a record of ",
-                                             ":You have been added to the Problematic list by ",
-                                             ":You have been removed from KOTH #",
-                                             ":You have been removed from the Problematic list by ",
-                                             ":You have joined tourney #",
-                                             ":You have taken over as the manager of tourney #",
-                                             ":You leave KOTH #",
-                                             ":You observe the game of KOTH #",
-                                             ":You resign your game in tourney #",
-                                             ":You will not follow any KOTH.",
-                                             ":You will now be following KOTH #",
-                                             ":You will receive a bye in the next round of tourney #",
-                                             ":You withdrew from tourney #",
-                                             ":Your "
-                                           } ;
+											 ":-: Inactive;",
+											 ":#: Match request issued.",
+											 ":%: Requested half-point bye;",
+											 ":(*) Board #",
+											 ":(*) Players disconnected: ",
+											 ":(*) Players idle: ",
+											 ":(manager of tourneys: #",
+											 ":(managing event: #",
+											 ":(managing tourney: #",
+											 ":(observing tourney: #",
+											 ":(participating in tourney: #",
+											 ":(playing a regular server game)",
+											 ":*: Kept.",
+											 ":*: Managing.",
+											 ":*: Paired.",
+											 ":.: Idle;",
+											 ":[",
+											 ":|-",
+											 ":| ",
+											 ":+-",
+											 ":+: Joinable;",
+											 ":+: Online;",
+											 ":<: Running.",
+											 ":>: Joined;",
+											 ":Active:",
+											 ":Add Level:",
+											 ":AllowedList:",
+											 ":Announce:",
+											 ":AutoAnnounce:",
+											 ":AutoPair:",
+											 ":AutoStart:",
+											 ":Average rating: ",
+											 ":Bell:",
+											 ":Board:",
+											 ":Byes:",
+											 ":Censor:",
+											 ":Censoring count:",
+											 ":Command:",
+											 ":Comment added for ",
+											 ":Comment:",
+											 ":Comments for ",
+											 ":Comments:",
+											 ":Computers:",
+											 ":Contact ",
+											 ":Current Acting-COO:",
+											 ":Current COO:",
+											 ":Current Programmer:",
+											 ":Currently empty.",
+											 ":Currently includes ",
+											 ":DefaultKOTH:",
+											 ":DefaultTourney:",
+											 ":Echo:",
+											 ":EntryMessage:",
+											 ":Event:",
+											 ":Examples:",
+											 ":ExtraInfo:",
+											 ":Female:",
+											 ":Force:",
+											 ":Game cleared.",
+											 ":Game number set.",
+											 ":Game set.",
+											 ":Getting KOTH Infos count:",
+											 ":Getting Tourney Infos count:",
+											 ":Getting Tourney Shouts count:",
+											 ":HalfJoins:",
+											 ":Height:",
+											 ":Help file ",
+											 ":Idle:",
+											 ":In Load:",
+											 ":In Size:",
+											 ":Inc:",
+											 ":Interface variable settings of ",
+											 ":Invitation:",
+											 ":Keep:",
+											 ":KOTHInfo:",
+											 ":Language:",
+											 ":Last Managed:",
+											 ":Last Played:",
+											 ":LateJoins:",
+											 ":Level:",
+											 ":Listed: ",
+											 ":Loaded count:",
+											 ":Lock:",
+											 ":MailingAddress:",
+											 ":MailingAddress2:",
+											 ":mamer's command list:",
+											 ":mamer's Event list:",
+											 ":mamer's KOTH list:",
+											 ":mamer's manager list:",
+											 ":mamer's tourney list:",
+											 ":mamer KOTH INFO: ",
+											 ":mamer TOURNEY #",
+											 ":mamer TOURNEY INFO: ",
+											 ":Manager help file ",
+											 ":Manager Level:",
+											 ":MaxByes:",
+											 ":MaxRating:",
+											 ":Message sent to ",
+											 ":MinRating:",
+											 ":Mode:",
+											 ":Name:",
+											 ":No one is observing tourney #",
+											 ":No potential problems detected.",
+											 ":NoEscape:",
+											 ":Note that this is not your tourney.",
+											 ":NotifyAdmin:",
+											 ":NotifyCA:",
+											 ":NotifyCOO:",
+											 ":NotifyFM:",
+											 ":NotifyGM:",
+											 ":NotifyIM:",
+											 ":NotifySR:",
+											 ":NotifyTM:",
+											 ":NotifyWFM:",
+											 ":NotifyWGM:",
+											 ":NotifyWIM:",
+											 ":Online count:",
+											 ":Out Load:",
+											 ":Out Size:",
+											 ":PlayerLimit:",
+											 ":Please leave a comment to explain why ",
+											 ":Prize:",
+											 ":Purpose:",
+											 ":Read Level:",
+											 ":RefusedList:",
+											 ":RefusedList2:",
+											 ":Registered count:",
+											 ":Results of tourney #",
+											 ":Rounds:",
+											 ":RoundUpdates:",
+											 ":See Level:",
+											 ":SetDefault:",
+											 ":ShoutInterface:",
+											 ":Silence:",
+											 ":Statistics for ",
+											 ":Style:",
+											 ":Sub Level:",
+											 ":The tourney has been forced to an end.",
+											 ":The variable ",
+											 ":There is no login information.",
+											 ":This is a ",
+											 ":This is a tourney in progress.",
+											 ":This is an aborted tourney.",
+											 ":This is an open ",
+											 ":TieBreaker:",
+											 ":Time:",
+											 ":Total Bandwidth:",
+											 ":Total: ",
+											 ":Tourney #",
+											 ":TourneyInfo:",
+											 ":TourneyTell:",
+											 ":TourneyUpdates:",
+											 ":TShout:",
+											 ":Type ",
+											 ":Unable to comply.",
+											 ":Usage count:",
+											 ":Usage:",
+											 ":Use \"tell mamer Next\" to see the next page.",
+											 ":Use Level:",
+											 ":Use the \"ManageTourney\" command if you need to take over.",
+											 ":Variable settings of ",
+											 ":Variant:",
+											 ":Warning: There is an odd number of players (",
+											 ":Wild:",
+											 ":You are managing this tourney.",
+											 ":You are already following KOTH #",
+											 ":You are no longer observing any tourney.",
+											 ":You are no longer observing the games in tourney #",
+											 ":You are no longer observing tourney #",
+											 ":You are no longer the king of KOTH #",
+											 ":You are no longer the queen of KOTH #",
+											 ":You are now observing the games in tourney #",
+											 ":You are now observing tourney #",
+											 ":You are now the king of KOTH #",
+											 ":You are now the queen of KOTH #",
+											 ":You can join this tourney.",
+											 ":You cannot late-join this tourney.",
+											 ":You challenge the king of KOTH #",
+											 ":You challenge the queen of KOTH #",
+											 ":You challenge your opponent in tourney #",
+											 ":You currently have ",
+											 ":You have a record of ",
+											 ":You have been added to the Problematic list by ",
+											 ":You have been removed from KOTH #",
+											 ":You have been removed from the Problematic list by ",
+											 ":You have joined tourney #",
+											 ":You have taken over as the manager of tourney #",
+											 ":You leave KOTH #",
+											 ":You observe the game of KOTH #",
+											 ":You resign your game in tourney #",
+											 ":You will not follow any KOTH.",
+											 ":You will now be following KOTH #",
+											 ":You will receive a bye in the next round of tourney #",
+											 ":You withdrew from tourney #",
+											 ":Your "
+										   } ;
 int MamerStringSize [MAX_MAMER_STRING] ;
 
 int nGNotifyHandle ;

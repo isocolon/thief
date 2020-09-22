@@ -1,5 +1,6 @@
 .vs 
 *.vcxproj.filters
 *.vcxproj.user
+*.orig
 THIEF___Win32_Debug
 UpgradeLog.htm

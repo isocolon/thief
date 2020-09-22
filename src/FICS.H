@@ -1,9 +1,9 @@
 #ifndef KICS
-   #define FICS_PROMPT                 "fics% "
+#define FICS_PROMPT                 "fics% "
 #endif
 
 #ifdef KICS
-   #define FICS_PROMPT                 "kics% "
+#define FICS_PROMPT                 "kics% "
 #endif
 
 
