@@ -2,38 +2,38 @@
 
 void GNOTIFY_Init(void)
 {
-	int nI ;
+	int nI;
 
-	nGNotifyHandle = 0 ;
+	nGNotifyHandle = 0;
 
 	for(nI = 0 ; nI < MAX_GNOTIFY_HANDLE ; nI++)
 	{
-		strcpy(cGNotifyHandle [nI], "") ;
+		strcpy(cGNotifyHandle [nI], "");
 	}
 }
 
 void GNOTIFY_Add(char *cH)
 {
-	int bF, nI ;
+	int bF, nI;
 
 	if(strlen(cH) == 0)
 	{
-		return ;
+		return;
 	}
 
 	if(nGNotifyHandle > MAX_GNOTIFY_HANDLE)
 	{
-		return ;
+		return;
 	}
 
-	bF = 0 ;
+	bF = 0;
 	for(nI = 0 ; nI <nGNotifyHandle ; nI++)
 	{
 		if(strlen(cGNotifyHandle [nI]) == 0)
 		{
-			bF = 1 ;
-			strcpy(cGNotifyHandle [nGNotifyHandle++], cH) ;
-			break ;
+			bF = 1;
+			strcpy(cGNotifyHandle [nGNotifyHandle++], cH);
+			break;
 		}
 	}
 
@@ -41,23 +41,23 @@ void GNOTIFY_Add(char *cH)
 	{
 		if(nGNotifyHandle < MAX_GNOTIFY_HANDLE)
 		{
-			strcpy(cGNotifyHandle [nGNotifyHandle++], cH) ;
+			strcpy(cGNotifyHandle [nGNotifyHandle++], cH);
 		}
 	}
 }
 
 void GNOTIFY_Delete(char *cH)
 {
-	int nI ;
+	int nI;
 
 	if(strlen(cH) == 0)
 	{
-		return ;
+		return;
 	}
 
 	if(nGNotifyHandle <= 0)
 	{
-		return ;
+		return;
 	}
 
 	for(nI = 0 ; nI < nGNotifyHandle ; nI++)
@@ -66,8 +66,8 @@ void GNOTIFY_Delete(char *cH)
 		{
 			if(stricmp(cGNotifyHandle [nI], cH) == 0)
 			{
-				strcpy(cGNotifyHandle [nGNotifyHandle++], "") ;
-				break ;
+				strcpy(cGNotifyHandle [nGNotifyHandle++], "");
+				break;
 			}
 		}
 	}
@@ -75,30 +75,30 @@ void GNOTIFY_Delete(char *cH)
 
 int GNOTIFY_Find(char *cH)
 {
-	int nI, bF ;
+	int nI, bF;
 
 	if(strlen(cH) == 0)
 	{
-		return 0 ;
+		return 0;
 	}
 
 	if(nGNotifyHandle <= 0)
 	{
-		return 0 ;
+		return 0;
 	}
 
-	bF = 0 ;
+	bF = 0;
 	for(nI = 0 ; nI < nGNotifyHandle ; nI++)
 	{
 		if(strlen(cGNotifyHandle [nI]) > 0)
 		{
 			if(stricmp(cGNotifyHandle [nI], cH) == 0)
 			{
-				bF = 1 ;
-				break ;
+				bF = 1;
+				break;
 			}
 		}
 	}
 
-	return bF ;
+	return bF;
 }

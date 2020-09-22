@@ -2,108 +2,108 @@
 
 void POSITION_Init(int nI)
 {
-	Game [nI].bFirstGame        = 1 ;
-	Game [nI].bErrorMoveList    = 0 ;
-	Game [nI].bRelation4        = 0 ;
-	Game [nI].bClickedButton    = 0 ;
-	Game [nI].nCurrentIndex     = -2 ;
-	Game [nI].nCurrentColor     = -2 ;
-	Game [nI].nMinIndex         = MAX_POSITION ;
-	Game [nI].nMinColor         = -2 ;
-	Game [nI].nMaxIndex         = -2 ;
-	Game [nI].nMaxColor         = -2 ;
-	Game [nI].nMoveListMaxIndex = -2 ;
-	Game [nI].nMoveListMaxColor = -2 ;
+	Game [nI].bFirstGame        = 1;
+	Game [nI].bErrorMoveList    = 0;
+	Game [nI].bRelation4        = 0;
+	Game [nI].bClickedButton    = 0;
+	Game [nI].nCurrentIndex     = -2;
+	Game [nI].nCurrentColor     = -2;
+	Game [nI].nMinIndex         = MAX_POSITION;
+	Game [nI].nMinColor         = -2;
+	Game [nI].nMaxIndex         = -2;
+	Game [nI].nMaxColor         = -2;
+	Game [nI].nMoveListMaxIndex = -2;
+	Game [nI].nMoveListMaxColor = -2;
 }
 
 void POSITION_FirstTime(int nI)
 {
-	int nX, nY ;
+	int nX, nY;
 
-	Game [nI].bErrorMoveList               = 0 ;
-	Game [nI].bRelation4                   = 0 ;
-	Game [nI].bClickedButton               = 0 ;
-	Game [nI].nInitDoublePushFile          = Game [nI].nLastDoublePushFile ;
-	Game [nI].bInitKingSide  [INDEX_WHITE] = Game [nI].bCanCastleKingSide  [INDEX_WHITE] ;
-	Game [nI].bInitQueenSide [INDEX_WHITE] = Game [nI].bCanCastleQueenSide [INDEX_WHITE] ;
-	Game [nI].bInitKingSide  [INDEX_BLACK] = Game [nI].bCanCastleKingSide  [INDEX_BLACK] ;
-	Game [nI].bInitQueenSide [INDEX_BLACK] = Game [nI].bCanCastleQueenSide [INDEX_BLACK] ;
-	Game [nI].nInitHalfMoves               = Game [nI].nHalfMoves ;
-	Game [nI].nInitKingX     [INDEX_WHITE] = Game [nI].nKingX              [INDEX_WHITE] ;
-	Game [nI].nInitKingY     [INDEX_WHITE] = Game [nI].nKingY              [INDEX_WHITE] ;
-	Game [nI].nInitKingX     [INDEX_BLACK] = Game [nI].nKingX              [INDEX_BLACK] ;
-	Game [nI].nInitKingY     [INDEX_BLACK] = Game [nI].nKingY              [INDEX_BLACK] ;
+	Game [nI].bErrorMoveList               = 0;
+	Game [nI].bRelation4                   = 0;
+	Game [nI].bClickedButton               = 0;
+	Game [nI].nInitDoublePushFile          = Game [nI].nLastDoublePushFile;
+	Game [nI].bInitKingSide  [INDEX_WHITE] = Game [nI].bCanCastleKingSide  [INDEX_WHITE];
+	Game [nI].bInitQueenSide [INDEX_WHITE] = Game [nI].bCanCastleQueenSide [INDEX_WHITE];
+	Game [nI].bInitKingSide  [INDEX_BLACK] = Game [nI].bCanCastleKingSide  [INDEX_BLACK];
+	Game [nI].bInitQueenSide [INDEX_BLACK] = Game [nI].bCanCastleQueenSide [INDEX_BLACK];
+	Game [nI].nInitHalfMoves               = Game [nI].nHalfMoves;
+	Game [nI].nInitKingX     [INDEX_WHITE] = Game [nI].nKingX              [INDEX_WHITE];
+	Game [nI].nInitKingY     [INDEX_WHITE] = Game [nI].nKingY              [INDEX_WHITE];
+	Game [nI].nInitKingX     [INDEX_BLACK] = Game [nI].nKingX              [INDEX_BLACK];
+	Game [nI].nInitKingY     [INDEX_BLACK] = Game [nI].nKingY              [INDEX_BLACK];
 
 	for(nY = 0 ; nY < 8 ; nY++)
 	{
 		for(nX = 0 ; nX < 8 ; nX++)
 		{
-			Game [nI].nInitBoard    [nX] [nY] = Game [nI].nBoard [nX] [nY] ;
-			Game [nI].nPromoteBoard [nX] [nY] = 0 ;
+			Game [nI].nInitBoard    [nX] [nY] = Game [nI].nBoard [nX] [nY];
+			Game [nI].nPromoteBoard [nX] [nY] = 0;
 		}
 	}
 
 	for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 	{
-		Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX] ;
+		Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX];
 	}
 
-	Game [nI].bInitInitialMove = Game [nI].bInitialMove ;
-	Game [nI].bInitWhitesMove  = Game [nI].bWhitesMove ;
-	Game [nI].nInitMoveNumber  = Game [nI].nMoveNumber ;
+	Game [nI].bInitInitialMove = Game [nI].bInitialMove;
+	Game [nI].bInitWhitesMove  = Game [nI].bWhitesMove;
+	Game [nI].nInitMoveNumber  = Game [nI].nMoveNumber;
 
-	strcpy(Game [nI].cInitLastMove,  Game [nI].cLastMove) ;
-	strcpy(Game [nI].cInitTime4Move, Game [nI].cTime4Move) ;
+	strcpy(Game [nI].cInitLastMove,  Game [nI].cLastMove);
+	strcpy(Game [nI].cInitTime4Move, Game [nI].cTime4Move);
 
-	Game [nI].nCurrentIndex     = -1 ;
-	Game [nI].nCurrentColor     = -1 ;
-	Game [nI].nMinIndex         = MAX_POSITION ;
-	Game [nI].nMinColor         = -1 ;
-	Game [nI].nMaxIndex         = -1 ;
-	Game [nI].nMaxColor         = -1 ;
-	Game [nI].nMoveListMaxIndex = -1 ;
-	Game [nI].nMoveListMaxColor = -1 ;
+	Game [nI].nCurrentIndex     = -1;
+	Game [nI].nCurrentColor     = -1;
+	Game [nI].nMinIndex         = MAX_POSITION;
+	Game [nI].nMinColor         = -1;
+	Game [nI].nMaxIndex         = -1;
+	Game [nI].nMaxColor         = -1;
+	Game [nI].nMoveListMaxIndex = -1;
+	Game [nI].nMoveListMaxColor = -1;
 }
 
 void POSITION_AddMoveList(int nI, int nJ, int nC, char *cMove, char *cTm4Move)
 {
-	int nL, nX, nY ;
-	int bReset, nWK, nWQ, nBK, nBQ ;
-	char cPosition [255], cTmpMove [50] ;
+	int nL, nX, nY;
+	int bReset, nWK, nWQ, nBK, nBQ;
+	char cPosition [255], cTmpMove [50];
 
 	// make sure it's ok to press move buttons for this game
 	if(! TOOLBOX_OKMoveButton(nI))
 	{
-		return ;
+		return;
 	}
 
 	// make sure it's not bigger or equal to MAX_POSITION
 	if(nJ >= MAX_POSITION)
 	{
-		return ;
+		return;
 	}
 
 	// update maximum move list number and color
-	Game [nI].nMoveListMaxIndex = nJ ;
-	Game [nI].nMoveListMaxColor = nC ;
+	Game [nI].nMoveListMaxIndex = nJ;
+	Game [nI].nMoveListMaxColor = nC;
 
 	// it errored before then we will skip it
 	if(Game [nI].bErrorMoveList)
 	{
 		// copy last move stuff
-		strcpy(Game [nI].Position [nJ].cLastMove  [nC], cMove) ;
-		strcpy(Game [nI].Position [nJ].cTime4Move [nC], cTm4Move) ;
+		strcpy(Game [nI].Position [nJ].cLastMove  [nC], cMove);
+		strcpy(Game [nI].Position [nJ].cTime4Move [nC], cTm4Move);
 
 		// set time remaining stuff to -9999L
-		Game [nI].Position [nJ].nTime [nC] = -9999L ;
-		return ;
+		Game [nI].Position [nJ].nTime [nC] = -9999L;
+		return;
 	}
 
 	// starting position --> index 0, white to move
 	if((nJ == 0) && (nC == 0))
 	{
 		// assign game type
-		Game [TEMP_GAME_INDEX].nGameType = Game [nI].nGameType ;
+		Game [TEMP_GAME_INDEX].nGameType = Game [nI].nGameType;
 
 		// check game type
 		if(Login.nLoginType == SERVER_ICC)
@@ -120,13 +120,13 @@ void POSITION_AddMoveList(int nI, int nJ, int nC, char *cMove, char *cTm4Move)
 				case GAMETYPE_CRAZYHOUSE :
 				case GAMETYPE_BUGHOUSE :
 				case GAMETYPE_GIVEAWAY :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD1 :
 				case GAMETYPE_ICC_WILD2 :
@@ -134,197 +134,197 @@ void POSITION_AddMoveList(int nI, int nJ, int nC, char *cMove, char *cTm4Move)
 				case GAMETYPE_ICC_WILD4 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_WILD5 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 0 ;
-						nWQ    = 0 ;
-						nBK    = 0 ;
-						nBQ    = 0 ;
-						strcpy(cPosition, INIT_WILD5_BOARD) ;
+						bReset = 1;
+						nWK    = 0;
+						nWQ    = 0;
+						nBK    = 0;
+						nBQ    = 0;
+						strcpy(cPosition, INIT_WILD5_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_ICC_WILD6 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD7 :
-					bReset = 1 ;
-					nWK    = 0 ;
-					nWQ    = 0 ;
-					nBK    = 0 ;
-					nBQ    = 0 ;
-					strcpy(cPosition, INIT_ICC_WILD7_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 0;
+					nWQ    = 0;
+					nBK    = 0;
+					nBQ    = 0;
+					strcpy(cPosition, INIT_ICC_WILD7_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD8 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD8_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD8_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD9 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD9_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD9_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD10 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD10_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD10_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD11 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD11_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD11_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD12 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 0 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD12_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 0;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD12_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD13 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD13_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD13_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD14 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 0 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_ICC_WILD14_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 0;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_ICC_WILD14_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD15 :
-					bReset = 1 ;
-					nWK    = 0 ;
-					nWQ    = 0 ;
-					nBK    = 0 ;
-					nBQ    = 0 ;
-					strcpy(cPosition, INIT_ICC_WILD15_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 0;
+					nWQ    = 0;
+					nBK    = 0;
+					nBQ    = 0;
+					strcpy(cPosition, INIT_ICC_WILD15_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD16 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_ICC_WILD18 :
-					bReset = 1 ;
-					nWK    = 0 ;
-					nWQ    = 0 ;
-					nBK    = 0 ;
-					nBQ    = 0 ;
-					strcpy(cPosition, INIT_ICC_WILD18_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 0;
+					nWQ    = 0;
+					nBK    = 0;
+					nBQ    = 0;
+					strcpy(cPosition, INIT_ICC_WILD18_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD19 :
-					bReset = 1 ;
-					nWK    = 0 ;
-					nWQ    = 0 ;
-					nBK    = 0 ;
-					nBQ    = 0 ;
-					strcpy(cPosition, INIT_ICC_WILD19_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 0;
+					nWQ    = 0;
+					nBK    = 0;
+					nBQ    = 0;
+					strcpy(cPosition, INIT_ICC_WILD19_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD20 :
 				case GAMETYPE_ICC_WILD21 :
 				case GAMETYPE_ICC_WILD22 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD25 :
 				case GAMETYPE_ICC_WILD27 :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 
 				case GAMETYPE_ICC_WILD28 :
-					bReset = 1 ;
-					nWK    = 0 ;
-					nWQ    = 0 ;
-					nBK    = 0 ;
-					nBQ    = 0 ;
-					strcpy(cPosition, INIT_ICC_WILD28_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 0;
+					nWQ    = 0;
+					nBK    = 0;
+					nBQ    = 0;
+					strcpy(cPosition, INIT_ICC_WILD28_BOARD);
+					break;
 
 				default :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 			}
 		}
 		else
@@ -339,277 +339,277 @@ void POSITION_AddMoveList(int nI, int nJ, int nC, char *cMove, char *cTm4Move)
 				case GAMETYPE_CRAZYHOUSE :
 				case GAMETYPE_BUGHOUSE :
 				case GAMETYPE_FICS_ATOMIC :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 
 				case GAMETYPE_FICS_WILD0 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_FICS_WILD0_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_FICS_WILD0_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD1 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD2 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD3 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD4 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_WILD5 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 0 ;
-						nWQ    = 0 ;
-						nBK    = 0 ;
-						nBQ    = 0 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 0;
+						nWQ    = 0;
+						nBK    = 0;
+						nBQ    = 0;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD8 :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_FICS_WILD8_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_FICS_WILD8_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILD8A :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_FICS_WILD8A_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_FICS_WILD8A_BOARD);
 					}
-					break ;
+					break;
 
 				case GAMETYPE_FICS_WILDFR :
 					if(Game [nI].bRelation4)
 					{
-						bReset = 0 ;
+						bReset = 0;
 					}
 					else
 					{
-						bReset = 1 ;
-						nWK    = 1 ;
-						nWQ    = 1 ;
-						nBK    = 1 ;
-						nBQ    = 1 ;
-						strcpy(cPosition, INIT_BOARD) ;
+						bReset = 1;
+						nWK    = 1;
+						nWQ    = 1;
+						nBK    = 1;
+						nBQ    = 1;
+						strcpy(cPosition, INIT_BOARD);
 					}
-					break ;
+					break;
 
 				default :
-					bReset = 1 ;
-					nWK    = 1 ;
-					nWQ    = 1 ;
-					nBK    = 1 ;
-					nBQ    = 1 ;
-					strcpy(cPosition, INIT_BOARD) ;
-					break ;
+					bReset = 1;
+					nWK    = 1;
+					nWQ    = 1;
+					nBK    = 1;
+					nBQ    = 1;
+					strcpy(cPosition, INIT_BOARD);
+					break;
 			}
 		}
 
 		if(bReset)
 		{
-			Game [TEMP_GAME_INDEX].bWhitesMove                       = 1 ;
-			Game [TEMP_GAME_INDEX].bInitialMove                      = 1 ;
-			Game [TEMP_GAME_INDEX].nMoveNumber                       = 1 ;
-			Game [TEMP_GAME_INDEX].nLastDoublePushFile               = -1 ;
-			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE] = nWK ;
-			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE] = nWQ ;
-			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK] = nBK ;
-			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK] = nBQ ;
-			Game [TEMP_GAME_INDEX].nHalfMoves                        = 0 ;
-			Game [TEMP_GAME_INDEX].bChessGame                        = Game [nI].bChessGame ;
+			Game [TEMP_GAME_INDEX].bWhitesMove                       = 1;
+			Game [TEMP_GAME_INDEX].bInitialMove                      = 1;
+			Game [TEMP_GAME_INDEX].nMoveNumber                       = 1;
+			Game [TEMP_GAME_INDEX].nLastDoublePushFile               = -1;
+			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE] = nWK;
+			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE] = nWQ;
+			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK] = nBK;
+			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK] = nBQ;
+			Game [TEMP_GAME_INDEX].nHalfMoves                        = 0;
+			Game [TEMP_GAME_INDEX].bChessGame                        = Game [nI].bChessGame;
 
-			BOARD_LoadBoard(TEMP_GAME_INDEX, cPosition, ICS_INITIAL_MOVE_NAME) ;
-			BOARD_LoadBuffer(TEMP_GAME_INDEX, INIT_BUFFER, INIT_BUFFER) ;
-			BOARD_ResetPromoteBoard(TEMP_GAME_INDEX) ;
+			BOARD_LoadBoard(TEMP_GAME_INDEX, cPosition, ICS_INITIAL_MOVE_NAME);
+			BOARD_LoadBuffer(TEMP_GAME_INDEX, INIT_BUFFER, INIT_BUFFER);
+			BOARD_ResetPromoteBoard(TEMP_GAME_INDEX);
 
-			Game [nI].nInitDoublePushFile          = Game [TEMP_GAME_INDEX].nLastDoublePushFile ;
-			Game [nI].bInitKingSide  [INDEX_WHITE] = Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE] ;
-			Game [nI].bInitQueenSide [INDEX_WHITE] = Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE] ;
-			Game [nI].bInitKingSide  [INDEX_BLACK] = Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK] ;
-			Game [nI].bInitQueenSide [INDEX_BLACK] = Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK] ;
-			Game [nI].nInitHalfMoves               = Game [TEMP_GAME_INDEX].nHalfMoves ;
-			Game [nI].nInitKingX     [INDEX_WHITE] = Game [TEMP_GAME_INDEX].nKingX              [INDEX_WHITE] ;
-			Game [nI].nInitKingY     [INDEX_WHITE] = Game [TEMP_GAME_INDEX].nKingY              [INDEX_WHITE] ;
-			Game [nI].nInitKingX     [INDEX_BLACK] = Game [TEMP_GAME_INDEX].nKingX              [INDEX_BLACK] ;
-			Game [nI].nInitKingY     [INDEX_BLACK] = Game [TEMP_GAME_INDEX].nKingY              [INDEX_BLACK] ;
+			Game [nI].nInitDoublePushFile          = Game [TEMP_GAME_INDEX].nLastDoublePushFile;
+			Game [nI].bInitKingSide  [INDEX_WHITE] = Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE];
+			Game [nI].bInitQueenSide [INDEX_WHITE] = Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE];
+			Game [nI].bInitKingSide  [INDEX_BLACK] = Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK];
+			Game [nI].bInitQueenSide [INDEX_BLACK] = Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK];
+			Game [nI].nInitHalfMoves               = Game [TEMP_GAME_INDEX].nHalfMoves;
+			Game [nI].nInitKingX     [INDEX_WHITE] = Game [TEMP_GAME_INDEX].nKingX              [INDEX_WHITE];
+			Game [nI].nInitKingY     [INDEX_WHITE] = Game [TEMP_GAME_INDEX].nKingY              [INDEX_WHITE];
+			Game [nI].nInitKingX     [INDEX_BLACK] = Game [TEMP_GAME_INDEX].nKingX              [INDEX_BLACK];
+			Game [nI].nInitKingY     [INDEX_BLACK] = Game [TEMP_GAME_INDEX].nKingY              [INDEX_BLACK];
 
 			for(nY = 0 ; nY < 8 ; nY++)
 			{
 				for(nX = 0 ; nX < 8 ; nX++)
 				{
-					Game [nI].nInitBoard    [nX] [nY] = Game [TEMP_GAME_INDEX].nBoard [nX] [nY] ;
-					Game [nI].nPromoteBoard [nX] [nY] = 0 ;
+					Game [nI].nInitBoard    [nX] [nY] = Game [TEMP_GAME_INDEX].nBoard [nX] [nY];
+					Game [nI].nPromoteBoard [nX] [nY] = 0;
 				}
 			}
 
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].nInitBuffer [nX] = Game [TEMP_GAME_INDEX].nBuffer [nX] ;
+				Game [nI].nInitBuffer [nX] = Game [TEMP_GAME_INDEX].nBuffer [nX];
 			}
 
-			Game [nI].bInitInitialMove = 1 ;
-			Game [nI].bInitWhitesMove  = 1 ;
-			Game [nI].nInitMoveNumber  = 1 ;
+			Game [nI].bInitInitialMove = 1;
+			Game [nI].bInitWhitesMove  = 1;
+			Game [nI].nInitMoveNumber  = 1;
 
-			strcpy(Game [nI].cInitLastMove,  ICS_INITIAL_MOVE_NAME) ;
-			strcpy(Game [nI].cInitTime4Move, ICS_INITIAL_TIME_MOVE) ;
+			strcpy(Game [nI].cInitLastMove,  ICS_INITIAL_MOVE_NAME);
+			strcpy(Game [nI].cInitTime4Move, ICS_INITIAL_TIME_MOVE);
 		}
 		else
 		{
-			Game [TEMP_GAME_INDEX].bChessGame                        = Game [nI].bChessGame ;
-			Game [TEMP_GAME_INDEX].nLastDoublePushFile               = Game [nI].nInitDoublePushFile ;
-			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE] = Game [nI].bInitKingSide  [INDEX_WHITE] ;
-			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE] = Game [nI].bInitQueenSide [INDEX_WHITE] ;
-			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK] = Game [nI].bInitKingSide  [INDEX_BLACK] ;
-			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK] = Game [nI].bInitQueenSide [INDEX_BLACK] ;
-			Game [TEMP_GAME_INDEX].nHalfMoves                        = Game [nI].nHalfMoves ;
-			Game [TEMP_GAME_INDEX].nKingX              [INDEX_WHITE] = Game [nI].nInitKingX     [INDEX_WHITE] ;
-			Game [TEMP_GAME_INDEX].nKingY              [INDEX_WHITE] = Game [nI].nInitKingY     [INDEX_WHITE] ;
-			Game [TEMP_GAME_INDEX].nKingX              [INDEX_BLACK] = Game [nI].nInitKingX     [INDEX_BLACK] ;
-			Game [TEMP_GAME_INDEX].nKingY              [INDEX_BLACK] = Game [nI].nInitKingY     [INDEX_BLACK] ;
+			Game [TEMP_GAME_INDEX].bChessGame                        = Game [nI].bChessGame;
+			Game [TEMP_GAME_INDEX].nLastDoublePushFile               = Game [nI].nInitDoublePushFile;
+			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_WHITE] = Game [nI].bInitKingSide  [INDEX_WHITE];
+			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_WHITE] = Game [nI].bInitQueenSide [INDEX_WHITE];
+			Game [TEMP_GAME_INDEX].bCanCastleKingSide  [INDEX_BLACK] = Game [nI].bInitKingSide  [INDEX_BLACK];
+			Game [TEMP_GAME_INDEX].bCanCastleQueenSide [INDEX_BLACK] = Game [nI].bInitQueenSide [INDEX_BLACK];
+			Game [TEMP_GAME_INDEX].nHalfMoves                        = Game [nI].nHalfMoves;
+			Game [TEMP_GAME_INDEX].nKingX              [INDEX_WHITE] = Game [nI].nInitKingX     [INDEX_WHITE];
+			Game [TEMP_GAME_INDEX].nKingY              [INDEX_WHITE] = Game [nI].nInitKingY     [INDEX_WHITE];
+			Game [TEMP_GAME_INDEX].nKingX              [INDEX_BLACK] = Game [nI].nInitKingX     [INDEX_BLACK];
+			Game [TEMP_GAME_INDEX].nKingY              [INDEX_BLACK] = Game [nI].nInitKingY     [INDEX_BLACK];
 
 			for(nY = 0 ; nY < 8 ; nY++)
 			{
 				for(nX = 0 ; nX < 8 ; nX++)
 				{
-					Game [TEMP_GAME_INDEX].nBoard        [nX] [nY] = Game [nI].nInitBoard [nX] [nY] ;
-					Game [TEMP_GAME_INDEX].nPromoteBoard [nX] [nY] = 0 ;
+					Game [TEMP_GAME_INDEX].nBoard        [nX] [nY] = Game [nI].nInitBoard [nX] [nY];
+					Game [TEMP_GAME_INDEX].nPromoteBoard [nX] [nY] = 0;
 				}
 			}
 
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [TEMP_GAME_INDEX].nBuffer [nX] = Game [nI].nInitBuffer [nX] ;
+				Game [TEMP_GAME_INDEX].nBuffer [nX] = Game [nI].nInitBuffer [nX];
 			}
 		}
 	}
 
 	// remove the last '+' or '#' symbol from the move string
-	strcpy(cTmpMove, cMove) ;
+	strcpy(cTmpMove, cMove);
 
-	nL = strlen(cTmpMove) ;
+	nL = strlen(cTmpMove);
 	if((cTmpMove [nL - 1] == '+') || (cTmpMove [nL - 1] == '#'))
 	{
-		cTmpMove [nL - 1] = NULL_CHAR ;
+		cTmpMove [nL - 1] = NULL_CHAR;
 	}
 
 	// assign who's turn to move
-	Game [TEMP_GAME_INDEX].bWhitesMove = (nC == 0) ;
+	Game [TEMP_GAME_INDEX].bWhitesMove = (nC == 0);
 
 	// issue the move to the chess legal move engine
 	if(! CHESS_IsLegalMoveString(TEMP_GAME_INDEX, cTmpMove))
 	{
-		POSITION_FirstTime(nI) ;
-		Game [nI].bErrorMoveList = 1 ;
+		POSITION_FirstTime(nI);
+		Game [nI].bErrorMoveList = 1;
 
 //      if (nC == 0)
 //          {
-//          sprintf (cPosition, "Errored on %d. %s\n\n", nJ + 1, cMove) ;
+//          sprintf (cPosition, "Errored on %d. %s\n\n", nJ + 1, cMove);
 //          }
 //      else
 //          {
-//          sprintf (cPosition, "Errored on %d... %s\n\n", nJ + 1, cMove) ;
+//          sprintf (cPosition, "Errored on %d... %s\n\n", nJ + 1, cMove);
 //          }
-//      TOOLBOX_WriteSystem (cPosition) ;
+//      TOOLBOX_WriteSystem (cPosition);
 
-		return ;
+		return;
 	}
 
 	// execute the move
@@ -621,126 +621,126 @@ void POSITION_AddMoveList(int nI, int nJ, int nC, char *cMove, char *cTm4Move)
 				   Moves.nMoveType [Moves.nLastMatch],
 				   Moves.nCapture  [Moves.nLastMatch],
 				   Moves.nDrop     [Moves.nLastMatch],
-				   Moves.nPromote  [Moves.nLastMatch]) ;
+				   Moves.nPromote  [Moves.nLastMatch]);
 
 	// copy position
 	for(nY = 0 ; nY < 8 ; nY++)
 	{
 		for(nX = 0 ; nX < 8 ; nX++)
 		{
-			Game [nI].Position [nJ].nBoard [nC] [nX] [nY] = Game [TEMP_GAME_INDEX].nBoard [nX] [nY] ;
+			Game [nI].Position [nJ].nBoard [nC] [nX] [nY] = Game [TEMP_GAME_INDEX].nBoard [nX] [nY];
 		}
 	}
 
 	// copy buffer
 	for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 	{
-		Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [TEMP_GAME_INDEX].nBuffer [nX] ;
+		Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [TEMP_GAME_INDEX].nBuffer [nX];
 	}
 
 	// copy last move stuff
-	strcpy(Game [nI].Position [nJ].cLastMove  [nC], cMove) ;
-	strcpy(Game [nI].Position [nJ].cTime4Move [nC], cTm4Move) ;
+	strcpy(Game [nI].Position [nJ].cLastMove  [nC], cMove);
+	strcpy(Game [nI].Position [nJ].cTime4Move [nC], cTm4Move);
 
 	// set time remaining stuff to -9999L
-	Game [nI].Position [nJ].nTime [nC] = -9999L ;
+	Game [nI].Position [nJ].nTime [nC] = -9999L;
 
 	// assign minimum
 	if(Game [nI].nMinIndex == MAX_POSITION)
 	{
-		Game [nI].nMinIndex = nJ ;
-		Game [nI].nMinColor = nC ;
+		Game [nI].nMinIndex = nJ;
+		Game [nI].nMinColor = nC;
 	}
 	else if(nJ < Game [nI].nMinIndex)
 	{
-		Game [nI].nMinIndex = nJ ;
-		Game [nI].nMinColor = nC ;
+		Game [nI].nMinIndex = nJ;
+		Game [nI].nMinColor = nC;
 	}
 	else if(nJ == Game [nI].nMinIndex)
 	{
 		if(nC < Game [nI].nMinColor)
 		{
-			Game [nI].nMinColor = nC ;
+			Game [nI].nMinColor = nC;
 		}
 	}
 
 	// assign maximum
 	if((Game [nI].nMaxIndex == -1) || (Game [nI].nMaxIndex == -2))
 	{
-		Game [nI].nMaxIndex = nJ ;
-		Game [nI].nMaxColor = nC ;
+		Game [nI].nMaxIndex = nJ;
+		Game [nI].nMaxColor = nC;
 	}
 	else if(nJ > Game [nI].nMaxIndex)
 	{
-		Game [nI].nMaxIndex = nJ ;
-		Game [nI].nMaxColor = nC ;
+		Game [nI].nMaxIndex = nJ;
+		Game [nI].nMaxColor = nC;
 	}
 	else if(nJ == Game [nI].nMaxIndex)
 	{
 		if(nC > Game [nI].nMaxColor)
 		{
-			Game [nI].nMaxColor = nC ;
+			Game [nI].nMaxColor = nC;
 		}
 	}
 
 	// assign current
-	Game [nI].nCurrentIndex = nJ ;
-	Game [nI].nCurrentColor = nC ;
+	Game [nI].nCurrentIndex = nJ;
+	Game [nI].nCurrentColor = nC;
 }
 
 void POSITION_SaveGameMove(int nI)
 {
-	int nJ, nC, nX, nY ;
+	int nJ, nC, nX, nY;
 
 	// make sure it's ok to press move buttons for this game
 	if(! TOOLBOX_OKMoveButton(nI))
 	{
-		return ;
+		return;
 	}
 
 	// if it's initial position then initialize the current position as the first position
 	if(Game [nI].nMaxIndex == -2)
 	{
-		POSITION_FirstTime(nI) ;
-		return ;
+		POSITION_FirstTime(nI);
+		return;
 	}
 
 	// make sure it's not bigger or equal to MAX_POSITION
-	nJ = (Game [nI].nMoveNumber - 1) ;
+	nJ = (Game [nI].nMoveNumber - 1);
 	if(nJ >= MAX_POSITION)
 	{
-		POSITION_FirstTime(nI) ;
-		return ;
+		POSITION_FirstTime(nI);
+		return;
 	}
 
 	// if it's the initial position then set it as the initial position
 	if(Game [nI].bInitialMove)
 	{
-		POSITION_FirstTime(nI) ;
-		return ;
+		POSITION_FirstTime(nI);
+		return;
 	}
 
 	if(nJ == 0)
 	{
 		if(Game [nI].bLastWhitesMove)
 		{
-			nC = 1 ;
+			nC = 1;
 		}
 		else
 		{
-			nC = 0 ;
+			nC = 0;
 		}
 	}
 	else
 	{
 		if(Game [nI].bLastWhitesMove)
 		{
-			nJ = nJ - 1 ;
-			nC = 1 ;
+			nJ = nJ - 1;
+			nC = 1;
 		}
 		else
 		{
-			nC = 0 ;
+			nC = 0;
 		}
 	}
 
@@ -749,49 +749,49 @@ void POSITION_SaveGameMove(int nI)
 	{
 		for(nX = 0 ; nX < 8 ; nX++)
 		{
-			Game [nI].Position [nJ].nBoard [nC] [nX] [nY] = Game [nI].nBoard [nX] [nY] ;
+			Game [nI].Position [nJ].nBoard [nC] [nX] [nY] = Game [nI].nBoard [nX] [nY];
 		}
 	}
 
 	// copy buffer
 	for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 	{
-		Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX] ;
+		Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX];
 	}
 
 	// update maximum move list number and color
-	Game [nI].nMoveListMaxIndex = nJ ;
-	Game [nI].nMoveListMaxColor = nC ;
+	Game [nI].nMoveListMaxIndex = nJ;
+	Game [nI].nMoveListMaxColor = nC;
 
 	// copy last move stuff
-	strcpy(Game [nI].Position [nJ].cLastMove  [nC], Game [nI].cLastMove) ;
-	strcpy(Game [nI].Position [nJ].cTime4Move [nC], Game [nI].cTime4Move) ;
+	strcpy(Game [nI].Position [nJ].cLastMove  [nC], Game [nI].cLastMove);
+	strcpy(Game [nI].Position [nJ].cTime4Move [nC], Game [nI].cTime4Move);
 
 	// copy time remaining stuff
-	Game [nI].Position [nJ].nTime [nC] = Game [nI].nTimeRemaining [nC] ;
+	Game [nI].Position [nJ].nTime [nC] = Game [nI].nTimeRemaining [nC];
 
 	// assign minimum
 	if(Game [nI].nMinIndex == MAX_POSITION)
 	{
-		Game [nI].nMinIndex = nJ ;
-		Game [nI].nMinColor = nC ;
+		Game [nI].nMinIndex = nJ;
+		Game [nI].nMinColor = nC;
 	}
 	else if(nJ < Game [nI].nMinIndex)
 	{
-		Game [nI].nMinIndex = nJ ;
-		Game [nI].nMinColor = nC ;
+		Game [nI].nMinIndex = nJ;
+		Game [nI].nMinColor = nC;
 	}
 	else if(nJ == Game [nI].nMinIndex)
 	{
 		if(nC < Game [nI].nMinColor)
 		{
-			Game [nI].nMinColor = nC ;
+			Game [nI].nMinColor = nC;
 		}
 	}
 
 	// assign maximum
-	Game [nI].nMaxIndex = nJ ;
-	Game [nI].nMaxColor = nC ;
+	Game [nI].nMaxIndex = nJ;
+	Game [nI].nMaxColor = nC;
 
 	// assign current
 	if(Game [nI].bClickedButton)
@@ -803,31 +803,31 @@ void POSITION_SaveGameMove(int nI)
 					((Game [nI].nCurrentIndex == Game [nI].nMinIndex) &&
 					 (Game [nI].nCurrentColor <  Game [nI].nMinColor)))
 			{
-				Game [nI].nCurrentIndex = Game [nI].nMinIndex ;
-				Game [nI].nCurrentColor = Game [nI].nMinColor ;
+				Game [nI].nCurrentIndex = Game [nI].nMinIndex;
+				Game [nI].nCurrentColor = Game [nI].nMinColor;
 			}
 			else if((Game [nI].nCurrentIndex > Game [nI].nMaxIndex) ||
 					((Game [nI].nCurrentIndex == Game [nI].nMaxIndex) &&
 					 (Game [nI].nCurrentColor >  Game [nI].nMaxColor)))
 			{
-				Game [nI].nCurrentIndex = Game [nI].nMaxIndex ;
-				Game [nI].nCurrentColor = Game [nI].nMaxColor ;
+				Game [nI].nCurrentIndex = Game [nI].nMaxIndex;
+				Game [nI].nCurrentColor = Game [nI].nMaxColor;
 			}
 		}
 	}
 	else
 	{
-		Game [nI].nCurrentIndex = nJ ;
-		Game [nI].nCurrentColor = nC ;
+		Game [nI].nCurrentIndex = nJ;
+		Game [nI].nCurrentColor = nC;
 	}
 
 	// save it into bughouse moves (if applicable)
-	BUGHOUSE_SaveGameMove(nI, nJ, nC) ;
+	BUGHOUSE_SaveGameMove(nI, nJ, nC);
 }
 
 void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 {
-	int nJ, nC, nX ;
+	int nJ, nC, nX;
 
 	//
 	// update move list position buffer
@@ -836,10 +836,10 @@ void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 	//
 	// <b1> game 71 white [N] black [] <- WN    (NEXT)
 	//
-	nJ = (Game [nI].nMoveNumber - 1) ;
+	nJ = (Game [nI].nMoveNumber - 1);
 	if(nJ >= MAX_POSITION)
 	{
-		POSITION_FirstTime(nI) ;
+		POSITION_FirstTime(nI);
 	}
 	else
 	{
@@ -850,12 +850,12 @@ void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 			//
 			if(Game [nI].bLastWhitesMove)
 			{
-				nC = 1 ;
+				nC = 1;
 			}
 			else
 			{
-				nJ = nJ + 1 ;
-				nC = 0 ;
+				nJ = nJ + 1;
+				nC = 0;
 			}
 		}
 		else
@@ -867,23 +867,23 @@ void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 			{
 				if(Game [nI].bLastWhitesMove)
 				{
-					nC = 1 ;
+					nC = 1;
 				}
 				else
 				{
-					nC = 0 ;
+					nC = 0;
 				}
 			}
 			else
 			{
 				if(Game [nI].bLastWhitesMove)
 				{
-					nJ = nJ - 1 ;
-					nC = 1 ;
+					nJ = nJ - 1;
+					nC = 1;
 				}
 				else
 				{
-					nC = 0 ;
+					nC = 0;
 				}
 			}
 		}
@@ -892,14 +892,14 @@ void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 		else
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 	}
@@ -907,7 +907,7 @@ void POSITION_FICS_SaveGameBuffer(int nI, int bNext)
 
 void POSITION_ICC_SaveGameBuffer(int nI)
 {
-	int nJ, nC, nX ;
+	int nJ, nC, nX;
 
 	//
 	// update move list piece buffer
@@ -916,10 +916,10 @@ void POSITION_ICC_SaveGameBuffer(int nI)
 	// (after style 12 string) thus the piece buffer update has to be made
 	// for the previous move.
 	//
-	nJ = (Game [nI].nMoveNumber - 1) ;
+	nJ = (Game [nI].nMoveNumber - 1);
 	if(nJ >= MAX_POSITION)
 	{
-		POSITION_FirstTime(nI) ;
+		POSITION_FirstTime(nI);
 	}
 	else
 	{
@@ -927,23 +927,23 @@ void POSITION_ICC_SaveGameBuffer(int nI)
 		{
 			if(Game [nI].bLastWhitesMove)
 			{
-				nC = 1 ;
+				nC = 1;
 			}
 			else
 			{
-				nC = 0 ;
+				nC = 0;
 			}
 		}
 		else
 		{
 			if(Game [nI].bLastWhitesMove)
 			{
-				nJ = nJ - 1 ;
-				nC = 1 ;
+				nJ = nJ - 1;
+				nC = 1;
 			}
 			else
 			{
-				nC = 0 ;
+				nC = 0;
 			}
 		}
 
@@ -951,14 +951,14 @@ void POSITION_ICC_SaveGameBuffer(int nI)
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 		else
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 	}
@@ -966,7 +966,7 @@ void POSITION_ICC_SaveGameBuffer(int nI)
 
 void POSITION_NONFICS_SaveGameBuffer(int nI, int bNext)
 {
-	int nJ, nC, nX ;
+	int nJ, nC, nX;
 
 	//
 	// update move list position buffer
@@ -975,10 +975,10 @@ void POSITION_NONFICS_SaveGameBuffer(int nI, int bNext)
 	//
 	// <b1> game 71 white [N] black [] <- WN    (NEXT)
 	//
-	nJ = (Game [nI].nMoveNumber - 1) ;
+	nJ = (Game [nI].nMoveNumber - 1);
 	if(nJ >= MAX_POSITION)
 	{
-		POSITION_FirstTime(nI) ;
+		POSITION_FirstTime(nI);
 	}
 	else
 	{
@@ -989,12 +989,12 @@ void POSITION_NONFICS_SaveGameBuffer(int nI, int bNext)
 			//
 			if(Game [nI].bLastWhitesMove)
 			{
-				nC = 1 ;
+				nC = 1;
 			}
 			else
 			{
-				nJ = nJ + 1 ;
-				nC = 0 ;
+				nJ = nJ + 1;
+				nC = 0;
 			}
 		}
 		else
@@ -1006,23 +1006,23 @@ void POSITION_NONFICS_SaveGameBuffer(int nI, int bNext)
 			{
 				if(Game [nI].bLastWhitesMove)
 				{
-					nC = 1 ;
+					nC = 1;
 				}
 				else
 				{
-					nC = 0 ;
+					nC = 0;
 				}
 			}
 			else
 			{
 				if(Game [nI].bLastWhitesMove)
 				{
-					nJ = nJ - 1 ;
-					nC = 1 ;
+					nJ = nJ - 1;
+					nC = 1;
 				}
 				else
 				{
-					nC = 0 ;
+					nC = 0;
 				}
 			}
 		}
@@ -1031,14 +1031,14 @@ void POSITION_NONFICS_SaveGameBuffer(int nI, int bNext)
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].nInitBuffer [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 		else
 		{
 			for(nX = 0 ; nX < MAX_BUFFER ; nX++)
 			{
-				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX] ;
+				Game [nI].Position [nJ].nBuffer [nC] [nX] = Game [nI].nBuffer [nX];
 			}
 		}
 	}

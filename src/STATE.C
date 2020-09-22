@@ -2,23 +2,23 @@
 
 void STATE_PlayNewGame(void)
 {
-	F8KEY_Init() ;
-	GAMEEVENT_Command(GAME_EVENT_PLAY_START1) ;
-	GAMEEVENT_Command(GAME_EVENT_PLAY_START2) ;
+	F8KEY_Init();
+	GAMEEVENT_Command(GAME_EVENT_PLAY_START1);
+	GAMEEVENT_Command(GAME_EVENT_PLAY_START2);
 }
 
 void STATE_PlayEndGame(void)
 {
-	F8KEY_Init() ;
+	F8KEY_Init();
 
-	TOOLBOX_ResetPromotKnight() ;
+	TOOLBOX_ResetPromotKnight();
 
 	if(System.bIssuedAbort)
 	{
-		System.bIssuedAbort = 0 ;
+		System.bIssuedAbort = 0;
 
-		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER1) ;
-		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER2) ;
+		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER1);
+		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER2);
 	}
 	else
 	{
@@ -28,24 +28,24 @@ void STATE_PlayEndGame(void)
 			{
 				if(! Game [INDEX_PLAY].bSavedGame)
 				{
-					SAVEGAME_SaveGame(INDEX_PLAY, 0, 0) ;
+					SAVEGAME_SaveGame(INDEX_PLAY, 0, 0);
 				}
 			}
 		}
 
-		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER1) ;
-		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER2) ;
+		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER1);
+		GAMEEVENT_Command(GAME_EVENT_PLAY_OVER2);
 
 		if(User.bAutoRematch)
 		{
-			PostMessage(hwndWindow [HWND_FRAME], WM_COMMAND, IDM_REMATCH, (LPARAM) 0) ;
+			PostMessage(hwndWindow [HWND_FRAME], WM_COMMAND, IDM_REMATCH, (LPARAM) 0);
 		}
 	}
 }
 
 void STATE_ObserveNewGame(int nI, int bPartner)
 {
-	GAMEEVENT_Command(GAME_EVENT_OBSERVE_START) ;
+	GAMEEVENT_Command(GAME_EVENT_OBSERVE_START);
 }
 
 void STATE_ObserveEndGame(int nI, int bPartner, int bUnobserve)
@@ -60,7 +60,7 @@ void STATE_ObserveEndGame(int nI, int bPartner, int bUnobserve)
 				{
 					if(! Game [nI].bSavedGame)
 					{
-						SAVEGAME_SaveGame(nI, 0, 0) ;
+						SAVEGAME_SaveGame(nI, 0, 0);
 					}
 				}
 			}
@@ -70,47 +70,47 @@ void STATE_ObserveEndGame(int nI, int bPartner, int bUnobserve)
 				{
 					if(! Game [nI].bSavedGame)
 					{
-						SAVEGAME_SaveGame(nI, 0, 0) ;
+						SAVEGAME_SaveGame(nI, 0, 0);
 					}
 				}
 			}
 		}
 	}
 
-	GAMEEVENT_Command(GAME_EVENT_OBSERVE_OVER) ;
+	GAMEEVENT_Command(GAME_EVENT_OBSERVE_OVER);
 }
 
 void STATE_PlayPieceBufferUpdate(void)
 {
-	F8KEY_Issue() ;
+	F8KEY_Issue();
 }
 
 void STATE_Login(int bHasTimeseal)
 {
-	F8KEY_Init() ;
+	F8KEY_Init();
 }
 
 void STATE_Logout(void)
 {
-	F8KEY_Init() ;
+	F8KEY_Init();
 }
 
 int STATE_EnterDialogBox(void)
 {
 	if(System.bInDialogBox)
 	{
-		TOOLBOX_Beep() ;
-		return 0 ;
+		TOOLBOX_Beep();
+		return 0;
 	}
 	else
 	{
-		System.bInDialogBox = 1 ;
-		return 1 ;
+		System.bInDialogBox = 1;
+		return 1;
 	}
 }
 
 void STATE_LeaveDialogBox(void)
 {
-	System.bInDialogBox = 0 ;
-	SetFocus(hwndWindow [HWND_TELNET_EDIT]) ;
+	System.bInDialogBox = 0;
+	SetFocus(hwndWindow [HWND_TELNET_EDIT]);
 }

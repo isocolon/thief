@@ -1065,30 +1065,30 @@ typedef struct
 	long nSec ; // assuming this is >= 32 bits
 	int nMs ;   // assuming this is >= 16 bits
 }
-TIMEMARK ;
+TIMEMARK;
 
 typedef struct
 {
-	HFONT hfFont ;
-	LOGFONT lf ;
-	char Name [MAX_FONT_NAME + 10] ;
-	int nPointSize ;
-	int bBold ;
-	int bItalic ;
-	int bUnderLine ;
-	int bStrikeOut ;
+	HFONT hfFont;
+	LOGFONT lf;
+	char Name [MAX_FONT_NAME + 10];
+	int nPointSize;
+	int bBold;
+	int bItalic;
+	int bUnderLine;
+	int bStrikeOut;
 }
-FONTRECORD ;
+FONTRECORD;
 
 typedef struct
 {
-	int nBoard [2] [8] [8] ;
-	int nBuffer [2] [MAX_BUFFER] ;
-	char cLastMove [2] [50] ;
-	char cTime4Move [2] [50] ;
-	long nTime [2] ;
+	int nBoard [2] [8] [8];
+	int nBuffer [2] [MAX_BUFFER];
+	char cLastMove [2] [50];
+	char cTime4Move [2] [50];
+	long nTime [2];
 }
-POSITION ;
+POSITION;
 
 typedef struct
 {
@@ -1218,17 +1218,17 @@ typedef struct
 	int ChessValue [13] ;               // chess piece value
 	int BugValue   [13] ;               // bughouse/crazyhouse piece value
 }
-GAME ;
+GAME;
 
 typedef struct
 {
-	HBITMAP  hPiece   [MAX_PIECE] ;
-	POINT    ptPiece  [MAX_PIECE] ;
-	COLORREF clrPiece [MAX_PIECE] ;
-	HBITMAP  hSquare  [MAX_PIECE] ;
-	POINT    ptSquare [MAX_PIECE] ;
+	HBITMAP  hPiece   [MAX_PIECE];
+	POINT    ptPiece  [MAX_PIECE];
+	COLORREF clrPiece [MAX_PIECE];
+	HBITMAP  hSquare  [MAX_PIECE];
+	POINT    ptSquare [MAX_PIECE];
 }
-CSET ;
+CSET;
 
 typedef struct
 {
@@ -1251,30 +1251,30 @@ typedef struct
 	POINT ptBuffer [10] ;   // buffer piece starting x and y coordinates
 	POINT ptNumber [3] ;    // buffer piece number coordinates
 
-	int   bVectorPiece ;
-	int   bVectorSquare ;
-	char  cBitmapPiece [_MAX_PATH + 10] ;
-	char  cBitmapSquare [_MAX_PATH + 10] ;
-	int   nPieceSet ;
+	int   bVectorPiece;
+	int   bVectorSquare;
+	char  cBitmapPiece [_MAX_PATH + 10];
+	char  cBitmapSquare [_MAX_PATH + 10];
+	int   nPieceSet;
 
-	HBITMAP htTemp ;
+	HBITMAP htTemp;
 }
-BOARDCFG ;
+BOARDCFG;
 
 typedef struct
 {
-	int nMove ;
-	int nLastMatch ;
-	int nFromX    [MAX_MOVE] ;
-	int nFromY    [MAX_MOVE] ;
-	int nToX      [MAX_MOVE] ;
-	int nToY      [MAX_MOVE] ;
-	int nMoveType [MAX_MOVE] ;
-	int nCapture  [MAX_MOVE] ;
-	int nDrop     [MAX_MOVE] ;
-	int nPromote  [MAX_MOVE] ;
+	int nMove;
+	int nLastMatch;
+	int nFromX    [MAX_MOVE];
+	int nFromY    [MAX_MOVE];
+	int nToX      [MAX_MOVE];
+	int nToY      [MAX_MOVE];
+	int nMoveType [MAX_MOVE];
+	int nCapture  [MAX_MOVE];
+	int nDrop     [MAX_MOVE];
+	int nPromote  [MAX_MOVE];
 }
-MOVES ;
+MOVES;
 
 typedef struct
 {
@@ -1309,7 +1309,7 @@ typedef struct
 	int  nNumber [MAX_BUGHOUSE] ;       // move number
 	int  nColor [MAX_BUGHOUSE] ;        // color
 }
-BUGHOUSE ;
+BUGHOUSE;
 
 typedef struct
 {
@@ -1319,91 +1319,91 @@ typedef struct
 	int h ; // window height
 	int s ; // window state (0=normal,1=maximized,
 }       //               2=minimized,3=closed)
-WCOORD ;
+WCOORD;
 
 typedef struct
 {
-	int nType [MAX_BUTTON] ;
-	char cText [MAX_BUTTON] [MAX_BUTTON_TEXT + 10] ;
-	char cAction [MAX_BUTTON] [MAX_BUTTON_ACTION + 10] ;
+	int nType [MAX_BUTTON];
+	char cText [MAX_BUTTON] [MAX_BUTTON_TEXT + 10];
+	char cAction [MAX_BUTTON] [MAX_BUTTON_ACTION + 10];
 }
-BUTTONS, *LPBUTTONS ;
+BUTTONS, *LPBUTTONS;
 
 typedef struct
 {
-	int bPlay [MAX_SOUND] ;
-	int bBeep [MAX_SOUND] ;
-	char cName [MAX_SOUND] [MAX_SOUND_NAME + 10] ;
-	void *pData [MAX_SOUND] ;
+	int bPlay [MAX_SOUND];
+	int bBeep [MAX_SOUND];
+	char cName [MAX_SOUND] [MAX_SOUND_NAME + 10];
+	void *pData [MAX_SOUND];
 }
-SOUNDS, *LPSOUNDS ;
+SOUNDS, *LPSOUNDS;
 
 typedef struct
 {
-	int bPlay [MAX_EAR] ;
-	int bBeep [MAX_EAR] ;
-	char cTell [MAX_EAR] [MAX_EAR_TELL + 10] ;
-	char cName [MAX_EAR] [MAX_EAR_NAME + 10] ;
-	void *pData [MAX_EAR] ;
+	int bPlay [MAX_EAR];
+	int bBeep [MAX_EAR];
+	char cTell [MAX_EAR] [MAX_EAR_TELL + 10];
+	char cName [MAX_EAR] [MAX_EAR_NAME + 10];
+	void *pData [MAX_EAR];
 }
-EARS, *LPEARS ;
+EARS, *LPEARS;
 
 typedef struct
 {
-	int bPlay [MAX_GAME_SOUND] ;
-	int bBeep [MAX_GAME_SOUND] ;
-	char cName [MAX_GAME_SOUND] [MAX_GAME_SOUND_NAME + 10] ;
-	void *pData [MAX_GAME_SOUND] ;
+	int bPlay [MAX_GAME_SOUND];
+	int bBeep [MAX_GAME_SOUND];
+	char cName [MAX_GAME_SOUND] [MAX_GAME_SOUND_NAME + 10];
+	void *pData [MAX_GAME_SOUND];
 }
-GAMESOUNDS, *LPGAMESOUNDS ;
+GAMESOUNDS, *LPGAMESOUNDS;
 
 typedef struct
 {
-	int bPlay [MAX_TIME_SOUND] ;
-	int bPlayed [MAX_TIME_SOUND] ;
-	int nLastSecond ;
-	char cName [MAX_TIME_SOUND] [MAX_TIME_SOUND_NAME + 10] ;
-	void *pData [MAX_TIME_SOUND] ;
+	int bPlay [MAX_TIME_SOUND];
+	int bPlayed [MAX_TIME_SOUND];
+	int nLastSecond;
+	char cName [MAX_TIME_SOUND] [MAX_TIME_SOUND_NAME + 10];
+	void *pData [MAX_TIME_SOUND];
 }
-TIMESOUNDS, *LPTIMESOUNDS ;
+TIMESOUNDS, *LPTIMESOUNDS;
 
 typedef struct
 {
-	int nType [MAX_LOGIN_EVENT] ;
-	char cCommand [MAX_LOGIN_EVENT] [MAX_LOGIN_EVENT_COMMAND_SIZE + 10] ;
+	int nType [MAX_LOGIN_EVENT];
+	char cCommand [MAX_LOGIN_EVENT] [MAX_LOGIN_EVENT_COMMAND_SIZE + 10];
 }
-LOGINEVENT ;
+LOGINEVENT;
 
 typedef struct
 {
-	int nType [MAX_GAME_EVENT] ;
-	char cCommand [MAX_GAME_EVENT] [MAX_GAME_EVENT_COMMAND_SIZE + 10] ;
+	int nType [MAX_GAME_EVENT];
+	char cCommand [MAX_GAME_EVENT] [MAX_GAME_EVENT_COMMAND_SIZE + 10];
 }
-GAMEEVENT ;
+GAMEEVENT;
 
 typedef struct
 {
-	char cMenu [MAX_RM_ITEM] [MAX_RM_MENU_SIZE + 10] ;
-	int nType [MAX_RM_ITEM] ;
-	char cCommand [MAX_RM_ITEM] [MAX_RM_COMMAND_SIZE + 10] ;
+	char cMenu [MAX_RM_ITEM] [MAX_RM_MENU_SIZE + 10];
+	int nType [MAX_RM_ITEM];
+	char cCommand [MAX_RM_ITEM] [MAX_RM_COMMAND_SIZE + 10];
 }
-RIGHTMOUSE ;
+RIGHTMOUSE;
 
 typedef struct
 {
-	int nI ;
-	int nX ;
-	int nY ;
+	int nI;
+	int nX;
+	int nY;
 }
-LEFTMOUSEDROP ;
+LEFTMOUSEDROP;
 
 typedef struct
 {
-	int nI ;
-	int nX ;
-	int nY ;
+	int nI;
+	int nX;
+	int nY;
 }
-RIGHTMOUSEDROP ;
+RIGHTMOUSEDROP;
 
 typedef struct
 {
@@ -1416,7 +1416,7 @@ typedef struct
 	int nPc ;           // dragged piece
 	int nClicked ;      // click move counter
 }
-TFDRAGINFO ;
+TFDRAGINFO;
 
 typedef struct
 {
@@ -1427,200 +1427,200 @@ typedef struct
 	POINT ptLast ;      // window coordinates of last position
 	int nPc ;           // dragged piece
 }
-TFANIMATEINFO ;
+TFANIMATEINFO;
 
 typedef struct
 {
-	char cConnectionBrowse [_MAX_PATH + 10] ;
-	char cLogBrowse [_MAX_PATH + 10] ;
-	char cSaveBPGNBrowse [_MAX_PATH + 10] ;
-	char cSavePGNBrowse [_MAX_PATH + 10] ;
-	char cProfileBrowse [_MAX_PATH + 10] ;
-	char cPieceBrowse [_MAX_PATH + 10] ;
-	char cSquareBrowse [_MAX_PATH + 10] ;
-	char cPGNBrowse [_MAX_PATH + 10] ;
-	char cBPGNBrowse [_MAX_PATH + 10] ;
+	char cConnectionBrowse [_MAX_PATH + 10];
+	char cLogBrowse [_MAX_PATH + 10];
+	char cSaveBPGNBrowse [_MAX_PATH + 10];
+	char cSavePGNBrowse [_MAX_PATH + 10];
+	char cProfileBrowse [_MAX_PATH + 10];
+	char cPieceBrowse [_MAX_PATH + 10];
+	char cSquareBrowse [_MAX_PATH + 10];
+	char cPGNBrowse [_MAX_PATH + 10];
+	char cBPGNBrowse [_MAX_PATH + 10];
 }
-BROWSE ;
+BROWSE;
 
 typedef struct
 {
-	CHARFORMAT cfTelnet ;
-	CHARFORMAT cfItalic ;
-	CHARFORMAT cfUnderline ;
-	char cTelnetBuffer [CO_MAX + 1 + 10] ;
-	char cMarkBuffer [CO_MAX + 1 + 10] ;
-	char cEditBuffer [EDIT_LINE_SIZE + 10] ;
-	int bHasESC ;
-	int bFoundHandle ;
-	int bTelnetSkipLine ;
-	int bLastTelnetIsCR ;
-	int bLastIsTelnetEdit ;
-	int bLastChannel ;
-	int nLastChannel ;
-	int nTelnetState ;
-	COLORREF clrCurrent ;
-	COLORREF clrLastLine ;
-	int nCurrentSound ;
-	int bDisplayLine ;
-	int bForceVisible ;
-	int bMissingQuote ;
-	int bMissingBracket ;
-	int bMissinghttpwww ;
-	int bDisplayContinueLine ;
-	int bSkipDisplayLine ;
-	int bLastIsChallenge ;
-	int bTellTold ;
-	int bPtellTold ;
-	int bSayTold ;
-	int bPartnerTold ;
-	int nTellTold ;
-	int nPtellTold ;
-	int nSayTold ;
-	int nPartnerTold ;
-	int bReceivedMessage ;
-	int nAutoClearedMessage ;
-	char cTellTold [128] ;
-	char cPtellTold [128] ;
-	char cSayTold [128] ;
-	char cPartnerTold [128] ;
-	char cLastGameInfo [512] ;
+	CHARFORMAT cfTelnet;
+	CHARFORMAT cfItalic;
+	CHARFORMAT cfUnderline;
+	char cTelnetBuffer [CO_MAX + 1 + 10];
+	char cMarkBuffer [CO_MAX + 1 + 10];
+	char cEditBuffer [EDIT_LINE_SIZE + 10];
+	int bHasESC;
+	int bFoundHandle;
+	int bTelnetSkipLine;
+	int bLastTelnetIsCR;
+	int bLastIsTelnetEdit;
+	int bLastChannel;
+	int nLastChannel;
+	int nTelnetState;
+	COLORREF clrCurrent;
+	COLORREF clrLastLine;
+	int nCurrentSound;
+	int bDisplayLine;
+	int bForceVisible;
+	int bMissingQuote;
+	int bMissingBracket;
+	int bMissinghttpwww;
+	int bDisplayContinueLine;
+	int bSkipDisplayLine;
+	int bLastIsChallenge;
+	int bTellTold;
+	int bPtellTold;
+	int bSayTold;
+	int bPartnerTold;
+	int nTellTold;
+	int nPtellTold;
+	int nSayTold;
+	int nPartnerTold;
+	int bReceivedMessage;
+	int nAutoClearedMessage;
+	char cTellTold [128];
+	char cPtellTold [128];
+	char cSayTold [128];
+	char cPartnerTold [128];
+	char cLastGameInfo [512];
 }
-TELNET ;
+TELNET;
 
 typedef struct
 {
 	char cBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;    // input buffer
 	char cAppSpawn [MAX_APP_SPAWN + 10] ;           // child process executable filename
-	HANDLE hFile ;
-	HANDLE hThread ;
-	HANDLE hProcess ;
-	HANDLE hTo ;
-	HANDLE hFrom ;
-	DWORD nID ;
-	DWORD nCount ;
-	char *cNext ;
-	int nError ;
-	int bLoadOK ;
+	HANDLE hFile;
+	HANDLE hThread;
+	HANDLE hProcess;
+	HANDLE hTo;
+	HANDLE hFrom;
+	DWORD nID;
+	DWORD nCount;
+	char *cNext;
+	int nError;
+	int bLoadOK;
 }
-INPUT ;
+INPUT;
 
 typedef struct
 {
-	INPUT TSInput ;
-	SOCKET skSocket ;
-	char cSocketBuffer [MAX_SOCKET_BUFFER_SIZE + 10] ;
-	char cSocketLine [MAX_SOCKET_BUFFER_SIZE + 10] ;
-	int bSocketLine ;
-	char cServerAddress [2048] ;
-	int bSocketIsOpen ;
-	int nSocketLogin ;
-	int bBeforeLogin ;
+	INPUT TSInput;
+	SOCKET skSocket;
+	char cSocketBuffer [MAX_SOCKET_BUFFER_SIZE + 10];
+	char cSocketLine [MAX_SOCKET_BUFFER_SIZE + 10];
+	int bSocketLine;
+	char cServerAddress [2048];
+	int bSocketIsOpen;
+	int nSocketLogin;
+	int bBeforeLogin;
 }
-TIMESEAL ;
+TIMESEAL;
 
 typedef struct
 {
-	int nTimer ;
-	int nTimerCount ;
-	int bTimerCommand ;
-	int nTimerMinute ;
-	int nType ;
-	char cTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
-	char cICCTimerCommand [MAX_TIMER_LINE_SIZE + 10] ;
+	int nTimer;
+	int nTimerCount;
+	int bTimerCommand;
+	int nTimerMinute;
+	int nType;
+	char cTimerCommand [MAX_TIMER_LINE_SIZE + 10];
+	char cICCTimerCommand [MAX_TIMER_LINE_SIZE + 10];
 }
-TIMERCMD ;
+TIMERCMD;
 
 typedef struct
 {
-	TIMEMARK tLastLagCommand ;
-	int nLagTolerance ;
-	int nLagThreshold ;
-	long nLagLThreshold ;
-	int nType ;
-	char cLagCommand [MAX_LAG_COMMAND_SIZE + 10] ;
-	char cLagDisplay [MAX_LAG_DISPLAY_SIZE + 10] ;
+	TIMEMARK tLastLagCommand;
+	int nLagTolerance;
+	int nLagThreshold;
+	long nLagLThreshold;
+	int nType;
+	char cLagCommand [MAX_LAG_COMMAND_SIZE + 10];
+	char cLagDisplay [MAX_LAG_DISPLAY_SIZE + 10];
 }
-LAGCMD ;
+LAGCMD;
 
 typedef struct
 {
-	int nRedClock ;
-	long nLRedClock ;
-	int nShowTenthSecond ;
-	int bShowOneSecond ;
+	int nRedClock;
+	long nLRedClock;
+	int nShowTenthSecond;
+	int bShowOneSecond;
 }
-REDCLOCK ;
+REDCLOCK;
 
 typedef struct
 {
-	int bCensor ;
-	int nItem ;
-	char cHandle [MAX_CENSOR_ITEM] [ICS_HANDLE_LENGTH] ;
-	char cCensor [MAX_CENSOR_ITEM] [MAX_CENSOR_BIT] ;
-	char cTell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-	char cPtell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-	char cSay [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-	char cPartner [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-	char cMessage [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10] ;
-	int nStart [26] ;
-	int nEnd [26] ;
+	int bCensor;
+	int nItem;
+	char cHandle [MAX_CENSOR_ITEM] [ICS_HANDLE_LENGTH];
+	char cCensor [MAX_CENSOR_ITEM] [MAX_CENSOR_BIT];
+	char cTell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
+	char cPtell [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
+	char cSay [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
+	char cPartner [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
+	char cMessage [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
+	int nStart [26];
+	int nEnd [26];
 }
-CENSOR ;
+CENSOR;
 
 typedef struct
 {
-	CHARRANGE TmpSel ;
-	int nGameIndex ;
-	int bMaximizeMain ;
-	int bIsMyTurn ;
-	int nIssuedMovesCommand ;
-	int nMoveListIndexNumber ;
-	int bIncludeSpace ;
-	int bInDialogBox ;
-	int nRightMouseIndex ;
-	int bFirstTime ;
-	int bOkToResizePlay ;
-	char cDocumentDir [_MAX_PATH + 10] ;
-	HWND hwndLastGame ;
-	int bUnobserve ;
-	int nUnobGameNumber ;
-	char cUnobWname [50] ;
-	char cUnobBname [50] ;
-	TIMEMARK tUnobserve ;
-	char cSaveBuffer [CO_MAX + CO_MAX + 1 + 10] ;
-	char cLoginFile [_MAX_PATH + 10] ;
-	int nSysPlayGameType ;
-	int nSysExamGameType ;
-	int nSysObserveGameType ;
-	int nLastPlayGameType ;
-	int nLastExamGameType ;
-	int nLastObserveGameType ;
+	CHARRANGE TmpSel;
+	int nGameIndex;
+	int bMaximizeMain;
+	int bIsMyTurn;
+	int nIssuedMovesCommand;
+	int nMoveListIndexNumber;
+	int bIncludeSpace;
+	int bInDialogBox;
+	int nRightMouseIndex;
+	int bFirstTime;
+	int bOkToResizePlay;
+	char cDocumentDir [_MAX_PATH + 10];
+	HWND hwndLastGame;
+	int bUnobserve;
+	int nUnobGameNumber;
+	char cUnobWname [50];
+	char cUnobBname [50];
+	TIMEMARK tUnobserve;
+	char cSaveBuffer [CO_MAX + CO_MAX + 1 + 10];
+	char cLoginFile [_MAX_PATH + 10];
+	int nSysPlayGameType;
+	int nSysExamGameType;
+	int nSysObserveGameType;
+	int nLastPlayGameType;
+	int nLastExamGameType;
+	int nLastObserveGameType;
 	//int bMoveOnLButtonDown;
-	int nCensorIndex ;
-	int bIssuedAbort ;
-	int bICCLastGameWasWild16 ;
-	int bPromoteCommand ;
-	int nPromoteWPiece ;
-	int nPromoteBPiece ;
-	int bPromoteKnight ;
-	int nTryList ;
-	int nTryScreen ;
-	int nTryTaskbar ;
-	int nTryPlay ;
-	int bInPromote ;
-	HWND hwndPromote ;
-	int bQuickConnection ;
-	int bCDROMConnection ;
+	int nCensorIndex;
+	int bIssuedAbort;
+	int bICCLastGameWasWild16;
+	int bPromoteCommand;
+	int nPromoteWPiece;
+	int nPromoteBPiece;
+	int bPromoteKnight;
+	int nTryList;
+	int nTryScreen;
+	int nTryTaskbar;
+	int nTryPlay;
+	int bInPromote;
+	HWND hwndPromote;
+	int bQuickConnection;
+	int bCDROMConnection;
 }
-SYSTEM ;
+SYSTEM;
 
 typedef struct
 {
-	char cFn [_MAX_PATH + 10] ;
-	FILE *Fv ;
+	char cFn [_MAX_PATH + 10];
+	FILE *Fv;
 }
-LOG ;
+LOG;
 
 typedef struct
 {
@@ -1641,389 +1641,389 @@ typedef struct
 	int bSilencePlaySay;
 	int bSilencePlayKibitz;
 	int bSilencePlayWhisper;
-	char cTell [SILENCE_COMMAND_SIZE + 10] ;
+	char cTell [SILENCE_COMMAND_SIZE + 10];
 }
-SILENCE ;
+SILENCE;
 
 typedef struct
 {
-	int bLogTelnet ;
+	int bLogTelnet;
 	int bTimeStampTelnet;
 	int bTimeStampLog;
-	int bLogGame ;
-	int bSavePlayGame ;
-	int bSaveObserveGame ;
-	int bSaveUnobserveGame ;
-	int bSaveAbortGame ;
-	int bSaveNoBFENBugGame ;
-	int bSaveDaily ;
-	char cPGNViewer [_MAX_PATH + 10] ;
-	char cBPGNViewer [_MAX_PATH + 10] ;
-	int bAutoFlag ;
-	int bAutoRematch ;
-	int bAutoObserve ;
-	int bAutoObserveGNotify ;
-	int bActualSize ;
-	int bStopResizePlay ;
-	int bEscCancelDragMove ;
-	int bEscCancelTruePremove ;
-	int bEscCancelSitDropMove ;
-	int bEscCancelPromoteKnight ;
-	int bNoPlayAbuser ;
-	int bNoPlayComputer ;
-	int nPlayWild5Flip ;
-	int bShowResult ;
-	int bShowRating ;
-	int bShowLagStat ;
-	int bShowPtell ;
-	int bShowCoord ;
-	int bShowGameType ;
-	int bShowGameTypeOnTitleBar ;
-	int bShowValueOnTitleBar ;
-	int bShowLastMove ;
-	int bShowLastMoveTenth ;
-	int bShowHighlight ;
-	int bShowTPHighlight ;
-	int bShowClockOnTop ;
-	int bShowKingHighlight ;
-	int nShowKingHighlightPM ;
-	int nShowKingHighlightPO ;
-	int nShowKingHighlightE ;
-	int nShowKingHighlightO ;
-	int nShowCapturedChessPiece ;
-	int nBufferOrientation ;
-	int bVectorPiece ;
-	int bVectorSquare ;
-	char cBitmapPiece [_MAX_PATH + 10] ;
-	char cBitmapSquare [_MAX_PATH + 10] ;
-	int nPieceSet ;
-	int bAutoQueen ;
-	int nMoveType ;
-	int bAutoCenterDragPiece ;
-	int bSmartMove ;
-	int bSmartMove1 ;
-	int bSmartMove2 ;
-	int bTruePremove ;
-	int nTruePremove ;
-	int bIllegalTPBeep ;
-	int bRightMousePlay ;
-	int bRightMousePartner ;
-	int bTestLegalPlay ;
-	int bTestLegalPartner ;
-	int bAnimateObserve ;
-	int bAnimateExam ;
-	int bAnimatePlay ;
-	int nAnimateSpeedObserve ;
-	int nAnimateSpeedExam ;
-	int nAnimateSpeedPlay ;
-	int bLongPartner ;
-	char cPartnerMove1 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-	char cPartnerMove2 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-	char cPartnerMove3 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-	char cPartnerMove4 [MAX_PARTNER_ASSIST_SIZE + 10] ;
-	int bShowMoveButton ;
-	int bUseArrowKeyMoveButton ;
-	int bMouseWheel ;
-	int bShowUnderline ;
-	int bEnterHighlight ;
-	int bTelnetResizeGoBottom ;
-	int bSuppressAnnouncement ;
-	int bSuppressCompKibitz ;
-	int bSuppressCompWhisper ;
-	int bSuppressIgnoreFormula ;
-	int bSuppressROBOWelcome ;
-	int bSuppressCompChTell ;
-	int bSuppressCompTell ;
-	int bSuppressCompShout ;
-	int bMaximizeTelnetUponLogin ;
-	int bSound ;
-	int bTelnetSound ;
-	int bGameSound ;
-	int bEarSound ;
-	int bFinalCountDown ;
-	int bLagCommand ;
-	int bExtendedButton ;
-	int bSaveOnExit ;
+	int bLogGame;
+	int bSavePlayGame;
+	int bSaveObserveGame;
+	int bSaveUnobserveGame;
+	int bSaveAbortGame;
+	int bSaveNoBFENBugGame;
+	int bSaveDaily;
+	char cPGNViewer [_MAX_PATH + 10];
+	char cBPGNViewer [_MAX_PATH + 10];
+	int bAutoFlag;
+	int bAutoRematch;
+	int bAutoObserve;
+	int bAutoObserveGNotify;
+	int bActualSize;
+	int bStopResizePlay;
+	int bEscCancelDragMove;
+	int bEscCancelTruePremove;
+	int bEscCancelSitDropMove;
+	int bEscCancelPromoteKnight;
+	int bNoPlayAbuser;
+	int bNoPlayComputer;
+	int nPlayWild5Flip;
+	int bShowResult;
+	int bShowRating;
+	int bShowLagStat;
+	int bShowPtell;
+	int bShowCoord;
+	int bShowGameType;
+	int bShowGameTypeOnTitleBar;
+	int bShowValueOnTitleBar;
+	int bShowLastMove;
+	int bShowLastMoveTenth;
+	int bShowHighlight;
+	int bShowTPHighlight;
+	int bShowClockOnTop;
+	int bShowKingHighlight;
+	int nShowKingHighlightPM;
+	int nShowKingHighlightPO;
+	int nShowKingHighlightE;
+	int nShowKingHighlightO;
+	int nShowCapturedChessPiece;
+	int nBufferOrientation;
+	int bVectorPiece;
+	int bVectorSquare;
+	char cBitmapPiece [_MAX_PATH + 10];
+	char cBitmapSquare [_MAX_PATH + 10];
+	int nPieceSet;
+	int bAutoQueen;
+	int nMoveType;
+	int bAutoCenterDragPiece;
+	int bSmartMove;
+	int bSmartMove1;
+	int bSmartMove2;
+	int bTruePremove;
+	int nTruePremove;
+	int bIllegalTPBeep;
+	int bRightMousePlay;
+	int bRightMousePartner;
+	int bTestLegalPlay;
+	int bTestLegalPartner;
+	int bAnimateObserve;
+	int bAnimateExam;
+	int bAnimatePlay;
+	int nAnimateSpeedObserve;
+	int nAnimateSpeedExam;
+	int nAnimateSpeedPlay;
+	int bLongPartner;
+	char cPartnerMove1 [MAX_PARTNER_ASSIST_SIZE + 10];
+	char cPartnerMove2 [MAX_PARTNER_ASSIST_SIZE + 10];
+	char cPartnerMove3 [MAX_PARTNER_ASSIST_SIZE + 10];
+	char cPartnerMove4 [MAX_PARTNER_ASSIST_SIZE + 10];
+	int bShowMoveButton;
+	int bUseArrowKeyMoveButton;
+	int bMouseWheel;
+	int bShowUnderline;
+	int bEnterHighlight;
+	int bTelnetResizeGoBottom;
+	int bSuppressAnnouncement;
+	int bSuppressCompKibitz;
+	int bSuppressCompWhisper;
+	int bSuppressIgnoreFormula;
+	int bSuppressROBOWelcome;
+	int bSuppressCompChTell;
+	int bSuppressCompTell;
+	int bSuppressCompShout;
+	int bMaximizeTelnetUponLogin;
+	int bSound;
+	int bTelnetSound;
+	int bGameSound;
+	int bEarSound;
+	int bFinalCountDown;
+	int bLagCommand;
+	int bExtendedButton;
+	int bSaveOnExit;
 	int bMinimizetoTray;
-	int bShowBitmapSize ;
-	int bShowMenuPath ;
-	int bButtonCommandAddHist ;
-	int bPlayCommandAddHist ;
-	int bObserveCommandAddHist ;
-	int bTelnetTextCommandAddHist ;
-	int bTelnetEditCommandAddHist ;
-	int bLEventCommandAddHist ;
-	int bGEventCommandAddHist ;
-	int bFKeyCommandAddHist ;
-	int bCKeyCommandAddHist ;
-	int bSeekCommandAddHist ;
-	int bMatchCommandAddHist ;
-	int bTellCommandAddHist ;
-	int bMessageCommandAddHist ;
-	int bTimerCommandAddHist ;
-	int bLagCommandAddHist ;
-	int bQuestionCommandAddHist ;
-	int bEarPartner ;
-	int bFICSPlayCloseAll ;
-	int bFICSPlayEndPartner ;
-	int bICCPlayCloseAll ;
-	int bICCPlayEndPartner ;
-	int bNONFICSPlayCloseAll ;
-	int bNONFICSPlayEndPartner ;
-	int bEat12GameNotFoundLine ;
-	int bEatb1GameNotFoundLine ;
-	int bRMNoHLSetTelnetHandle ;
-	int bSuppressExitPrompt ;
-	int bUseXTellForLastTell ;
-	char cNotepad [_MAX_PATH + 10] ;
-	int bMessageMouse ;
-	int bIamAGuest ;
+	int bShowBitmapSize;
+	int bShowMenuPath;
+	int bButtonCommandAddHist;
+	int bPlayCommandAddHist;
+	int bObserveCommandAddHist;
+	int bTelnetTextCommandAddHist;
+	int bTelnetEditCommandAddHist;
+	int bLEventCommandAddHist;
+	int bGEventCommandAddHist;
+	int bFKeyCommandAddHist;
+	int bCKeyCommandAddHist;
+	int bSeekCommandAddHist;
+	int bMatchCommandAddHist;
+	int bTellCommandAddHist;
+	int bMessageCommandAddHist;
+	int bTimerCommandAddHist;
+	int bLagCommandAddHist;
+	int bQuestionCommandAddHist;
+	int bEarPartner;
+	int bFICSPlayCloseAll;
+	int bFICSPlayEndPartner;
+	int bICCPlayCloseAll;
+	int bICCPlayEndPartner;
+	int bNONFICSPlayCloseAll;
+	int bNONFICSPlayEndPartner;
+	int bEat12GameNotFoundLine;
+	int bEatb1GameNotFoundLine;
+	int bRMNoHLSetTelnetHandle;
+	int bSuppressExitPrompt;
+	int bUseXTellForLastTell;
+	char cNotepad [_MAX_PATH + 10];
+	int bMessageMouse;
+	int bIamAGuest;
 	int bColoredClocks;
 }
-USER ;
+USER;
 
 typedef struct
 {
-	char cServer [MAX_SERVER] [MAX_SERVER_SIZE + 10] ;
-	char cPort [MAX_SERVER] [MAX_SERVER_PORT_SIZE + 10] ;
-	char cPrompt [MAX_SERVER] [MAX_SERVER_PROMPT_SIZE + 10] ;
-	int nType [MAX_SERVER] ;
+	char cServer [MAX_SERVER] [MAX_SERVER_SIZE + 10];
+	char cPort [MAX_SERVER] [MAX_SERVER_PORT_SIZE + 10];
+	char cPrompt [MAX_SERVER] [MAX_SERVER_PROMPT_SIZE + 10];
+	int nType [MAX_SERVER];
 }
-SERVER ;
+SERVER;
 
 typedef struct
 {
-	int nLoginString ;
-	char cLoginString [MAX_LOGIN] [MAX_LOGIN_SIZE + 10] ;
-	char cLoginFile [_MAX_PATH + 10] ;
-	char cLoginName [MAX_LOGIN_NAME_SIZE + 10] ;
-	char cLoginAddress [MAX_LOGIN_ADDRESS_SIZE + 10] ;
-	char cLoginPort [MAX_LOGIN_PORT_SIZE + 10] ;
-	char cLoginPrompt [MAX_LOGIN_PROMPT_SIZE + 10] ;
-	int nLoginPrompt ;
-	char cLoginHelper [_MAX_PATH + 10] ;
-	int bLoginHelper ;
-	int nLoginType ;
-	char cLoginHandle [MAX_LOGIN_HANDLE_SIZE + 10] ;
-	char cLoginPassword [MAX_LOGIN_PASSWORD_SIZE + 10] ;
-	char cLoginScript [_MAX_PATH + 10] ;
-	char cServerName [MAX_LOGIN_SERVER_NAME_SIZE + 10] ;
+	int nLoginString;
+	char cLoginString [MAX_LOGIN] [MAX_LOGIN_SIZE + 10];
+	char cLoginFile [_MAX_PATH + 10];
+	char cLoginName [MAX_LOGIN_NAME_SIZE + 10];
+	char cLoginAddress [MAX_LOGIN_ADDRESS_SIZE + 10];
+	char cLoginPort [MAX_LOGIN_PORT_SIZE + 10];
+	char cLoginPrompt [MAX_LOGIN_PROMPT_SIZE + 10];
+	int nLoginPrompt;
+	char cLoginHelper [_MAX_PATH + 10];
+	int bLoginHelper;
+	int nLoginType;
+	char cLoginHandle [MAX_LOGIN_HANDLE_SIZE + 10];
+	char cLoginPassword [MAX_LOGIN_PASSWORD_SIZE + 10];
+	char cLoginScript [_MAX_PATH + 10];
+	char cServerName [MAX_LOGIN_SERVER_NAME_SIZE + 10];
 }
-LOGIN ;
+LOGIN;
 
 typedef struct
 {
-	char cWhoAmI [50] ;
-	char cPartner [50] ;
-	char cOpponent [50] ;
-	char cPartnerOpponent [50] ;
-	char cLastTell [50] ;
-	char cLastKib [50] ;
-	char cLastWhisper [50] ;
-	char cLastSay [50] ;
-	char cTelnetHandle [50] ;
-	char cBoardHandle [50] ;
-	char cUserHandle1 [50] ;
-	char cUserHandle2 [50] ;
-	char cPartnerTell [4096] ;
-	char cPartnerTell1 [50] ;
-	char cPartnerTell2 [50] ;
-	char cFollow [50] ;
-	char cPfollow [50] ;
-	char cFollowGone [255] ;
-	char cFollowGone1 [255] ;
-	char cFollowOn [255] ;
-	int nFollowGone ;
-	int nFollowGone1 ;
-	int nFollowOn ;
-	char cObserve [50] ;
-	char cExam [50] ;
-	int nEditVar ;
+	char cWhoAmI [50];
+	char cPartner [50];
+	char cOpponent [50];
+	char cPartnerOpponent [50];
+	char cLastTell [50];
+	char cLastKib [50];
+	char cLastWhisper [50];
+	char cLastSay [50];
+	char cTelnetHandle [50];
+	char cBoardHandle [50];
+	char cUserHandle1 [50];
+	char cUserHandle2 [50];
+	char cPartnerTell [4096];
+	char cPartnerTell1 [50];
+	char cPartnerTell2 [50];
+	char cFollow [50];
+	char cPfollow [50];
+	char cFollowGone [255];
+	char cFollowGone1 [255];
+	char cFollowOn [255];
+	int nFollowGone;
+	int nFollowGone1;
+	int nFollowOn;
+	char cObserve [50];
+	char cExam [50];
+	int nEditVar;
 }
-VARS ;
+VARS;
 
 typedef struct
 {
-	int nHistoryI ;
-	int nHistoryP ;
-	char cHistoryT [MAX_HISTORY] [EDIT_LINE_SIZE + 10] ;
+	int nHistoryI;
+	int nHistoryP;
+	char cHistoryT [MAX_HISTORY] [EDIT_LINE_SIZE + 10];
 }
-HISTORY ;
+HISTORY;
 
 typedef struct
 {
-	int  nType [MAX_FUNCTION_KEY] ;
-	char cFKey [MAX_FUNCTION_KEY] [MAX_FUNCTION_KEY_SIZE + 10] ;
+	int  nType [MAX_FUNCTION_KEY];
+	char cFKey [MAX_FUNCTION_KEY] [MAX_FUNCTION_KEY_SIZE + 10];
 }
-FKEY ;
+FKEY;
 
 typedef struct
 {
-	char cSitPieceDropMove [MAX_MOVE_STRING_SIZE + 10] ;
+	char cSitPieceDropMove [MAX_MOVE_STRING_SIZE + 10];
 }
-F8KEY ;
+F8KEY;
 
 typedef struct
 {
-	int nLoopTellHandle ;
-	char cLastTellHandle [MAX_TELL_HANDLE] [50] ;
+	int nLoopTellHandle;
+	char cLastTellHandle [MAX_TELL_HANDLE] [50];
 }
-F9KEY ;
+F9KEY;
 
 typedef struct
 {
-	int  nType [MAX_CONTROL_KEY] ;
-	char cFKey [MAX_CONTROL_KEY] [MAX_CONTROL_KEY_SIZE + 10] ;
+	int  nType [MAX_CONTROL_KEY];
+	char cFKey [MAX_CONTROL_KEY] [MAX_CONTROL_KEY_SIZE + 10];
 }
-CONTROLKEY ;
+CONTROLKEY;
 
 typedef struct
 {
-	int bPobserve ;
-	int nPobserve ;
-	char cPobserve [50] ;
+	int bPobserve;
+	int nPobserve;
+	char cPobserve [50];
 }
-FICS ;
+FICS;
 
 typedef struct
 {
-	int bIssuedBugCommand ;
-	int nIssuedBugCommand ;
-	int bStartBugGameList ;
-	int nFirstBugGame ;
-	int nSecondBugGame ;
-	int bSecondBugFlip ;
-	int bFindICCPartner ;
-	char cICCPartner [20] ;
+	int bIssuedBugCommand;
+	int nIssuedBugCommand;
+	int bStartBugGameList;
+	int nFirstBugGame;
+	int nSecondBugGame;
+	int bSecondBugFlip;
+	int bFindICCPartner;
+	char cICCPartner [20];
 }
-ICC ;
+ICC;
 
 typedef struct
 {
-	int nPremoveCount ;
-	int nPremoveHead ;
-	int nPremoveTail ;
-	char cPremoveBuffer [MAX_TRUE_PREMOVE] [32] ;
-	int nPremoveLegalBuffer [MAX_TRUE_PREMOVE] [9] ;
-	int bLastTP ;
-	POINT ptLastTP [2] ;
-	int bIllegalTP ;
-	POINT ptIllegalTP [2] ;
+	int nPremoveCount;
+	int nPremoveHead;
+	int nPremoveTail;
+	char cPremoveBuffer [MAX_TRUE_PREMOVE] [32];
+	int nPremoveLegalBuffer [MAX_TRUE_PREMOVE] [9];
+	int bLastTP;
+	POINT ptLastTP [2];
+	int bIllegalTP;
+	POINT ptIllegalTP [2];
 }
-PREMOVE ;
+PREMOVE;
 
 typedef struct
 {
-	int bMatchMouse ;
-	char cMatchHandle [50] ;
-	int nMatchTime ;
-	int nMatchIncrement ;
-	int bMatchRated ;
-	int nMatchType ;
-	int nICCMatchType ;
-	int nMatchColor ;
+	int bMatchMouse;
+	char cMatchHandle [50];
+	int nMatchTime;
+	int nMatchIncrement;
+	int bMatchRated;
+	int nMatchType;
+	int nICCMatchType;
+	int nMatchColor;
 }
-MATCH ;
+MATCH;
 
 typedef struct
 {
-	int nSeekTime ;
-	int nSeekIncrement ;
-	int nSeekRating1 ;
-	int nSeekRating2 ;
-	int nSeekType ;
-	int nICCSeekType ;
-	int nSeekColor ;
-	int bSeekManual ;
-	int bSeekFormula ;
-	int bSeekRated ;
+	int nSeekTime;
+	int nSeekIncrement;
+	int nSeekRating1;
+	int nSeekRating2;
+	int nSeekType;
+	int nICCSeekType;
+	int nSeekColor;
+	int bSeekManual;
+	int bSeekFormula;
+	int bSeekRated;
 }
-SEEK ;
+SEEK;
 
 #ifdef __MAIN__
-HINSTANCE hInst ;
+HINSTANCE hInst;
 
-WNDPROC WndProcText ;
-WNDPROC WndProcEdit ;
-WNDPROC WndProcButton ;
+WNDPROC WndProcText;
+WNDPROC WndProcEdit;
+WNDPROC WndProcButton;
 
-HMENU hMenu [MAX_MENU] ;
-HWND hwndWindow [MAX_WINDOW] ;
+HMENU hMenu [MAX_MENU];
+HWND hwndWindow [MAX_WINDOW];
 
 HICON hIcon;
 
-COLORREF clrColor [MAX_COLOR] ;
-COLORREF clrRed ;
+COLORREF clrColor [MAX_COLOR];
+COLORREF clrRed;
 
-int bChannel [MAX_CHANNEL_COLOR] ;
-COLORREF clrChannel [MAX_CHANNEL_COLOR] ;
+int bChannel [MAX_CHANNEL_COLOR];
+COLORREF clrChannel [MAX_CHANNEL_COLOR];
 
-HPEN hpPen [MAX_PEN] ;
-HBRUSH hbBrush [MAX_BRUSH] ;
+HPEN hpPen [MAX_PEN];
+HBRUSH hbBrush [MAX_BRUSH];
 
-FONTRECORD hfFont [MAX_FONT] ;
+FONTRECORD hfFont [MAX_FONT];
 
-GAME Game [MAX_GAME + 1] ;
-BOARDCFG BoardCfg ;
-CSET CSet ;
+GAME Game [MAX_GAME + 1];
+BOARDCFG BoardCfg;
+CSET CSet;
 
-MOVES Moves ;
-MOVES TempMoves ;
+MOVES Moves;
+MOVES TempMoves;
 
-BUGHOUSE Bughouse [MAX_GAME] ;
+BUGHOUSE Bughouse [MAX_GAME];
 
-WCOORD wCoord [MAX_COORD] ;
-WCOORD wPartner ;
-WCOORD wLayout [MAX_LAYOUT] [MAX_COORD] ;
+WCOORD wCoord [MAX_COORD];
+WCOORD wPartner;
+WCOORD wLayout [MAX_LAYOUT] [MAX_COORD];
 
-HWND hwndButton [MAX_BUTTON] ;
-BUTTONS Buttons ;
+HWND hwndButton [MAX_BUTTON];
+BUTTONS Buttons;
 
-SOUNDS Sounds ;
-EARS Ears ;
-GAMESOUNDS GameSounds ;
-TIMESOUNDS TimeSounds ;
-LOGINEVENT LEvent ;
-GAMEEVENT GEvent ;
-RIGHTMOUSE RightMouse [MAX_RM] ;
-LEFTMOUSEDROP LeftMouseDrop ;
-RIGHTMOUSEDROP RightMouseDrop ;
+SOUNDS Sounds;
+EARS Ears;
+GAMESOUNDS GameSounds;
+TIMESOUNDS TimeSounds;
+LOGINEVENT LEvent;
+GAMEEVENT GEvent;
+RIGHTMOUSE RightMouse [MAX_RM];
+LEFTMOUSEDROP LeftMouseDrop;
+RIGHTMOUSEDROP RightMouseDrop;
 
-TFDRAGINFO DragInfo ;
-TFANIMATEINFO AnimateInfo ;
+TFDRAGINFO DragInfo;
+TFANIMATEINFO AnimateInfo;
 
-BROWSE Browse ;
+BROWSE Browse;
 
-TELNET Telnet ;
-TIMESEAL Timeseal ;
-TIMERCMD TimerCmd ;
-LAGCMD LagCmd ;
+TELNET Telnet;
+TIMESEAL Timeseal;
+TIMERCMD TimerCmd;
+LAGCMD LagCmd;
 
-REDCLOCK RedClock ;
-CENSOR Censor [MAX_CENSOR] ;
-SYSTEM System ;
-LOG Log ;
-USER User ;
+REDCLOCK RedClock;
+CENSOR Censor [MAX_CENSOR];
+SYSTEM System;
+LOG Log;
+USER User;
 
 SILENCE Silence;
 
-SERVER Server ;
-LOGIN Login ;
-VARS Vars ;
-HISTORY History ;
+SERVER Server;
+LOGIN Login;
+VARS Vars;
+HISTORY History;
 
-FKEY FKey ;
-F8KEY F8Key ;
-F9KEY F9Key ;
-CONTROLKEY ControlKey ;
+FKEY FKey;
+F8KEY F8Key;
+F9KEY F9Key;
+CONTROLKEY ControlKey;
 
-FICS Fics ;
-ICC Icc ;
+FICS Fics;
+ICC Icc;
 
-PREMOVE Premove ;
+PREMOVE Premove;
 
-MATCH Match ;
-SEEK Seek ;
+MATCH Match;
+SEEK Seek;
 
 int ColorBoard [8] [8] = { {
 		INDEX_BLACK, INDEX_WHITE, INDEX_BLACK, INDEX_WHITE,
@@ -2057,21 +2057,21 @@ int ColorBoard [8] [8] = { {
 		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK,
 		INDEX_WHITE, INDEX_BLACK, INDEX_WHITE, INDEX_BLACK
 	}
-} ;
-int ReverseCoord [8] = { 7, 6, 5, 4, 3, 2, 1 } ;
+};
+int ReverseCoord [8] = { 7, 6, 5, 4, 3, 2, 1 };
 char ICSPiece [MAX_PIECE] = { ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
 							  ICS_BLACK_PAWN, ICS_BLACK_ROOK, ICS_BLACK_KNIGHT, ICS_BLACK_BISHOP, ICS_BLACK_QUEEN,
 							  ICS_WHITE_KING, ICS_BLACK_KING
-							} ;
+							};
 char ICSWPiece [MAX_PIECE] = { ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
 							   ICS_WHITE_PAWN, ICS_WHITE_ROOK, ICS_WHITE_KNIGHT, ICS_WHITE_BISHOP, ICS_WHITE_QUEEN,
 							   ICS_WHITE_KING, ICS_WHITE_KING
-							 } ;
+							 };
 
-int ChessPiece        [MAX_BUFFER] = { 8, 2, 2, 2, 1, 8, 2, 2, 2, 1 } ;
-int ReverseChessPiece [MAX_BUFFER] = { 5, 6, 7, 8, 9, 0, 1, 2, 3, 4 } ;
+int ChessPiece        [MAX_BUFFER] = { 8, 2, 2, 2, 1, 8, 2, 2, 2, 1 };
+int ReverseChessPiece [MAX_BUFFER] = { 5, 6, 7, 8, 9, 0, 1, 2, 3, 4 };
 
-int AnimateSpeed [MAX_ANIMATE_SPEED] = {  5, 10, 15, 20, 25, 30, 35, 40, 45, 50 } ;
+int AnimateSpeed [MAX_ANIMATE_SPEED] = {  5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
 
 UINT FMenu [MAX_FMENU] = { IDM_NONE,
 						   IDM_TITLE,
@@ -2182,7 +2182,7 @@ UINT FMenu [MAX_FMENU] = { IDM_NONE,
 						   IDM_SET_AUTO_KNIGHT_ON,
 						   IDM_SET_AUTO_KNIGHT_OFF,
 						   IDM_TEXT_TELL
-						 } ;
+						 };
 
 char FString [MAX_FMENU] [99] = { "None",
 								  "--- Telnet Commands ---",
@@ -2293,9 +2293,9 @@ char FString [MAX_FMENU] [99] = { "None",
 								  "Set Auto Knight Promotion On",
 								  "Set Auto Knight Promotion Off",
 								  "Main Telnet Console: Tell Handle"
-								} ;
+								};
 
-int FCheck [MAX_FMENU] ;
+int FCheck [MAX_FMENU];
 
 char TelnetUnderLine [MAX_UNDERLINE_STRING] [32] = { "play ",
 													 "tell ",
@@ -2320,11 +2320,11 @@ char TelnetUnderLine [MAX_UNDERLINE_STRING] [32] = { "play ",
 													 "observe ",
 													 "examine ",
 													 "mam "
-												   } ;
-int TelnetUnderSize [MAX_UNDERLINE_STRING] ;
+												   };
+int TelnetUnderSize [MAX_UNDERLINE_STRING];
 
-char TelnetBracket [MAX_BRACKET_STRING] [32] = { "next" } ;
-int TelnetBracketSize [MAX_BRACKET_STRING] ;
+char TelnetBracket [MAX_BRACKET_STRING] [32] = { "next" };
+int TelnetBracketSize [MAX_BRACKET_STRING];
 
 char MamerString [MAX_MAMER_STRING] [99] = { ":-",
 											 ":-: Inactive;",
@@ -2522,120 +2522,120 @@ char MamerString [MAX_MAMER_STRING] [99] = { ":-",
 											 ":You will receive a bye in the next round of tourney #",
 											 ":You withdrew from tourney #",
 											 ":Your "
-										   } ;
-int MamerStringSize [MAX_MAMER_STRING] ;
+										   };
+int MamerStringSize [MAX_MAMER_STRING];
 
-int nGNotifyHandle ;
-char cGNotifyHandle [MAX_GNOTIFY_HANDLE] [ICS_HANDLE_LENGTH] ;
+int nGNotifyHandle;
+char cGNotifyHandle [MAX_GNOTIFY_HANDLE] [ICS_HANDLE_LENGTH];
 
-int ChessValue [13] = {1, 5, 3, 3, 9, 1, 5, 3, 3, 9, 0, 0, 0} ;
-int BugValue   [13] = {1, 2, 2, 2, 4, 1, 2, 2, 2, 4, 0, 0, 0} ;
+int ChessValue [13] = {1, 5, 3, 3, 9, 1, 5, 3, 3, 9, 0, 0, 0};
+int BugValue   [13] = {1, 2, 2, 2, 4, 1, 2, 2, 2, 4, 0, 0, 0};
 
 #else
 
-extern HINSTANCE hInst ;
+extern HINSTANCE hInst;
 
-extern WNDPROC WndProcText ;
-extern WNDPROC WndProcEdit ;
-extern WNDPROC WndProcButton ;
+extern WNDPROC WndProcText;
+extern WNDPROC WndProcEdit;
+extern WNDPROC WndProcButton;
 
-extern HMENU hMenu [MAX_MENU] ;
-extern HWND hwndWindow [MAX_WINDOW] ;
+extern HMENU hMenu [MAX_MENU];
+extern HWND hwndWindow [MAX_WINDOW];
 
 extern HICON hIcon;
 
-extern COLORREF clrColor [MAX_COLOR] ;
-extern COLORREF clrRed ;
+extern COLORREF clrColor [MAX_COLOR];
+extern COLORREF clrRed;
 
-extern int bChannel [MAX_CHANNEL_COLOR] ;
-extern COLORREF clrChannel [MAX_CHANNEL_COLOR] ;
+extern int bChannel [MAX_CHANNEL_COLOR];
+extern COLORREF clrChannel [MAX_CHANNEL_COLOR];
 
-extern HPEN hpPen [MAX_PEN] ;
-extern HBRUSH hbBrush [MAX_BRUSH] ;
+extern HPEN hpPen [MAX_PEN];
+extern HBRUSH hbBrush [MAX_BRUSH];
 
-extern FONTRECORD hfFont [MAX_FONT] ;
+extern FONTRECORD hfFont [MAX_FONT];
 
-extern GAME Game [MAX_GAME + 1] ;
-extern BOARDCFG BoardCfg ;
-extern CSET CSet ;
+extern GAME Game [MAX_GAME + 1];
+extern BOARDCFG BoardCfg;
+extern CSET CSet;
 
-extern MOVES Moves ;
-extern MOVES TempMoves ;
+extern MOVES Moves;
+extern MOVES TempMoves;
 
-extern BUGHOUSE Bughouse [MAX_GAME] ;
+extern BUGHOUSE Bughouse [MAX_GAME];
 
-extern WCOORD wCoord [MAX_COORD] ;
-extern WCOORD wPartner ;
-extern WCOORD wLayout [MAX_LAYOUT] [MAX_COORD] ;
+extern WCOORD wCoord [MAX_COORD];
+extern WCOORD wPartner;
+extern WCOORD wLayout [MAX_LAYOUT] [MAX_COORD];
 
-extern HWND hwndButton [MAX_BUTTON] ;
-extern BUTTONS Buttons ;
+extern HWND hwndButton [MAX_BUTTON];
+extern BUTTONS Buttons;
 
-extern SOUNDS Sounds ;
-extern EARS Ears ;
-extern GAMESOUNDS GameSounds ;
-extern TIMESOUNDS TimeSounds ;
-extern LOGINEVENT LEvent ;
-extern GAMEEVENT GEvent ;
-extern RIGHTMOUSE RightMouse [MAX_RM] ;
-extern LEFTMOUSEDROP LeftMouseDrop ;
-extern RIGHTMOUSEDROP RightMouseDrop ;
+extern SOUNDS Sounds;
+extern EARS Ears;
+extern GAMESOUNDS GameSounds;
+extern TIMESOUNDS TimeSounds;
+extern LOGINEVENT LEvent;
+extern GAMEEVENT GEvent;
+extern RIGHTMOUSE RightMouse [MAX_RM];
+extern LEFTMOUSEDROP LeftMouseDrop;
+extern RIGHTMOUSEDROP RightMouseDrop;
 
-extern TFDRAGINFO DragInfo ;
-extern TFANIMATEINFO AnimateInfo ;
+extern TFDRAGINFO DragInfo;
+extern TFANIMATEINFO AnimateInfo;
 
-extern BROWSE Browse ;
+extern BROWSE Browse;
 
-extern TELNET Telnet ;
-extern TIMESEAL Timeseal ;
-extern TIMERCMD TimerCmd ;
-extern LAGCMD LagCmd ;
+extern TELNET Telnet;
+extern TIMESEAL Timeseal;
+extern TIMERCMD TimerCmd;
+extern LAGCMD LagCmd;
 
-extern REDCLOCK RedClock ;
-extern CENSOR Censor [MAX_CENSOR] ;
-extern SYSTEM System ;
-extern LOG Log ;
-extern USER User ;
-extern SILENCE Silence ;
+extern REDCLOCK RedClock;
+extern CENSOR Censor [MAX_CENSOR];
+extern SYSTEM System;
+extern LOG Log;
+extern USER User;
+extern SILENCE Silence;
 
-extern SERVER Server ;
-extern LOGIN Login ;
-extern VARS Vars ;
-extern HISTORY History ;
+extern SERVER Server;
+extern LOGIN Login;
+extern VARS Vars;
+extern HISTORY History;
 
-extern FKEY FKey ;
-extern F8KEY F8Key ;
-extern F9KEY F9Key ;
-extern CONTROLKEY ControlKey ;
+extern FKEY FKey;
+extern F8KEY F8Key;
+extern F9KEY F9Key;
+extern CONTROLKEY ControlKey;
 
-extern FICS Fics ;
-extern ICC Icc ;
+extern FICS Fics;
+extern ICC Icc;
 
-extern PREMOVE Premove ;
+extern PREMOVE Premove;
 
-extern MATCH Match ;
-extern SEEK Seek ;
+extern MATCH Match;
+extern SEEK Seek;
 
-extern int ColorBoard [8] [8] ;
-extern int ReverseCoord [8] ;
-extern char ICSPiece [MAX_PIECE] ;
-extern char ICSWPiece [MAX_PIECE] ;
-extern int ChessPiece [MAX_BUFFER] ;
-extern int ReverseChessPiece [MAX_BUFFER] ;
-extern int AnimateSpeed [MAX_ANIMATE_SPEED] ;
+extern int ColorBoard [8] [8];
+extern int ReverseCoord [8];
+extern char ICSPiece [MAX_PIECE];
+extern char ICSWPiece [MAX_PIECE];
+extern int ChessPiece [MAX_BUFFER];
+extern int ReverseChessPiece [MAX_BUFFER];
+extern int AnimateSpeed [MAX_ANIMATE_SPEED];
 
-extern UINT FMenu [MAX_FMENU] ;
-extern char FString [MAX_FMENU] [99] ;
-extern int FCheck [MAX_FMENU] ;
-extern char TelnetUnderLine [MAX_UNDERLINE_STRING] [32] ;
-extern int TelnetUnderSize [MAX_UNDERLINE_STRING] ;
-extern char TelnetBracket [MAX_BRACKET_STRING] [32] ;
-extern int TelnetBracketSize [MAX_BRACKET_STRING] ;
-extern char MamerString [MAX_MAMER_STRING] [99] ;
-extern int MamerStringSize [MAX_MAMER_STRING] ;
-extern int nGNotifyHandle ;
-extern char cGNotifyHandle [MAX_GNOTIFY_HANDLE] [ICS_HANDLE_LENGTH] ;
+extern UINT FMenu [MAX_FMENU];
+extern char FString [MAX_FMENU] [99];
+extern int FCheck [MAX_FMENU];
+extern char TelnetUnderLine [MAX_UNDERLINE_STRING] [32];
+extern int TelnetUnderSize [MAX_UNDERLINE_STRING];
+extern char TelnetBracket [MAX_BRACKET_STRING] [32];
+extern int TelnetBracketSize [MAX_BRACKET_STRING];
+extern char MamerString [MAX_MAMER_STRING] [99];
+extern int MamerStringSize [MAX_MAMER_STRING];
+extern int nGNotifyHandle;
+extern char cGNotifyHandle [MAX_GNOTIFY_HANDLE] [ICS_HANDLE_LENGTH];
 
-extern int ChessValue [13] ;
-extern int BugValue   [13] ;
+extern int ChessValue [13];
+extern int BugValue   [13];
 #endif

@@ -2,58 +2,58 @@
 
 void HISTORY_Init(void)
 {
-	int nI ;
+	int nI;
 
-	History.nHistoryI = 0 ;
-	History.nHistoryP = 0 ;
+	History.nHistoryI = 0;
+	History.nHistoryP = 0;
 
 	for(nI = 0 ; nI < MAX_HISTORY ; nI++)
 	{
-		strcpy(History.cHistoryT [nI], "") ;
+		strcpy(History.cHistoryT [nI], "");
 	}
 }
 
 void HISTORY_Previous(void)
 {
-	int nP ;
-	CHARRANGE TSel ;
+	int nP;
+	CHARRANGE TSel;
 
-	nP = (History.nHistoryP - 1 + MAX_HISTORY) % MAX_HISTORY ;
+	nP = (History.nHistoryP - 1 + MAX_HISTORY) % MAX_HISTORY;
 	if(nP == History.nHistoryI || strlen(History.cHistoryT [nP]) == 0)
 	{
-		SetFocus(hwndWindow [HWND_TELNET_EDIT]) ;
-		return ;
+		SetFocus(hwndWindow [HWND_TELNET_EDIT]);
+		return;
 	}
 
-	History.nHistoryP = nP ;
+	History.nHistoryP = nP;
 
-	SetWindowText(hwndWindow [HWND_TELNET_EDIT], History.cHistoryT [History.nHistoryP]) ;
+	SetWindowText(hwndWindow [HWND_TELNET_EDIT], History.cHistoryT [History.nHistoryP]);
 
-	TSel.cpMin = 999999 ;
-	TSel.cpMax = 999999 ;
-	SendMessage(hwndWindow [HWND_TELNET_EDIT], EM_EXSETSEL, 0, (LPARAM) &TSel) ;
-	SetFocus(hwndWindow [HWND_TELNET_EDIT]) ;
+	TSel.cpMin = 999999;
+	TSel.cpMax = 999999;
+	SendMessage(hwndWindow [HWND_TELNET_EDIT], EM_EXSETSEL, 0, (LPARAM) &TSel);
+	SetFocus(hwndWindow [HWND_TELNET_EDIT]);
 }
 
 void HISTORY_Next(void)
 {
-	CHARRANGE  TSel ;
+	CHARRANGE  TSel;
 
 	if(History.nHistoryP == History.nHistoryI)
 	{
-		SetWindowText(hwndWindow [HWND_TELNET_EDIT], "") ;
+		SetWindowText(hwndWindow [HWND_TELNET_EDIT], "");
 	}
 	else
 	{
-		History.nHistoryP = (History.nHistoryP + 1) % MAX_HISTORY ;
+		History.nHistoryP = (History.nHistoryP + 1) % MAX_HISTORY;
 
-		SetWindowText(hwndWindow [HWND_TELNET_EDIT], History.cHistoryT [History.nHistoryP]) ;
+		SetWindowText(hwndWindow [HWND_TELNET_EDIT], History.cHistoryT [History.nHistoryP]);
 
-		TSel.cpMin = 999999 ;
-		TSel.cpMax = 999999 ;
-		SendMessage(hwndWindow [HWND_TELNET_EDIT], EM_EXSETSEL, 0, (LPARAM) &TSel) ;
+		TSel.cpMin = 999999;
+		TSel.cpMax = 999999;
+		SendMessage(hwndWindow [HWND_TELNET_EDIT], EM_EXSETSEL, 0, (LPARAM) &TSel);
 	}
-	SetFocus(hwndWindow [HWND_TELNET_EDIT]) ;
+	SetFocus(hwndWindow [HWND_TELNET_EDIT]);
 }
 
 void HISTORY_Add(char *s)
@@ -62,16 +62,16 @@ void HISTORY_Add(char *s)
 	{
 		if(User.bEnterHighlight)
 		{
-			History.nHistoryI = (History.nHistoryI + 1) % MAX_HISTORY ;
+			History.nHistoryI = (History.nHistoryI + 1) % MAX_HISTORY;
 
-			strcpy(History.cHistoryT [History.nHistoryI], s) ;
+			strcpy(History.cHistoryT [History.nHistoryI], s);
 		}
 		else
 		{
-			strcpy(History.cHistoryT [History.nHistoryI], s) ;
+			strcpy(History.cHistoryT [History.nHistoryI], s);
 
-			History.nHistoryI = (History.nHistoryI + 1) % MAX_HISTORY ;
+			History.nHistoryI = (History.nHistoryI + 1) % MAX_HISTORY;
 		}
-		History.nHistoryP = History.nHistoryI ;
+		History.nHistoryP = History.nHistoryI;
 	}
 }

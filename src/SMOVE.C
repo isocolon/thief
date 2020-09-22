@@ -6,8 +6,8 @@ void SMARTMOVE_Adjust(void)
 	{
 		if((! User.bSmartMove1) && (! User.bSmartMove2))
 		{
-			User.bSmartMove1 = 1 ;
-			User.bSmartMove2 = 1 ;
+			User.bSmartMove1 = 1;
+			User.bSmartMove2 = 1;
 		}
 	}
 }
