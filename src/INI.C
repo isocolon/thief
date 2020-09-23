@@ -2369,85 +2369,85 @@ void INI_WriteSetup(char *cIni)
 
 	// add button command into history?
 	fprintf(Fv, "\n[Hidden]\n");
-	fprintf(Fv, "Add button command into history=%d\n", User.bButtonCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add button command into history=%d\n", User.bButtonCommandAddHist ? 1 : 0);
 
 	// add play command into history?
-	fprintf(Fv, "Add play command into history=%d\n", User.bPlayCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add play command into history=%d\n", User.bPlayCommandAddHist ? 1 : 0);
 
 	// add observe command into history?
-	fprintf(Fv, "Add observe command into history=%d\n", User.bObserveCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add observe command into history=%d\n", User.bObserveCommandAddHist ? 1 : 0);
 
 	// add telnet text command into history?
-	fprintf(Fv, "Add telnet text command into history=%d\n", User.bTelnetTextCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add telnet text command into history=%d\n", User.bTelnetTextCommandAddHist ? 1 : 0);
 
 	// add telnet edit command into history?
-	fprintf(Fv, "Add telnet edit command into history=%d\n", User.bTelnetEditCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add telnet edit command into history=%d\n", User.bTelnetEditCommandAddHist ? 1 : 0);
 
 	// add login event command into history?
-	fprintf(Fv, "Add login event command into history=%d\n", User.bLEventCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add login event command into history=%d\n", User.bLEventCommandAddHist ? 1 : 0);
 
 	// add game event command into history?
-	fprintf(Fv, "Add game event command into history=%d\n", User.bGEventCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add game event command into history=%d\n", User.bGEventCommandAddHist ? 1 : 0);
 
 	// add function key command into history?
-	fprintf(Fv, "Add function key command into history=%d\n", User.bFKeyCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add function key command into history=%d\n", User.bFKeyCommandAddHist ? 1 : 0);
 
 	// add control key command into history?
-	fprintf(Fv, "Add control key command into history=%d\n", User.bCKeyCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add control key command into history=%d\n", User.bCKeyCommandAddHist ? 1 : 0);
 
 	// add seek command into history?
-	fprintf(Fv, "Add seek command into history=%d\n", User.bSeekCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add seek command into history=%d\n", User.bSeekCommandAddHist ? 1 : 0);
 
 	// add match command into history?
-	fprintf(Fv, "Add match command into history=%d\n", User.bMatchCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add match command into history=%d\n", User.bMatchCommandAddHist ? 1 : 0);
 
 	// add tell command into history?
-	fprintf(Fv, "Add tell command into history=%d\n", User.bTellCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add tell command into history=%d\n", User.bTellCommandAddHist ? 1 : 0);
 
 	// add message command into history?
-	fprintf(Fv, "Add message command into history=%d\n", User.bMessageCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add message command into history=%d\n", User.bMessageCommandAddHist ? 1 : 0);
 
 	// add timer command into history?
-	fprintf(Fv, "Add timer command into history=%d\n", User.bTimerCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add timer command into history=%d\n", User.bTimerCommandAddHist ? 1 : 0);
 
 	// add lag command into history?
-	fprintf(Fv, "Add lag command into history=%d\n", User.bLagCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add lag command into history=%d\n", User.bLagCommandAddHist ? 1 : 0);
 
 	// add question command into history?
-	fprintf(Fv, "Add question command into history=%d\n", User.bQuestionCommandAddHist ? 1 : 0, Ini);
+	fprintf(Fv, "Add question command into history=%d\n", User.bQuestionCommandAddHist ? 1 : 0);
 
 	// apply only to partner's tell (partner sound)?
-	fprintf(Fv, "Apply only to partner's tell=%d\n", User.bEarPartner ? 1 : 0, Ini);
+	fprintf(Fv, "Apply only to partner's tell=%d\n", User.bEarPartner ? 1 : 0);
 
 	// FICS start playing close all game
-	fprintf(Fv, "FICS start playing close all games=%d\n", User.bFICSPlayCloseAll ? 1 : 0, Ini);
+	fprintf(Fv, "FICS start playing close all games=%d\n", User.bFICSPlayCloseAll ? 1 : 0);
 
 	// FICS play end stop partner game
-	fprintf(Fv, "FICS play end stop partner game=%d\n", User.bFICSPlayEndPartner ? 1 : 0, Ini);
+	fprintf(Fv, "FICS play end stop partner game=%d\n", User.bFICSPlayEndPartner ? 1 : 0);
 
 	// ICC start playing close all game
-	fprintf(Fv, "ICC start playing close all games=%d\n", User.bICCPlayCloseAll ? 1 : 0, Ini);
+	fprintf(Fv, "ICC start playing close all games=%d\n", User.bICCPlayCloseAll ? 1 : 0);
 
 	// ICC play end stop partner game
-	fprintf(Fv, "ICC play end stop partner game=%d\n", User.bICCPlayEndPartner ? 1 : 0, Ini);
+	fprintf(Fv, "ICC play end stop partner game=%d\n", User.bICCPlayEndPartner ? 1 : 0);
 
 	// NONFICS start playing close all game
-	fprintf(Fv, "NONFICS start playing close all games=%d\n", User.bNONFICSPlayCloseAll ? 1 : 0, Ini);
+	fprintf(Fv, "NONFICS start playing close all games=%d\n", User.bNONFICSPlayCloseAll ? 1 : 0);
 
 	// NONFICS play end stop partner game
-	fprintf(Fv, "NONFICS play end stop partner game=%d\n", User.bNONFICSPlayEndPartner ? 1 : 0, Ini);
+	fprintf(Fv, "NONFICS play end stop partner game=%d\n", User.bNONFICSPlayEndPartner ? 1 : 0);
 
 	// eat <12> game not found line
-	fprintf(Fv, "Eat <12> game not found line=%d\n", User.bEat12GameNotFoundLine ? 1 : 0, Ini);
+	fprintf(Fv, "Eat <12> game not found line=%d\n", User.bEat12GameNotFoundLine ? 1 : 0);
 
 	// eat <b1> game not found line
-	fprintf(Fv, "Eat <b1> game not found line=%d\n", User.bEatb1GameNotFoundLine ? 1 : 0, Ini);
+	fprintf(Fv, "Eat <b1> game not found line=%d\n", User.bEatb1GameNotFoundLine ? 1 : 0);
 
 	// use right mouse click no highlight set telnet handle
-	fprintf(Fv, "Use right mouse click no highlight set telnet handle=%d\n", User.bRMNoHLSetTelnetHandle ? 1 : 0, Ini);
+	fprintf(Fv, "Use right mouse click no highlight set telnet handle=%d\n", User.bRMNoHLSetTelnetHandle ? 1 : 0);
 
 	// use xtell for last tell
-	fprintf(Fv, "Use xtell for last tell=%d\n", User.bUseXTellForLastTell ? 1 : 0, Ini);
+	fprintf(Fv, "Use xtell for last tell=%d\n", User.bUseXTellForLastTell ? 1 : 0);
 
 	// notepad executable file
 	if(strlen(User.cNotepad) == 0)
@@ -2474,7 +2474,7 @@ void INI_WriteSetup(char *cIni)
 	fprintf(Fv, "Move type=%d\n", User.nMoveType);
 
 	// Auto center drag piece
-	fprintf(Fv, "Auto center drag piece=%d\n", User.bAutoCenterDragPiece ? 1 : 0, Ini);
+	fprintf(Fv, "Auto center drag piece=%d\n", User.bAutoCenterDragPiece ? 1 : 0);
 
 	// smart move?
 	fprintf(Fv, "Smart move=%d\n", User.bSmartMove ? 1 : 0);
@@ -2537,10 +2537,10 @@ void INI_WriteSetup(char *cIni)
 	fprintf(Fv, "Partner assist opponent sit for piece move prefix=%s\n", User.cPartnerMove4);
 
 	// show move buttons
-	fprintf(Fv, "Show move buttons=%d\n", User.bShowMoveButton ? 1 : 0, Ini);
+	fprintf(Fv, "Show move buttons=%d\n", User.bShowMoveButton ? 1 : 0);
 
 	// use arrow keys for move buttons
-	fprintf(Fv, "User arrow keys for move buttons=%d\n", User.bUseArrowKeyMoveButton ? 1 : 0, Ini);
+	fprintf(Fv, "User arrow keys for move buttons=%d\n", User.bUseArrowKeyMoveButton ? 1 : 0);
 
 	// show actual board size?
 	fprintf(Fv, "Show actual board size=%d\n", User.bActualSize ? 1 : 0);
@@ -2588,10 +2588,10 @@ void INI_WriteSetup(char *cIni)
 	fprintf(Fv, "Show game type=%d\n", User.bShowGameType ? 1 : 0);
 
 	// show game type on window title bar
-	fprintf(Fv, "Show game type on window title bar=%d\n", User.bShowGameTypeOnTitleBar ? 1 : 0, Ini);
+	fprintf(Fv, "Show game type on window title bar=%d\n", User.bShowGameTypeOnTitleBar ? 1 : 0);
 
 	// show piece value on window title bar
-	fprintf(Fv, "Show piece value on window title bar=%d\n", User.bShowValueOnTitleBar ? 1 : 0, Ini);
+	fprintf(Fv, "Show piece value on window title bar=%d\n", User.bShowValueOnTitleBar ? 1 : 0);
 
 	// show last move?
 	fprintf(Fv, "Show last move=%d\n", User.bShowLastMove ? 1 : 0);
@@ -2848,37 +2848,37 @@ void INI_WriteSetup(char *cIni)
 	fprintf(Fv, "Enter key highlights input text=%d\n", User.bEnterHighlight ? 1 : 0);
 
 	// go bottom after telnet resize
-	fprintf(Fv, "Go bottom after telnet resize=%d\n", User.bTelnetResizeGoBottom ? 1 : 0, Ini);
+	fprintf(Fv, "Go bottom after telnet resize=%d\n", User.bTelnetResizeGoBottom ? 1 : 0);
 
 	// suppress announcement
-	fprintf(Fv, "Suppress announcement=%d\n", User.bSuppressAnnouncement ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress announcement=%d\n", User.bSuppressAnnouncement ? 1 : 0);
 
 	// suppress computer kibitz
-	fprintf(Fv, "Suppress computer kibitz=%d\n", User.bSuppressCompKibitz ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress computer kibitz=%d\n", User.bSuppressCompKibitz ? 1 : 0);
 
 	// suppress computer whisper
-	fprintf(Fv, "Suppress computer whisper=%d\n", User.bSuppressCompWhisper ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress computer whisper=%d\n", User.bSuppressCompWhisper ? 1 : 0);
 
 	// suppress ignore formula
-	fprintf(Fv, "Suppress ignore formula=%d\n", User.bSuppressIgnoreFormula ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress ignore formula=%d\n", User.bSuppressIgnoreFormula ? 1 : 0);
 
 	// suppress ROBO welcome message
-	fprintf(Fv, "Suppress ROBO welcome message=%d\n", User.bSuppressROBOWelcome ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress ROBO welcome message=%d\n", User.bSuppressROBOWelcome ? 1 : 0);
 
 	// suppress computer channel tell
-	fprintf(Fv, "Suppress computer channel tell=%d\n", User.bSuppressCompChTell ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress computer channel tell=%d\n", User.bSuppressCompChTell ? 1 : 0);
 
 	// suppress computer tell
-	fprintf(Fv, "Suppress computer tell=%d\n", User.bSuppressCompTell ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress computer tell=%d\n", User.bSuppressCompTell ? 1 : 0);
 
 	// suppress computer shout
-	fprintf(Fv, "Suppress computer shout=%d\n", User.bSuppressCompShout ? 1 : 0, Ini);
+	fprintf(Fv, "Suppress computer shout=%d\n", User.bSuppressCompShout ? 1 : 0);
 
 	// Console Time Stamp
-	fprintf(Fv, "Console Time Stamp=%d\n", User.bTimeStampTelnet ? 1 : 0, Ini);
+	fprintf(Fv, "Console Time Stamp=%d\n", User.bTimeStampTelnet ? 1 : 0);
 
 	// Log Time Stamp
-	fprintf(Fv, "Log Time Stamp=%d\n", User.bTimeStampLog ? 1 : 0, Ini);
+	fprintf(Fv, "Log Time Stamp=%d\n", User.bTimeStampLog ? 1 : 0);
 
 	// telnet font
 	TOOLBOX_WriteINIFont(Fv, FONT_TELNET, "Telnet font");
@@ -2964,7 +2964,7 @@ void INI_WriteSetup(char *cIni)
 
 	// apply extended button?
 	fprintf(Fv, "\n[Button]\n");
-	fprintf(Fv, "Apply extended button=%d\n", User.bExtendedButton ? 1 : 0, Ini);
+	fprintf(Fv, "Apply extended button=%d\n", User.bExtendedButton ? 1 : 0);
 
 	// button font
 	TOOLBOX_WriteINIFont(Fv, FONT_BUTTON, "Button font");
