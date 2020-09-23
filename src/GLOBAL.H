@@ -1503,11 +1503,11 @@ typedef struct
 	int nError;
 	int bLoadOK;
 }
-INPUT;
+INPUT_T;
 
 typedef struct
 {
-	INPUT TSInput;
+	INPUT_T TSInput;
 	SOCKET skSocket;
 	char cSocketBuffer [MAX_SOCKET_BUFFER_SIZE + 10];
 	char cSocketLine [MAX_SOCKET_BUFFER_SIZE + 10];
