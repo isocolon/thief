@@ -561,8 +561,8 @@ void FICS_ProcessLine(char *cS)
 						{
 							if(Game [INDEX_PLAY].nGameNumber > 0 && Game [INDEX_PLAY].bPlaying)
 							{
-								if((stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
-										(stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
+								if((_stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
+										(_stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
 								{
 									if(! GAMESOUND_PartnerBoard(cS))
 									{
@@ -576,8 +576,8 @@ void FICS_ProcessLine(char *cS)
 							}
 							else
 							{
-								if((stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
-										(stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
+								if((_stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
+										(_stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
 								{
 									if(! GAMESOUND_PartnerBoard(cS))
 									{
@@ -623,8 +623,8 @@ void FICS_ProcessLine(char *cS)
 											{
 												if(Game [nI].bPlaying)
 												{
-													if((stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
-															(stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
+													if((_stricmp(Game [nI].cHandle [INDEX_WHITE], Vars.cPartner) == 0) ||
+															(_stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cPartner) == 0))
 													{
 														Game [nI].bFirstGame   = 0;
 														Game [nI].bPlaying     = 0;
@@ -738,7 +738,7 @@ void FICS_ProcessLine(char *cS)
 		}
 		cWHandle [ICS_HANDLE_LENGTH] = NULL_CHAR;
 
-		if(stricmp(cBHandle, "partner's") == 0)
+		if(_stricmp(cBHandle, "partner's") == 0)
 		{
 
 			// pfollow
@@ -992,10 +992,10 @@ void FICS_ProcessLine(char *cS)
 
 				sscanf(cS, "%s %s %s %s %s", &cWHandle, &cWRating, &cTmp, &cBHandle, &cBRating);
 
-				if(stricmp(cTmp, "vs.") == 0)
+				if(_stricmp(cTmp, "vs.") == 0)
 				{
-					if((stricmp(Game [nI].cHandle [INDEX_WHITE], cWHandle) == 0) &&
-							(stricmp(Game [nI].cHandle [INDEX_BLACK], cBHandle) == 0))
+					if((_stricmp(Game [nI].cHandle [INDEX_WHITE], cWHandle) == 0) &&
+							(_stricmp(Game [nI].cHandle [INDEX_BLACK], cBHandle) == 0))
 					{
 						strcpy(Game [nI].cRating [INDEX_WHITE], cWRating);
 						strcpy(Game [nI].cRating [INDEX_BLACK], cBRating);
@@ -1007,12 +1007,12 @@ void FICS_ProcessLine(char *cS)
 				}
 				else
 				{
-					if(stricmp(cWHandle, "Rated") == 0)
+					if(_stricmp(cWHandle, "Rated") == 0)
 					{
 						Game [nI].nRated = 1;
 						bFound           = 1;
 					}
-					else if(stricmp(cWHandle, "Unrated") == 0)
+					else if(_stricmp(cWHandle, "Unrated") == 0)
 					{
 						Game [nI].nRated = 0;
 						bFound           = 1;
@@ -1026,7 +1026,7 @@ void FICS_ProcessLine(char *cS)
 					{
 						strcpy(Game [nI].cOrgGameType, cWRating);
 
-						if(stricmp(cWRating, "bughouse") == 0)
+						if(_stricmp(cWRating, "bughouse") == 0)
 						{
 							strcpy(Game [nI].cGameType, "bug");
 							Game [nI].nGameType  = GAMETYPE_BUGHOUSE;
@@ -1035,94 +1035,94 @@ void FICS_ProcessLine(char *cS)
 						}
 						else
 						{
-							if(stricmp(cWRating, "crazyhouse") == 0)
+							if(_stricmp(cWRating, "crazyhouse") == 0)
 							{
 								strcpy(Game [nI].cGameType, "zh");
 								Game [nI].nGameType  = GAMETYPE_CRAZYHOUSE;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "suicide") == 0)
+							else if(_stricmp(cWRating, "suicide") == 0)
 							{
 								strcpy(Game [nI].cGameType, cWRating);
 								Game [nI].nGameType  = GAMETYPE_SUICIDE;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "lightning") == 0)
+							else if(_stricmp(cWRating, "lightning") == 0)
 							{
 								strcpy(Game [nI].cGameType, cWRating);
 								Game [nI].nGameType  = GAMETYPE_FICS_LIGHTNING;
 								Game [nI].bChessGame = 1;
 								BOARD_ResetPromoteBoard(nI);
 							}
-							else if(stricmp(cWRating, "blitz") == 0)
+							else if(_stricmp(cWRating, "blitz") == 0)
 							{
 								strcpy(Game [nI].cGameType, cWRating);
 								Game [nI].nGameType  = GAMETYPE_FICS_BLITZ;
 								Game [nI].bChessGame = 1;
 								BOARD_ResetPromoteBoard(nI);
 							}
-							else if(stricmp(cWRating, "standard") == 0)
+							else if(_stricmp(cWRating, "standard") == 0)
 							{
 								strcpy(Game [nI].cGameType, cWRating);
 								Game [nI].nGameType  = GAMETYPE_FICS_STANDARD;
 								Game [nI].bChessGame = 1;
 								BOARD_ResetPromoteBoard(nI);
 							}
-							else if(stricmp(cWRating, "wild/0") == 0)
+							else if(_stricmp(cWRating, "wild/0") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w0");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD0;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/1") == 0)
+							else if(_stricmp(cWRating, "wild/1") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w1");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD1;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/2") == 0)
+							else if(_stricmp(cWRating, "wild/2") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w2");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD2;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/3") == 0)
+							else if(_stricmp(cWRating, "wild/3") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w3");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD3;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/4") == 0)
+							else if(_stricmp(cWRating, "wild/4") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w4");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD4;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/5") == 0)
+							else if(_stricmp(cWRating, "wild/5") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w5");
 								Game [nI].nGameType  = GAMETYPE_WILD5;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/8") == 0)
+							else if(_stricmp(cWRating, "wild/8") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w8");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD8;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/8a") == 0)
+							else if(_stricmp(cWRating, "wild/8a") == 0)
 							{
 								strcpy(Game [nI].cGameType, "w8a");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILD8A;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "wild/fr") == 0)
+							else if(_stricmp(cWRating, "wild/fr") == 0)
 							{
 								strcpy(Game [nI].cGameType, "wfr");
 								Game [nI].nGameType  = GAMETYPE_FICS_WILDFR;
 								Game [nI].bChessGame = 0;
 							}
-							else if(stricmp(cWRating, "atomic") == 0)
+							else if(_stricmp(cWRating, "atomic") == 0)
 							{
 								strcpy(Game [nI].cGameType, cWRating);
 								Game [nI].nGameType  = GAMETYPE_FICS_ATOMIC;
@@ -1436,7 +1436,7 @@ int FICS_ParseBoard(char *cS)
 
 	// playing game
 	if(nRl == -1 ||     // -1 i am playing, it is my opponent's move
-			nRl ==  1)      //  1 i am playing and it is my move
+	   nRl ==  1)      //  1 i am playing and it is my move
 	{
 		System.bIsMyTurn = (nRl == 1);
 
@@ -1470,108 +1470,108 @@ int FICS_ParseBoard(char *cS)
 
 			sscanf(Telnet.cLastGameInfo + 5, "%d p=%d t=%s", &nG, &nGarbage, &cGame);
 
-			if(stricmp(cGame, "bughouse") == 0)
+			if(_stricmp(cGame, "bughouse") == 0)
 			{
 				bB = 1;
 				bC = 0;
 				bT = GAMETYPE_BUGHOUSE;
 				strcpy(cGame, "bug");
 			}
-			else if(stricmp(cGame, "crazyhouse") == 0)
+			else if(_stricmp(cGame, "crazyhouse") == 0)
 			{
 				bB = 0;
 				bC = 1;
 				bT = GAMETYPE_CRAZYHOUSE;
 				strcpy(cGame, "zh");
 			}
-			else if(stricmp(cGame, "suicide") == 0)
+			else if(_stricmp(cGame, "suicide") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_SUICIDE;
 			}
-			else if(stricmp(cGame, "lightning") == 0)
+			else if(_stricmp(cGame, "lightning") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_LIGHTNING;
 			}
-			else if(stricmp(cGame, "blitz") == 0)
+			else if(_stricmp(cGame, "blitz") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_BLITZ;
 			}
-			else if(stricmp(cGame, "standard") == 0)
+			else if(_stricmp(cGame, "standard") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_STANDARD;
 			}
-			else if(stricmp(cGame, "wild/0") == 0)
+			else if(_stricmp(cGame, "wild/0") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD0;
 				strcpy(cGame, "w0");
 			}
-			else if(stricmp(cGame, "wild/1") == 0)
+			else if(_stricmp(cGame, "wild/1") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD1;
 				strcpy(cGame, "w1");
 			}
-			else if(stricmp(cGame, "wild/2") == 0)
+			else if(_stricmp(cGame, "wild/2") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD2;
 				strcpy(cGame, "w2");
 			}
-			else if(stricmp(cGame, "wild/3") == 0)
+			else if(_stricmp(cGame, "wild/3") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD3;
 				strcpy(cGame, "w3");
 			}
-			else if(stricmp(cGame, "wild/4") == 0)
+			else if(_stricmp(cGame, "wild/4") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD4;
 				strcpy(cGame, "w4");
 			}
-			else if(stricmp(cGame, "wild/5") == 0)
+			else if(_stricmp(cGame, "wild/5") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_WILD5;
 				strcpy(cGame, "w5");
 			}
-			else if(stricmp(cGame, "wild/8") == 0)
+			else if(_stricmp(cGame, "wild/8") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD8;
 				strcpy(cGame, "w8");
 			}
-			else if(stricmp(cGame, "wild/8a") == 0)
+			else if(_stricmp(cGame, "wild/8a") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD8A;
 				strcpy(cGame, "w8a");
 			}
-			else if(stricmp(cGame, "wild/fr") == 0)
+			else if(_stricmp(cGame, "wild/fr") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILDFR;
 				strcpy(cGame, "wfr");
 			}
-			else if(stricmp(cGame, "atomic") == 0)
+			else if(_stricmp(cGame, "atomic") == 0)
 			{
 				bB = 0;
 				bC = 0;
@@ -1596,7 +1596,7 @@ int FICS_ParseBoard(char *cS)
 					switch(User.nPlayWild5Flip)
 					{
 						case DEFAULT_WILD5_PLAY_TOP :
-							if(stricmp(cwName, Vars.cWhoAmI) == 0)
+							if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 							{
 								Game [INDEX_PLAY].bIPlayWhite = 1;
 								Game [INDEX_PLAY].bFlip       = 0;
@@ -1609,7 +1609,7 @@ int FICS_ParseBoard(char *cS)
 							break;
 
 						case DEFAULT_WILD5_PLAY_BOTTOM :
-							if(stricmp(cwName, Vars.cWhoAmI) == 0)
+							if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 							{
 								Game [INDEX_PLAY].bIPlayWhite = 1;
 								Game [INDEX_PLAY].bFlip       = 1;
@@ -1622,7 +1622,7 @@ int FICS_ParseBoard(char *cS)
 							break;
 
 						case DEFAULT_WILD5_PLAY_BBOTTOM :
-							if(stricmp(cwName, Vars.cWhoAmI) == 0)
+							if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 							{
 								Game [INDEX_PLAY].bIPlayWhite = 1;
 							}
@@ -1634,7 +1634,7 @@ int FICS_ParseBoard(char *cS)
 							break;
 
 						case DEFAULT_WILD5_PLAY_WBOTTOM :
-							if(stricmp(cwName, Vars.cWhoAmI) == 0)
+							if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 							{
 								Game [INDEX_PLAY].bIPlayWhite = 1;
 							}
@@ -1646,7 +1646,7 @@ int FICS_ParseBoard(char *cS)
 							break;
 
 						default :
-							if(stricmp(cwName, Vars.cWhoAmI) == 0)
+							if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 							{
 								Game [INDEX_PLAY].bIPlayWhite = 1;
 								Game [INDEX_PLAY].bFlip       = 0;
@@ -1696,7 +1696,7 @@ int FICS_ParseBoard(char *cS)
 				}
 				else
 				{
-					if(stricmp(cwName, Vars.cWhoAmI) == 0)
+					if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 					{
 						Game [INDEX_PLAY].bIPlayWhite = 1;
 						Game [INDEX_PLAY].bFlip       = 0;
@@ -1788,7 +1788,7 @@ int FICS_ParseBoard(char *cS)
 			}
 			else
 			{
-				if(stricmp(cwName, Vars.cWhoAmI) == 0)
+				if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 				{
 					Game [INDEX_PLAY].bIPlayWhite = 1;
 					Game [INDEX_PLAY].bFlip       = 0;
@@ -1807,7 +1807,7 @@ int FICS_ParseBoard(char *cS)
 				switch(User.nPlayWild5Flip)
 				{
 					case DEFAULT_WILD5_PLAY_TOP :
-						if(stricmp(cwName, Vars.cWhoAmI) == 0)
+						if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 						{
 							Game [INDEX_PLAY].bIPlayWhite = 1;
 							Game [INDEX_PLAY].bFlip       = 0;
@@ -1820,7 +1820,7 @@ int FICS_ParseBoard(char *cS)
 						break;
 
 					case DEFAULT_WILD5_PLAY_BOTTOM :
-						if(stricmp(cwName, Vars.cWhoAmI) == 0)
+						if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 						{
 							Game [INDEX_PLAY].bIPlayWhite = 1;
 							Game [INDEX_PLAY].bFlip       = 1;
@@ -1833,7 +1833,7 @@ int FICS_ParseBoard(char *cS)
 						break;
 
 					case DEFAULT_WILD5_PLAY_BBOTTOM :
-						if(stricmp(cwName, Vars.cWhoAmI) == 0)
+						if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 						{
 							Game [INDEX_PLAY].bIPlayWhite = 1;
 						}
@@ -1845,7 +1845,7 @@ int FICS_ParseBoard(char *cS)
 						break;
 
 					case DEFAULT_WILD5_PLAY_WBOTTOM :
-						if(stricmp(cwName, Vars.cWhoAmI) == 0)
+						if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 						{
 							Game [INDEX_PLAY].bIPlayWhite = 1;
 						}
@@ -1857,7 +1857,7 @@ int FICS_ParseBoard(char *cS)
 						break;
 
 					default :
-						if(stricmp(cwName, Vars.cWhoAmI) == 0)
+						if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 						{
 							Game [INDEX_PLAY].bIPlayWhite = 1;
 							Game [INDEX_PLAY].bFlip       = 0;
@@ -1872,7 +1872,7 @@ int FICS_ParseBoard(char *cS)
 			}
 			else
 			{
-				if(stricmp(cwName, Vars.cWhoAmI) == 0)
+				if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 				{
 					Game [INDEX_PLAY].bIPlayWhite = 1;
 					Game [INDEX_PLAY].bFlip       = 0;
@@ -1891,7 +1891,7 @@ int FICS_ParseBoard(char *cS)
 		Game [INDEX_PLAY].bWhitesMove  = (cTurn == 'W');
 		Game [INDEX_PLAY].bPlaying     = 1;
 		Game [INDEX_PLAY].nAbortStatus = 0;
-		Game [INDEX_PLAY].bInitialMove = (stricmp(cLastMove, ICS_INITIAL_MOVE_NAME) == 0);
+		Game [INDEX_PLAY].bInitialMove = (_stricmp(cLastMove, ICS_INITIAL_MOVE_NAME) == 0);
 		Game [INDEX_PLAY].nMoveNumber  = nMn;
 
 		strcpy(Game [INDEX_PLAY].cHandle [INDEX_WHITE], cwName);
@@ -2056,7 +2056,7 @@ int FICS_ParseBoard(char *cS)
 			{
 				if(strlen(Vars.cPfollow) > 0)
 				{
-					if(stricmp(Vars.cWhoAmI, Vars.cPfollow) != 0)
+					if(_stricmp(Vars.cWhoAmI, Vars.cPfollow) != 0)
 					{
 						TOOLBOX_WriteICS(FICS_PFOLLOW_COMMAND);
 						TOOLBOX_WriteICS(Vars.cWhoAmI);
@@ -2065,7 +2065,7 @@ int FICS_ParseBoard(char *cS)
 				}
 				else if(strlen(Vars.cFollow) > 0)
 				{
-					if(stricmp(Vars.cPartner, Vars.cFollow) != 0)
+					if(_stricmp(Vars.cPartner, Vars.cFollow) != 0)
 					{
 						TOOLBOX_WriteICS(FICS_PFOLLOW_COMMAND);
 						TOOLBOX_WriteICS(Vars.cWhoAmI);
@@ -2083,7 +2083,7 @@ int FICS_ParseBoard(char *cS)
 			{
 				if(strlen(Vars.cPfollow) > 0)
 				{
-					if(stricmp(Vars.cWhoAmI, Vars.cPfollow) != 0)
+					if(_stricmp(Vars.cWhoAmI, Vars.cPfollow) != 0)
 					{
 						TOOLBOX_WriteICS(FICS_NO_FOLLOW_COMMAND);
 					}
@@ -2536,8 +2536,8 @@ int FICS_ParseBoard(char *cS)
 		Game [INDEX_PLAY].bWhitesMove     = (cTurn == 'W');
 		Game [INDEX_PLAY].bLastWhitesMove = Game [INDEX_PLAY].bWhitesMove;
 		Game [INDEX_PLAY].bPlaying        = 0;
-		Game [INDEX_PLAY].bIPlayWhite     = (stricmp(cwName, Vars.cWhoAmI) == 0);
-		Game [INDEX_PLAY].bInitialMove    = (stricmp(cLastMove, ICS_INITIAL_MOVE_NAME) == 0);
+		Game [INDEX_PLAY].bIPlayWhite     = (_stricmp(cwName, Vars.cWhoAmI) == 0);
+		Game [INDEX_PLAY].bInitialMove    = (_stricmp(cLastMove, ICS_INITIAL_MOVE_NAME) == 0);
 		Game [INDEX_PLAY].nMoveNumber     = nMn;
 
 		strcpy(Game [INDEX_PLAY].cHandle [INDEX_WHITE], cwName);
@@ -2969,8 +2969,8 @@ int FICS_ParseBoard(char *cS)
 			if(nTmp <= 3)
 			{
 				if((System.nUnobGameNumber              == nN) &&
-						(stricmp(System.cUnobWname, cwName) == 0) &&
-						(stricmp(System.cUnobBname, cbName) == 0))
+						(_stricmp(System.cUnobWname, cwName) == 0) &&
+						(_stricmp(System.cUnobBname, cbName) == 0))
 				{
 					if(strlen(Vars.cObserve) == 0)
 					{
@@ -3039,108 +3039,108 @@ int FICS_ParseBoard(char *cS)
 
 			sscanf(Telnet.cLastGameInfo + 5, "%d p=%d t=%s", &nG, &nGarbage, &cGame);
 
-			if(stricmp(cGame, "bughouse") == 0)
+			if(_stricmp(cGame, "bughouse") == 0)
 			{
 				bB = 1;
 				bC = 0;
 				bT = GAMETYPE_BUGHOUSE;
 				strcpy(cGame, "bug");
 			}
-			else if(stricmp(cGame, "crazyhouse") == 0)
+			else if(_stricmp(cGame, "crazyhouse") == 0)
 			{
 				bB = 0;
 				bC = 1;
 				bT = GAMETYPE_CRAZYHOUSE;
 				strcpy(cGame, "zh");
 			}
-			else if(stricmp(cGame, "suicide") == 0)
+			else if(_stricmp(cGame, "suicide") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_SUICIDE;
 			}
-			else if(stricmp(cGame, "lightning") == 0)
+			else if(_stricmp(cGame, "lightning") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_LIGHTNING;
 			}
-			else if(stricmp(cGame, "blitz") == 0)
+			else if(_stricmp(cGame, "blitz") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_BLITZ;
 			}
-			else if(stricmp(cGame, "standard") == 0)
+			else if(_stricmp(cGame, "standard") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_STANDARD;
 			}
-			else if(stricmp(cGame, "wild/0") == 0)
+			else if(_stricmp(cGame, "wild/0") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD0;
 				strcpy(cGame, "w0");
 			}
-			else if(stricmp(cGame, "wild/1") == 0)
+			else if(_stricmp(cGame, "wild/1") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD1;
 				strcpy(cGame, "w1");
 			}
-			else if(stricmp(cGame, "wild/2") == 0)
+			else if(_stricmp(cGame, "wild/2") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD2;
 				strcpy(cGame, "w2");
 			}
-			else if(stricmp(cGame, "wild/3") == 0)
+			else if(_stricmp(cGame, "wild/3") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD3;
 				strcpy(cGame, "w3");
 			}
-			else if(stricmp(cGame, "wild/4") == 0)
+			else if(_stricmp(cGame, "wild/4") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD4;
 				strcpy(cGame, "w4");
 			}
-			else if(stricmp(cGame, "wild/5") == 0)
+			else if(_stricmp(cGame, "wild/5") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_WILD5;
 				strcpy(cGame, "w5");
 			}
-			else if(stricmp(cGame, "wild/8") == 0)
+			else if(_stricmp(cGame, "wild/8") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD8;
 				strcpy(cGame, "w8");
 			}
-			else if(stricmp(cGame, "wild/8a") == 0)
+			else if(_stricmp(cGame, "wild/8a") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILD8A;
 				strcpy(cGame, "w8a");
 			}
-			else if(stricmp(cGame, "wild/fr") == 0)
+			else if(_stricmp(cGame, "wild/fr") == 0)
 			{
 				bB = 0;
 				bC = 0;
 				bT = GAMETYPE_FICS_WILDFR;
 				strcpy(cGame, "wfr");
 			}
-			else if(stricmp(cGame, "atomic") == 0)
+			else if(_stricmp(cGame, "atomic") == 0)
 			{
 				bB = 0;
 				bC = 0;
@@ -3169,7 +3169,7 @@ int FICS_ParseBoard(char *cS)
 
 					bOrgFlip = Game [nI].bFlip;
 
-					bNotPartner = (stricmp(Vars.cPartner, cwName) != 0 && stricmp(Vars.cPartner, cbName) != 0);
+					bNotPartner = (_stricmp(Vars.cPartner, cwName) != 0 && _stricmp(Vars.cPartner, cbName) != 0);
 
 					if(nN == nG)
 					{
@@ -3185,7 +3185,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cPfollow) > 0)
 										{
-											if(stricmp(cbName, Vars.cPfollow) == 0)
+											if(_stricmp(cbName, Vars.cPfollow) == 0)
 											{
 												Game [nI].bFlip = 1;
 											}
@@ -3193,7 +3193,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cFollow) > 0)
 										{
-											if(stricmp(cbName, Vars.cFollow) == 0)
+											if(_stricmp(cbName, Vars.cFollow) == 0)
 											{
 												Game [nI].bFlip = 1;
 											}
@@ -3214,7 +3214,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cPfollow) > 0)
 										{
-											if(stricmp(cbName, Vars.cPfollow) == 0)
+											if(_stricmp(cbName, Vars.cPfollow) == 0)
 											{
 												Game [nI].bFlip = 0;
 											}
@@ -3222,7 +3222,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cFollow) > 0)
 										{
-											if(stricmp(cbName, Vars.cFollow) == 0)
+											if(_stricmp(cbName, Vars.cFollow) == 0)
 											{
 												Game [nI].bFlip = 0;
 											}
@@ -3261,7 +3261,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cPfollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cPfollow) == 0)
+										if(_stricmp(cbName, Vars.cPfollow) == 0)
 										{
 											Game [nI].bFlip = 1;
 										}
@@ -3269,7 +3269,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cFollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cFollow) == 0)
+										if(_stricmp(cbName, Vars.cFollow) == 0)
 										{
 											Game [nI].bFlip = 1;
 										}
@@ -3304,7 +3304,7 @@ int FICS_ParseBoard(char *cS)
 
 							if(strlen(Vars.cPfollow) > 0)
 							{
-								if(stricmp(cbName, Vars.cPfollow) == 0)
+								if(_stricmp(cbName, Vars.cPfollow) == 0)
 								{
 									Game [nI].bFlip = 1;
 								}
@@ -3312,7 +3312,7 @@ int FICS_ParseBoard(char *cS)
 
 							if(strlen(Vars.cFollow) > 0)
 							{
-								if(stricmp(cbName, Vars.cFollow) == 0)
+								if(_stricmp(cbName, Vars.cFollow) == 0)
 								{
 									Game [nI].bFlip = 1;
 								}
@@ -3635,7 +3635,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cPfollow) > 0)
 										{
-											if(stricmp(cwName, Vars.cPfollow) == 0)
+											if(_stricmp(cwName, Vars.cPfollow) == 0)
 											{
 												if(Game [nI].bFlip)
 												{
@@ -3646,7 +3646,7 @@ int FICS_ParseBoard(char *cS)
 
 										if(strlen(Vars.cFollow) > 0)
 										{
-											if(stricmp(cwName, Vars.cFollow) == 0)
+											if(_stricmp(cwName, Vars.cFollow) == 0)
 											{
 												if(Game [nI].bFlip)
 												{
@@ -3665,7 +3665,7 @@ int FICS_ParseBoard(char *cS)
 													{
 														if(strlen(Vars.cPfollow) > 0)
 														{
-															if(stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cPfollow) == 0)
+															if(_stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cPfollow) == 0)
 															{
 																if(! Game [nJ].bFlip)
 																{
@@ -3676,7 +3676,7 @@ int FICS_ParseBoard(char *cS)
 
 														if(strlen(Vars.cFollow) > 0)
 														{
-															if(stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
+															if(_stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
 															{
 																if(! Game [nJ].bFlip)
 																{
@@ -3749,7 +3749,7 @@ int FICS_ParseBoard(char *cS)
 						}
 					}
 
-					if(stricmp(Vars.cPartner, cwName) == 0)
+					if(_stricmp(Vars.cPartner, cwName) == 0)
 					{
 						if(IsWindow(Game [nI].hwnd))
 						{
@@ -3792,7 +3792,7 @@ int FICS_ParseBoard(char *cS)
 
 						STATE_ObserveNewGame(nI, 1);
 					}
-					else if(stricmp(Vars.cPartner, cbName) == 0)
+					else if(_stricmp(Vars.cPartner, cbName) == 0)
 					{
 						if(IsWindow(Game [nI].hwnd))
 						{
@@ -3855,7 +3855,7 @@ int FICS_ParseBoard(char *cS)
 				Game [nI].nGamePartner = 0;
 				Game [nI].nRelation    = nRl;
 
-				bNotPartner = (stricmp(Vars.cPartner, cwName) != 0 && stricmp(Vars.cPartner, cbName) != 0);
+				bNotPartner = (_stricmp(Vars.cPartner, cwName) != 0 && _stricmp(Vars.cPartner, cbName) != 0);
 
 				if(nN == nG)
 				{
@@ -3871,7 +3871,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cPfollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cPfollow) == 0)
+										if(_stricmp(cbName, Vars.cPfollow) == 0)
 										{
 											Game [nI].bFlip = 1;
 										}
@@ -3879,7 +3879,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cFollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cFollow) == 0)
+										if(_stricmp(cbName, Vars.cFollow) == 0)
 										{
 											Game [nI].bFlip = 1;
 										}
@@ -3900,7 +3900,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cPfollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cPfollow) == 0)
+										if(_stricmp(cbName, Vars.cPfollow) == 0)
 										{
 											Game [nI].bFlip = 0;
 										}
@@ -3908,7 +3908,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cFollow) > 0)
 									{
-										if(stricmp(cbName, Vars.cFollow) == 0)
+										if(_stricmp(cbName, Vars.cFollow) == 0)
 										{
 											Game [nI].bFlip = 0;
 										}
@@ -3947,7 +3947,7 @@ int FICS_ParseBoard(char *cS)
 
 								if(strlen(Vars.cPfollow) > 0)
 								{
-									if(stricmp(cbName, Vars.cPfollow) == 0)
+									if(_stricmp(cbName, Vars.cPfollow) == 0)
 									{
 										Game [nI].bFlip = 1;
 									}
@@ -3955,7 +3955,7 @@ int FICS_ParseBoard(char *cS)
 
 								if(strlen(Vars.cFollow) > 0)
 								{
-									if(stricmp(cbName, Vars.cFollow) == 0)
+									if(_stricmp(cbName, Vars.cFollow) == 0)
 									{
 										Game [nI].bFlip = 1;
 									}
@@ -3990,7 +3990,7 @@ int FICS_ParseBoard(char *cS)
 
 						if(strlen(Vars.cPfollow) > 0)
 						{
-							if(stricmp(cbName, Vars.cPfollow) == 0)
+							if(_stricmp(cbName, Vars.cPfollow) == 0)
 							{
 								Game [nI].bFlip = 1;
 							}
@@ -3998,7 +3998,7 @@ int FICS_ParseBoard(char *cS)
 
 						if(strlen(Vars.cFollow) > 0)
 						{
-							if(stricmp(cbName, Vars.cFollow) == 0)
+							if(_stricmp(cbName, Vars.cFollow) == 0)
 							{
 								Game [nI].bFlip = 1;
 							}
@@ -4163,7 +4163,7 @@ int FICS_ParseBoard(char *cS)
 				{
 					if(bB)
 					{
-						if(stricmp(Vars.cPartner, cwName) == 0)
+						if(_stricmp(Vars.cPartner, cwName) == 0)
 						{
 							bPartner = 1;
 
@@ -4218,7 +4218,7 @@ int FICS_ParseBoard(char *cS)
 								}
 							}
 						}
-						else if(stricmp(Vars.cPartner, cbName) == 0)
+						else if(_stricmp(Vars.cPartner, cbName) == 0)
 						{
 							bPartner = 1;
 
@@ -4407,7 +4407,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cPfollow) > 0)
 									{
-										if(stricmp(cwName, Vars.cPfollow) == 0)
+										if(_stricmp(cwName, Vars.cPfollow) == 0)
 										{
 											if(Game [nI].bFlip)
 											{
@@ -4418,7 +4418,7 @@ int FICS_ParseBoard(char *cS)
 
 									if(strlen(Vars.cFollow) > 0)
 									{
-										if(stricmp(cwName, Vars.cFollow) == 0)
+										if(_stricmp(cwName, Vars.cFollow) == 0)
 										{
 											if(Game [nI].bFlip)
 											{
@@ -4437,7 +4437,7 @@ int FICS_ParseBoard(char *cS)
 												{
 													if(strlen(Vars.cPfollow) > 0)
 													{
-														if(stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cPfollow) == 0)
+														if(_stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cPfollow) == 0)
 														{
 															if(! Game [nJ].bFlip)
 															{
@@ -4448,7 +4448,7 @@ int FICS_ParseBoard(char *cS)
 
 													if(strlen(Vars.cFollow) > 0)
 													{
-														if(stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
+														if(_stricmp(Game [nJ].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
 														{
 															if(! Game [nJ].bFlip)
 															{
@@ -5248,7 +5248,7 @@ int FICS_ColorIndex(char *cS)
 
 			sscanf(cS, "%s %s %s %s", &cTmp, &cWhite, &cTmp, &cBlack);
 
-			if(stricmp(cWhite, Vars.cWhoAmI) == 0)
+			if(_stricmp(cWhite, Vars.cWhoAmI) == 0)
 			{
 				if(CENSOR_Other(7, cBlack))
 				{
@@ -5399,12 +5399,12 @@ int FICS_ColorIndex(char *cS)
 			//Game notification: VABORIS (2422) vs. venomous (2401) rated crazyhouse 1 0: Game 4
 			sscanf(cS, "%s %s %s %s %s %s", &cTmp, &cTmp, &cTmp1, &cTmp, &cTmp, &cTmp2);
 
-			if((stricmp(cTmp1, Vars.cPartner) == 0) ||
-					(stricmp(cTmp1, Vars.cFollow) == 0) ||
-					(stricmp(cTmp1, Vars.cPfollow) == 0) ||
-					(stricmp(cTmp2, Vars.cPartner) == 0) ||
-					(stricmp(cTmp2, Vars.cFollow) == 0) ||
-					(stricmp(cTmp2, Vars.cPfollow) == 0))
+			if((_stricmp(cTmp1, Vars.cPartner) == 0) ||
+					(_stricmp(cTmp1, Vars.cFollow) == 0) ||
+					(_stricmp(cTmp1, Vars.cPfollow) == 0) ||
+					(_stricmp(cTmp2, Vars.cPartner) == 0) ||
+					(_stricmp(cTmp2, Vars.cFollow) == 0) ||
+					(_stricmp(cTmp2, Vars.cPfollow) == 0))
 			{
 
 				// do nothing
@@ -5422,10 +5422,10 @@ int FICS_ColorIndex(char *cS)
 						{
 							if(Game [nI].bPlaying)
 							{
-								if((stricmp(Game [nI].cHandle [INDEX_WHITE], cTmp1) == 0) ||
-										(stricmp(Game [nI].cHandle [INDEX_BLACK], cTmp1) == 0) ||
-										(stricmp(Game [nI].cHandle [INDEX_WHITE], cTmp2) == 0) ||
-										(stricmp(Game [nI].cHandle [INDEX_BLACK], cTmp2) == 0))
+								if((_stricmp(Game [nI].cHandle [INDEX_WHITE], cTmp1) == 0) ||
+										(_stricmp(Game [nI].cHandle [INDEX_BLACK], cTmp1) == 0) ||
+										(_stricmp(Game [nI].cHandle [INDEX_WHITE], cTmp2) == 0) ||
+										(_stricmp(Game [nI].cHandle [INDEX_BLACK], cTmp2) == 0))
 								{
 									nJ = 1;
 									break;
@@ -5575,7 +5575,7 @@ int FICS_ColorIndex(char *cS)
 			TOOLBOX_WriteICS(Vars.cWhoAmI);
 			TOOLBOX_WriteICS("\n");
 		}
-		else if(stricmp(Vars.cPfollow, Vars.cWhoAmI) != 0)
+		else if(_stricmp(Vars.cPfollow, Vars.cWhoAmI) != 0)
 		{
 			TOOLBOX_WriteICS(FICS_PFOLLOW_COMMAND);
 			TOOLBOX_WriteICS(Vars.cWhoAmI);
@@ -5625,7 +5625,7 @@ int FICS_ColorIndex(char *cS)
 			TOOLBOX_WriteICS(Vars.cWhoAmI);
 			TOOLBOX_WriteICS("\n");
 		}
-		else if(stricmp(Vars.cPfollow, Vars.cWhoAmI) != 0)
+		else if(_stricmp(Vars.cPfollow, Vars.cWhoAmI) != 0)
 		{
 			TOOLBOX_WriteICS(FICS_PFOLLOW_COMMAND);
 			TOOLBOX_WriteICS(Vars.cWhoAmI);
@@ -5797,7 +5797,7 @@ int FICS_ColorIndex(char *cS)
 
 								if(strlen(Vars.cFollow) > 0)
 								{
-									if(stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
+									if(_stricmp(Game [nI].cHandle [INDEX_BLACK], Vars.cFollow) == 0)
 									{
 										if(! Game [nI].bFlip)
 										{
