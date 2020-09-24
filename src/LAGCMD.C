@@ -219,5 +219,6 @@ void LAGCMD_Adjust(void)
 	{
 		LagCmd.nLagThreshold = 300;
 	}
-	LagCmd.nLagLThreshold = LagCmd.nLagThreshold * 1000;
+
+	LagCmd.nLagLThreshold *= 1000;
 }
