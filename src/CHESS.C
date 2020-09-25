@@ -1023,7 +1023,7 @@ void CHESS_GenWhitePawn(int nG, int nX, int nY)
 		{
 			// promotion
 			if((Game [nG].nGameType == GAMETYPE_SUICIDE) ||
-					(Game [nG].nGameType == GAMETYPE_GIVEAWAY))
+			   (Game [nG].nGameType == GAMETYPE_GIVEAWAY))
 			{
 				if(System.bPromoteCommand && User.bAutoQueen && (nG == INDEX_PLAY))
 				{
@@ -1101,7 +1101,7 @@ void CHESS_GenWhitePawn(int nG, int nX, int nY)
 			{
 				// promotion capture
 				if((Game [nG].nGameType == GAMETYPE_SUICIDE) ||
-						(Game [nG].nGameType == GAMETYPE_GIVEAWAY))
+				   (Game [nG].nGameType == GAMETYPE_GIVEAWAY))
 				{
 					if(System.bPromoteCommand && User.bAutoQueen && (nG == INDEX_PLAY))
 					{
@@ -4718,7 +4718,7 @@ int CHESS_IsLegalMove(int nG, int nPc, int nX, int nY, int nX1, int nY1, int nPo
 			}
 
 			if((nPc == WHITE_PAWN) || (nPc == WHITE_ROOK) || (nPc == WHITE_KNIGHT) ||
-					(nPc == WHITE_BISHOP) || (nPc == WHITE_QUEEN) || (nPc == WHITE_KING))
+			   (nPc == WHITE_BISHOP) || (nPc == WHITE_QUEEN) || (nPc == WHITE_KING))
 			{
 				nC = INDEX_WHITE;
 			}
@@ -5363,7 +5363,7 @@ int CHESS_GenKingLegalSquare(int nG, int nC)
 						for(nJ = 0 ; nJ < 8 ; nJ++)
 						{
 							if((Game [nG].ptLastKing [nC] [nJ].x == nA) &&
-									(Game [nG].ptLastKing [nC] [nJ].y == nB))
+							   (Game [nG].ptLastKing [nC] [nJ].y == nB))
 							{
 								Game [nG].ptLastKing [nC] [nJ].x = -1;
 								Game [nG].ptLastKing [nC] [nJ].y = -1;
@@ -5435,8 +5435,8 @@ void CHESS_AtomicCapture(int nG, int nSX, int nSY)
 		if(nX >= 0 && nX <= 7 && nY >= 0 && nY <= 7)
 		{
 			if((Game [nG].nBoard [nX] [nY] == EMPTY_SQUARE) ||
-					(Game [nG].nBoard [nX] [nY] == WHITE_PAWN) ||
-					(Game [nG].nBoard [nX] [nY] == BLACK_PAWN))
+			   (Game [nG].nBoard [nX] [nY] == WHITE_PAWN) ||
+			   (Game [nG].nBoard [nX] [nY] == BLACK_PAWN))
 			{
 			}
 			else
