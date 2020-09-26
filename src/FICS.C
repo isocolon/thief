@@ -995,7 +995,7 @@ void FICS_ProcessLine(char *cS)
 				if(_stricmp(cTmp, "vs.") == 0)
 				{
 					if((_stricmp(Game [nI].cHandle [INDEX_WHITE], cWHandle) == 0) &&
-							(_stricmp(Game [nI].cHandle [INDEX_BLACK], cBHandle) == 0))
+					   (_stricmp(Game [nI].cHandle [INDEX_BLACK], cBHandle) == 0))
 					{
 						strcpy(Game [nI].cRating [INDEX_WHITE], cWRating);
 						strcpy(Game [nI].cRating [INDEX_BLACK], cBRating);
@@ -1419,7 +1419,7 @@ int FICS_ParseBoard(char *cS)
 	long nWc, nBc, nLag;
 
 	sscanf(cS + 77,
-		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %d %d %d %d %d %s %s %s %d %d %ld",
+		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %s %s %d %d %d %s %s %s %d %d %ld",
 		   &cTurn,
 		   &nLP, &bWCK, &bWCQ, &bBCK, &bBCQ,
 		   &nHalf, &nN,
