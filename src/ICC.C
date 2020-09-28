@@ -2003,7 +2003,7 @@ int ICC_ParseBoard(char *cS)
 	long nTmpW, nTmpB, nLagThisMove [2], nTimeRemainder [2];
 
 	sscanf(cS + 77,
-		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %d %d %d %d %d %s %s %s",
+		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %s %s %d %d %d %s %s %s",
 		   &cTurn,
 		   &nLP, &bWCK, &bWCQ, &bBCK, &bBCQ,
 		   &nHalf, &nN,
@@ -4146,7 +4146,7 @@ void ICC_ParseExamBoard(char *cS)
 	long nWc, nBc;
 
 	sscanf(cS + 77,
-		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %d %d %d %d %d %s %s %s",
+		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %s %s %d %d %d %s %s %s",
 		   &cTurn,
 		   &nLP, &bWCK, &bWCQ, &bBCK, &bBCQ,
 		   &nHalf, &nN,
@@ -4173,7 +4173,7 @@ void ICC_ParseExamBoard(char *cS)
 	{
 		bNewGame = 1;
 
-		if(stricmp(cwName, Vars.cWhoAmI) == 0)
+		if(_stricmp(cwName, Vars.cWhoAmI) == 0)
 		{
 			Game [INDEX_PLAY].bFlip = 0;
 		}
