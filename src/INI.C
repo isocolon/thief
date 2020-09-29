@@ -2454,7 +2454,7 @@ void INI_WriteSetup(char *cIni)
 	{
 		strcpy(User.cNotepad, "notepad.exe");
 	}
-	fprintf(Fv, "Notepad executable file=%s\n", User.cNotepad, Ini);
+	fprintf(Fv, "Notepad executable file=%s\n", User.cNotepad);
 
 	//
 	// [Board]
