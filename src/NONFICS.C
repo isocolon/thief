@@ -1727,7 +1727,7 @@ int NONFICS_ParseBoard(char *cS)
 	long nTmpW, nTmpB, nLagThisMove [2], nTimeRemainder [2];
 
 	sscanf(cS + 77,
-		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %d %d %d %d %d %s %s %s",
+		   "%c %d %d %d %d %d %d %d %s %s %d %d %d %s %s %d %d %d %s %s %s",
 		   &cTurn,
 		   &nLP, &bWCK, &bWCQ, &bBCK, &bBCQ,
 		   &nHalf, &nN,
