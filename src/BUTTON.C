@@ -282,47 +282,11 @@ void BUTTON_OldFICSEAR(void)
 	strcpy(Buttons.cAction [38], "ptell Lag");
 
 #ifndef  KICS
-	strcpy(Buttons.cText   [39], "Lag cheat");
-	strcpy(Buttons.cAction [39], "ptell Lag cheating fuckers");
-
-	strcpy(Buttons.cText   [40], "Mother lag");
-	strcpy(Buttons.cAction [40], "ptell Mother fucking lag");
-
-	strcpy(Buttons.cText   [41], "Bitch dead");
-	strcpy(Buttons.cAction [41], "ptell Bitch is dead");
-
-	strcpy(Buttons.cText   [42], "Bite me");
-	strcpy(Buttons.cAction [42], "ptell Bite me");
-
-	strcpy(Buttons.cText   [43], "Cake");
-	strcpy(Buttons.cAction [43], "ptell Cake");
-
-	strcpy(Buttons.cText   [44], "Eat shit");
-	strcpy(Buttons.cAction [44], "ptell Eat shit");
-
-	strcpy(Buttons.cText   [45], "Fuck u");
-	strcpy(Buttons.cAction [45], "ptell Fuck u");
-
-	strcpy(Buttons.cText   [46], "I focked");
-	strcpy(Buttons.cAction [46], "ptell I finger focked");
-
-	strcpy(Buttons.cText   [47], "I focking");
-	strcpy(Buttons.cAction [47], "ptell I finger focking");
-
-	strcpy(Buttons.cText   [48], "Fast bitch");
-	strcpy(Buttons.cAction [48], "ptell Move faster bitch");
-
-	strcpy(Buttons.cText   [49], "Son bitch");
-	strcpy(Buttons.cAction [49], "ptell Son of a bitch");
-
 	strcpy(Buttons.cText   [50], "So easy");
 	strcpy(Buttons.cAction [50], "ptell So easy");
 
 	strcpy(Buttons.cText   [51], "She dead");
 	strcpy(Buttons.cAction [51], "ptell She dead");
-
-	strcpy(Buttons.cText   [52], "They suck");
-	strcpy(Buttons.cAction [52], "ptell They suck");
 
 	Buttons.nType [53] = FUNCTION_NONE;
 	strcpy(Buttons.cText   [53], "");
@@ -459,47 +423,11 @@ void BUTTON_NewFICSEAR(void)
 	strcpy(Buttons.cAction [38], "ptell Lag");
 
 #ifndef  KICS
-	strcpy(Buttons.cText   [39], "Lag cheat");
-	strcpy(Buttons.cAction [39], "ptell Lag cheating fuckers");
-
-	strcpy(Buttons.cText   [40], "Mother lag");
-	strcpy(Buttons.cAction [40], "ptell Mother fucking lag");
-
-	strcpy(Buttons.cText   [41], "Bitch dead");
-	strcpy(Buttons.cAction [41], "ptell Bitch is dead");
-
-	strcpy(Buttons.cText   [42], "Bite me");
-	strcpy(Buttons.cAction [42], "ptell Bite me");
-
-	strcpy(Buttons.cText   [43], "Cake");
-	strcpy(Buttons.cAction [43], "ptell Cake");
-
-	strcpy(Buttons.cText   [44], "Eat shit");
-	strcpy(Buttons.cAction [44], "ptell Eat shit");
-
-	strcpy(Buttons.cText   [45], "Fuck u");
-	strcpy(Buttons.cAction [45], "ptell Fuck u");
-
-	strcpy(Buttons.cText   [46], "I focked");
-	strcpy(Buttons.cAction [46], "ptell I finger focked");
-
-	strcpy(Buttons.cText   [47], "I focking");
-	strcpy(Buttons.cAction [47], "ptell I finger focking");
-
-	strcpy(Buttons.cText   [48], "Fast bitch");
-	strcpy(Buttons.cAction [48], "ptell Move faster bitch");
-
-	strcpy(Buttons.cText   [49], "Son bitch");
-	strcpy(Buttons.cAction [49], "ptell Son of a bitch");
-
 	strcpy(Buttons.cText   [50], "So easy");
 	strcpy(Buttons.cAction [50], "ptell So easy");
 
 	strcpy(Buttons.cText   [51], "She dead");
 	strcpy(Buttons.cAction [51], "ptell She dead");
-
-	strcpy(Buttons.cText   [52], "They suck");
-	strcpy(Buttons.cAction [52], "ptell They suck");
 #endif
 
 	Buttons.nType [53] = FUNCTION_NONE;
@@ -909,7 +837,6 @@ void BUTTON_Command(int nI)
 //        TOOLBOX_Command (Buttons.nType [nI], Buttons.cAction [nI], User.bButtonCommandAddHist);
 //        }
 //    }
-
 
 	// New Routine for Thief 1.2 (Ludens): Interpret "#" as linebreak
 	if(Buttons.nType [nI] != FUNCTION_NONE)
