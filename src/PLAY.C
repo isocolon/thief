@@ -552,7 +552,7 @@ LRESULT CALLBACK PlayWndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 					}
 					else
 					{
-						// examing
+						// examining
 						if(nMx >= Game [INDEX_PLAY].rBoard.left  &&
 								nMx <= Game [INDEX_PLAY].rBoard.right &&
 								nMy >= Game [INDEX_PLAY].rBoard.top   &&
@@ -653,7 +653,7 @@ LRESULT CALLBACK PlayWndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			}
 			else
 			{
-				// not playing nor examing
+				// not playing nor examining
 				nK = 0;
 			}
 
@@ -1241,7 +1241,7 @@ void PLAY_Command(int nB)
 
 	if(Timeseal.bSocketIsOpen)
 	{
-		// examing a game
+		// examining a game
 		if((Game [INDEX_PLAY].nGameNumber > 0) && (! Game [INDEX_PLAY].bPlaying))
 		{
 			switch(nB)
