@@ -12,7 +12,6 @@ char CS_cSay     [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
 char CS_cPartner [MAX_CENSOR_ITEM] [CENSOR_COMMAND_SIZE + 10];
 
 BOOL CALLBACK SilenceBoxWndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
-
 {
 	char cTmp [2048];
 
@@ -31,15 +30,15 @@ BOOL CALLBACK SilenceBoxWndProc(HWND hwnd, UINT iMsg, WPARAM wParam, LPARAM lPar
 			SendDlgItemMessage(hwnd, IDD_SILENCE_ANNOUNCE,  BM_SETCHECK, Silence.bSilenceAnnouncement   ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_CHTELL,    BM_SETCHECK, Silence.bSilenceChTell         ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PETELL,    BM_SETCHECK, Silence.bSilencePeTell         ? BST_CHECKED : BST_UNCHECKED, 0);
-			SendDlgItemMessage(hwnd, IDD_SILENCE_SAY,	     BM_SETCHECK, Silence.bSilenceSay            ? BST_CHECKED : BST_UNCHECKED, 0);
+			SendDlgItemMessage(hwnd, IDD_SILENCE_SAY,	    BM_SETCHECK, Silence.bSilenceSay            ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_KIBITZ,    BM_SETCHECK, Silence.bSilenceKibitz         ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_WHISPER,   BM_SETCHECK, Silence.bSilenceWhisper        ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLSHOUT,   BM_SETCHECK, Silence.bSilencePlayShout      ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLCSHOUT,  BM_SETCHECK, Silence.bSilencePlayCShout     ? BST_CHECKED : BST_UNCHECKED, 0);
-			SendDlgItemMessage(hwnd, IDD_SILENCE_PLANNOUNCE, BM_SETCHECK, Silence.bSilencePlayAnnouncement ? BST_CHECKED : BST_UNCHECKED, 0);
+			SendDlgItemMessage(hwnd, IDD_SILENCE_PLANNOUNCE,BM_SETCHECK, Silence.bSilencePlayAnnouncement ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLCHTELL,  BM_SETCHECK, Silence.bSilencePlayChTell     ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLPETELL,  BM_SETCHECK, Silence.bSilencePlayPeTell     ? BST_CHECKED : BST_UNCHECKED, 0);
-			SendDlgItemMessage(hwnd, IDD_SILENCE_PLSAY,	 BM_SETCHECK, Silence.bSilencePlaySay        ? BST_CHECKED : BST_UNCHECKED, 0);
+			SendDlgItemMessage(hwnd, IDD_SILENCE_PLSAY,		BM_SETCHECK, Silence.bSilencePlaySay        ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLKIBITZ,  BM_SETCHECK, Silence.bSilencePlayKibitz     ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_PLWHISPER, BM_SETCHECK, Silence.bSilencePlayWhisper    ? BST_CHECKED : BST_UNCHECKED, 0);
 			SendDlgItemMessage(hwnd, IDD_SILENCE_TELL,		 WM_SETTEXT, 0, (LPARAM) Silence.cTell);
