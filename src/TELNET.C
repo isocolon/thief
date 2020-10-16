@@ -2262,9 +2262,9 @@ int TELNET_IsChannel(char *cS, int *bComp)
 			case 1 :
 				while(isalpha(*cS) || *cS == '(' || *cS == ')' || *cS == '*')
 				{
-					if((*cS       == '(') &&
-							(*(cS + 1) == 'C') &&
-							(*(cS + 2) == ')'))
+					if((cS[0] == '(') &&
+					   (cS[1] == 'C') &&
+					   (cS[2] == ')'))
 					{
 						*bComp = 1;
 					}
@@ -2272,7 +2272,7 @@ int TELNET_IsChannel(char *cS, int *bComp)
 					cS++;
 				}
 
-				if(! isdigit(*cS))
+				if(!isdigit(*cS))
 				{
 					return 0;
 				}
